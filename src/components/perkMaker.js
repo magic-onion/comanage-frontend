@@ -4,7 +4,7 @@ const PerkMaker = props => {
   return (
     <div>
       <form>
-        <input type="text" placeholder="add something"/>
+        <input type="text" placeholder="ADD PERK"/>
         <button type="submit">..Add</button>
       </form>
     </div>

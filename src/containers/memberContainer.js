@@ -1,6 +1,7 @@
 import React from 'react'
 import PerkContainer from './perkContainer'
 import MemberInfo from './memberInfo'
+import MemberCard from '../components/MemberCard'
 
 class MemberContainer extends React.Component {
 
@@ -10,6 +11,7 @@ class MemberContainer extends React.Component {
         members container
         <MemberInfo/>
         <PerkContainer />
+        <MemberCard />
       </div>
     )
   }
