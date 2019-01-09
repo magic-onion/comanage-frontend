@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import store from '../index.js'
 
   const init = {
     username: "",
@@ -12,7 +13,7 @@ class UserMaker extends React.Component {
 
   handleChange = event => {
     this.setState({
-      [event.target.placeholder]: event.target.value
+      [event.target.name]: event.target.value
     })
   }
 
@@ -23,22 +24,29 @@ class UserMaker extends React.Component {
       type: 'CREATE_USER',
       payload: user
     })
+
+    let userBody = {
+      user: store.getState().user
+    }
+
     let config = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(this.props.user)
+      body: JSON.stringify(userBody)
     }
-    fetch('http://localhost:4000/api/users', config).then(r=>r.json).then(console.log)
+    console.log(config)
+    debugger
+    fetch('http://localhost:3000/api/v1/users', config).then(r=>r.json()).then(console.log)
   }
 
   render() {
     return (
       <div className="user-maker">
         <form onSubmit={this.handleSubmit}>
-          <input onChange={this.handleChange} type="text" placeholder="username" value={this.state.username}/>
-          <input onChange={this.handleChange} type="text" placeholder="password" value={this.state.password}/>
+          <input onChange={this.handleChange} type="text" name="username" value={this.state.username}/>
+          <input onChange={this.handleChange} type="text" name="password" value={this.state.password}/>
           <button type="submit">Create User</button>
         </form>
       </div>
