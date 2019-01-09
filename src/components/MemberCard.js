@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Card, Icon } from 'semantic-ui-react'
+import { Card} from 'semantic-ui-react'
 
 class MemberCard extends React.Component {
 

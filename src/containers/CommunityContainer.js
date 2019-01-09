@@ -1,6 +1,6 @@
 import React from 'react'
 import MemberContainer from './memberContainer'
-import RoomMaker from '../components/RoomMaker'
+// import RoomMaker from '../components/RoomMaker'
 import RoomCard from '../components/RoomCard'
 import { connect } from 'react-redux'
 

@@ -4,7 +4,8 @@ import NavigationContainer from './containers/NavigationContainer'
 // import SidebarContainer from './containers/SidebarContainer'
 import CommunityMaker from './components/CommunityMaker'
 import CommunityContainer from './containers/CommunityContainer'
-import RoomCard from './components/RoomCard'
+// import RoomCard from './components/RoomCard'
+import UserMaker from './components/UserMaker'
 
 import './App.css';
 
@@ -16,8 +17,8 @@ class App extends Component {
       <h1>Nature does not hurry, yet everything is accomplished.</h1>
       <NavigationContainer/>
       <CommunityMaker/>
-      <RoomCard/>
       <CommunityContainer/>
+      <UserMaker/>
       </div>
     );
   }

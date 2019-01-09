@@ -1,5 +1,5 @@
 import React from 'react'
-import PerkContainer from './perkContainer'
+// import PerkContainer from './perkContainer'
 import MemberInfo from './memberInfo'
 import MemberCard from '../components/MemberCard'
 
