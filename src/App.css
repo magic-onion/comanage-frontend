@@ -22,3 +22,25 @@
 .App-link {
   color: #61dafb;
 }
+.community-maker {
+  padding: 10px;
+  border: solid red 1px;
+  float:left;
+}
+
+
+.community-container {
+  border: solid green 1px;
+  float:left;
+}
+
+.room-card {
+  padding: 5px;
+  border: solid red 1px;
+  display: inline-block;
+}
+
+.member-container {
+  border: solid blue 1px;
+  display: inline-block;
+}

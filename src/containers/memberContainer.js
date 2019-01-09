@@ -7,10 +7,9 @@ class MemberContainer extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="member-container">
         members container
         <MemberInfo/>
-        <PerkContainer />
         <MemberCard />
       </div>
     )

@@ -1,13 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+// This should be able to assign people based on the number of unassigned members
+
   const init = {
-    communityName: "",
-    rooms: 0,
-    members: 0
+    RoomName: "",
   }
 
-class CommunityMaker extends React.Component {
+class RoomMaker extends React.Component {
 
   state= init
   handleChange = event => {
@@ -25,13 +25,13 @@ class CommunityMaker extends React.Component {
   render() {
     return (
       <form className="community-maker" onSubmit={this.handleSubmit} >
-        <p>Community Name</p>
-        <input onChange={this.handleChange} name="communityName" type="text" placeholder="Community Name" value={this.state.communityName}/>
+        <p>Room Name</p>
+        <input onChange={this.handleChange} name="communityName" type="text" placeholder="Room Name" value={this.state.communityName}/>
           <p>rooms</p>
         <input onChange={this.handleChange} name="rooms" type="number" placeholder="Rooms" value={this.state.rooms}/>
           <p>members</p>
         <input onChange={this.handleChange} name="members" type="number" placeholder="Members" value={this.state.members}/>
-        <button type="submit">Make the Community</button>
+        <button type="submit">Make the Room</button>
       </form>
     )
   }
@@ -41,4 +41,4 @@ const mapStateToProps = ({community}) => {
   return { community }
 }
 
-export default connect(mapStateToProps)(CommunityMaker)
+export default connect(mapStateToProps)(RoomMaker)

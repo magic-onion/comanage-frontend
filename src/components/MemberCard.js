@@ -12,7 +12,7 @@ class MemberCard extends React.Component {
       header="A Member"
       meta='Status'
       description='stated datetime'
-      extra="extra stuff"
+      extra={<button>Edit/Assign</button>}
 
       />
     )
