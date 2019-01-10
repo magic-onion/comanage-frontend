@@ -17,36 +17,46 @@ class UserMaker extends React.Component {
     })
   }
 
-  handleSubmit = event => {
+  handleUser = event => {
     event.preventDefault()
-    let user = this.state
-    this.props.dispatch({
-      type: 'CREATE_USER',
-      payload: user
-    })
-    let userBody = {
-      user: store.getState().user
+    if (event.target.name === "create") {
+      let user = this.state
+      this.props.dispatch({ type: 'CREATE_USER', payload: user })
+      let userBody = { user: store.getState().user }
+      let config = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(userBody)
+      }
+      fetch('http://localhost:3000/api/v1/users', config).then(r=>r.json()).then(p=>localStorage.setItem("token", p.jwt))
+      this.setState({username: init.username, password: init.password})
+    }
+    else if (event.target.name === "login") {
+      let user = this.state
+      this.props.dispatch({ type: 'CREATE_USER', payload: user })
+      let userBody = { user: store.getState().user }
+      let config = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(userBody)
+      }
+      fetch('http://localhost:3000/api/v1/login', config).then(r=>r.json()).then(p=>localStorage.setItem("token", p.jwt))
     }
 
-    let config = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(userBody)
-    }
-    console.log(config)
-    fetch('http://localhost:3000/api/v1/users', config).then(r=>r.json()).then(console.log)
-    this.setState({username: init.username, password: init.password})
   }
 
   render() {
     return (
       <div className="user-maker">
-        <form onSubmit={this.handleSubmit}>
+        <form>
           <input onChange={this.handleChange} type="text" name="username" value={this.state.username}/>
           <input onChange={this.handleChange} type="text" name="password" value={this.state.password}/>
-          <button type="submit">Create User</button>
+          <button onClick={this.handleUser} name="login" type="submit">Login</button>
+          <button onClick={this.handleUser} name="create" type="submit">Create User</button>
         </form>
       </div>
     )
@@ -61,6 +71,5 @@ const mapStateToProps = state => {
     status: state.user.status
   }
 }
-
 
 export default connect(mapStateToProps)(UserMaker)

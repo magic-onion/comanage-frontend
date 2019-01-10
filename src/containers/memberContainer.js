@@ -3,6 +3,8 @@ import React from 'react'
 import MemberInfo from './memberInfo'
 import MemberCard from '../components/MemberCard'
 
+
+
 class MemberContainer extends React.Component {
 
   render() {
@@ -10,7 +12,7 @@ class MemberContainer extends React.Component {
       <div className="member-container">
         members container
         <MemberInfo/>
-        <MemberCard />
+        <MemberCard member={this.props.member}/>
       </div>
     )
   }

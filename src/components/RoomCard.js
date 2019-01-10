@@ -14,9 +14,11 @@ class RoomCard extends React.Component {
 
 
   render() {
+    console.log(this.props.room)
+    const {props: {room}} = this
     return (
       <div className="room-card">
-        <span><h3>Room Name: </h3></span>
+        <span><h3>{room.name}</h3></span>
         <h4>Current Members: </h4>
         <span>
           <button onClick={this.handleEdit}>{this.state.edit ? "Hide" : "Edit"}</button>

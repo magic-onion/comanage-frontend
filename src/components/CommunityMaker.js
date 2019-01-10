@@ -26,15 +26,26 @@ class CommunityMaker extends React.Component {
     const communityBody = {
       community: store.getState().community
     }
+    console.log(communityBody)
     const config = {
       method: "POST",
       headers: {
+        "Authorization": `bearer ${localStorage.token}`,
         "Content-Type": "Application/json"
       },
       body: JSON.stringify(communityBody)
     }
     console.log(config)
-    fetch('http://localhost:3000/api/v1/communities', config).then(r=>r.json()).then(console.log)
+    fetch('http://localhost:3000/api/v1/communities', config).then(r=>r.json()).then(p=>{
+      console.log(p)
+      this.props.dispatch({
+        type: 'SAVED_COMMUNITY',
+        payload: {
+          rooms: p.rooms,
+          members: p.members
+        }
+      })
+    })
   }
 
   render() {

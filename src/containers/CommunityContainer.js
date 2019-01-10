@@ -2,6 +2,7 @@ import React from 'react'
 import MemberContainer from './memberContainer'
 // import RoomMaker from '../components/RoomMaker'
 import RoomCard from '../components/RoomCard'
+import MemberCard from '../components/MemberCard'
 import { connect } from 'react-redux'
 
 
@@ -53,13 +54,13 @@ class CommunityContainer extends React.Component {
 
   render() {
     const {props: {community}} = this
+    console.log(community.members)
     return(
       <div className="community-container">
       <button>Edit Community</button>
         <h1>Name: {community.communityName}</h1>
-        <h3>Rooms {community.rooms}</h3>
-        <p>Members: {community.members}</p>
-        {this.renderCommunityTools()}
+        {community.rooms ? community.rooms.map((room,i) => <RoomCard key={i} room={room}/>) : null}
+        {community.members ? community.members.map((member,i) => <MemberContainer key={i} member={member}/>) : null}
       </div>
     )
   }
