@@ -1,7 +1,8 @@
 function communityReducer(state = {
-  communityName: "",
-  rooms: 0,
-  members: 0
+  name: "",
+  roomamount: 0,
+  memberamount: 0,
+  start_date: ""
 
 }, action) {
   switch (action.type) {

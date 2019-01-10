@@ -24,7 +24,6 @@ class UserMaker extends React.Component {
       type: 'CREATE_USER',
       payload: user
     })
-
     let userBody = {
       user: store.getState().user
     }
@@ -37,8 +36,8 @@ class UserMaker extends React.Component {
       body: JSON.stringify(userBody)
     }
     console.log(config)
-    debugger
     fetch('http://localhost:3000/api/v1/users', config).then(r=>r.json()).then(console.log)
+    this.setState({username: init.username, password: init.password})
   }
 
   render() {
