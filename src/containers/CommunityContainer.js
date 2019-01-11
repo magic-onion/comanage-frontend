@@ -10,6 +10,10 @@ class CommunityContainer extends React.Component {
     this.things = null
   }
 
+  selected = event => {
+    this.props.dispatch({ type: "SELECT_COMMUNITY", payload: event.target.name})
+  }
+
   render() {
     const {props: {community}} = this
     return(
@@ -20,6 +24,7 @@ class CommunityContainer extends React.Component {
           <li> Rooms: {community.rooms.length}</li>
           <li> Members: {community.members.length}</li>
         </ul>
+        <button name={community.id} onClick={this.selected}>Select</button>
       </div>
     )
   }

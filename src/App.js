@@ -6,9 +6,9 @@ import CommunityMaker from './components/CommunityMaker'
 import CommunityContainer from './containers/CommunitiesContainer'
 // import RoomCard from './components/RoomCard'
 import UserMaker from './components/UserMaker'
-import Logout from './components/Logout'
 import { connect } from 'react-redux'
-import { Route, Switch, Redirect, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
+// import { Route, Switch, Redirect } from 'react-router-dom'
 
 
 import './App.css';
@@ -22,7 +22,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    if (!!localStorage.token) {
+    if (localStorage.token !== undefined) {
       let profileConfig = {
         method: "GET",
         headers: {"Content-type": 'application/json', "Authorization": `Bearer ${localStorage.token}`}
@@ -35,14 +35,14 @@ class App extends Component {
 
 
   render() {
+    const {props: {isLoggedIn, communities}} = this
     return (
       <div className="App">
-      <Logout loggingOut={this.loggingOut}/>
-      <h1>Nature does not hurry, yet everything is accomplished.</h1>
-      <NavigationContainer/>
-      <CommunityMaker/>
-        {this.props.isLoggedIn ? <CommunityContainer/> : null }
-      <UserMaker/>
+        <h1>Nature does not hurry, yet everything is accomplished.</h1>
+        <NavigationContainer loggingOut={this.loggingOut}/>
+        {isLoggedIn ? <CommunityMaker/> : null}
+        {isLoggedIn ? <CommunityContainer/> : null }
+        {isLoggedIn ? null: <UserMaker/> }
       </div>
     );
   }
@@ -53,6 +53,7 @@ class App extends Component {
 const mapStateToProps = state => {
   return {
     isLoggedIn: state.user.isLoggedIn,
+    communities: state.user.communities
   }
 }
 

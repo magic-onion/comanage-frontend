@@ -1,6 +1,7 @@
 import React from 'react'
 
 import {Menu} from 'semantic-ui-react'
+import Logout from '../components/Logout'
 
 export default class NavigationContainer extends React.Component {
 
@@ -12,6 +13,7 @@ export default class NavigationContainer extends React.Component {
       <Menu.Item name="rooms" />
       <Menu.Item name="members" />
       <Menu.Item name="skate or die" />
+      <Logout loggingOut={this.props.loggingOut}/>
       </Menu>
     )
   }
