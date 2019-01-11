@@ -18,9 +18,6 @@ function communityReducer(state = init, action) {
     case "SAVED_COMMUNITY":
     let commState = {...state, rooms: action.payload.rooms, members: action.payload.members}
     return commState
-    case "FETCH_COMMUNITY":
-    commState = {...state, rooms: action.payload.rooms, members: action.payload.members}
-    return commState
     default:
     return state
   }

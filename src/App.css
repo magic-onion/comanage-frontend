@@ -30,7 +30,7 @@
 
 
 .community-container {
-  border: solid green 1px;
+  border: solid green 5px;
   float:left;
 }
 
@@ -43,4 +43,18 @@
 .member-container {
   border: solid blue 1px;
   display: inline-block;
+}
+
+.communities-container {
+  float: right;
+  margin-right: 40px;
+  max-width: 900px;
+  border: 3px solid pink;
+}
+
+.user-maker {
+  padding: 5px;
+  margin: 10px;
+  float: left;
+  border: 1px solid blue;
 }

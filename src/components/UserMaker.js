@@ -49,7 +49,10 @@ class UserMaker extends React.Component {
           method: "GET",
           headers: {"Content-type": 'application/json', "Authorization": `Bearer ${localStorage.token}`}
         }
-        fetch('http://localhost:3000/api/v1/profile', profileConfig).then(r=>r.json()).then(console.log)
+        fetch('http://localhost:3000/api/v1/profile', profileConfig).then(r=>r.json()).then(p => {
+          console.log(p)
+          this.props.dispatch({type: "GET_USER_DATA", payload: p.communities})
+        })
       })
       this.setState({username: init.username, password: init.password})
     }
