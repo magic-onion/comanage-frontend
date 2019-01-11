@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import NavigationContainer from './containers/NavigationContainer'
 // import SidebarContainer from './containers/SidebarContainer'
 import CommunityMaker from './components/CommunityMaker'
-import CommunityContainer from './containers/CommunitiesContainer'
+import CommunitiesContainer from './containers/CommunitiesContainer'
 // import RoomCard from './components/RoomCard'
 import UserMaker from './components/UserMaker'
 import { connect } from 'react-redux'
@@ -35,13 +35,13 @@ class App extends Component {
 
 
   render() {
-    const {props: {isLoggedIn, communities}} = this
+    const {props: {isLoggedIn, communities, selectedCommunity}} = this
     return (
       <div className="App">
         <h1>Nature does not hurry, yet everything is accomplished.</h1>
         <NavigationContainer loggingOut={this.loggingOut}/>
         {isLoggedIn ? <CommunityMaker/> : null}
-        {isLoggedIn ? <CommunityContainer/> : null }
+        {isLoggedIn && !selectedCommunity ? <CommunitiesContainer/> : null }
         {isLoggedIn ? null: <UserMaker/> }
       </div>
     );
@@ -53,7 +53,8 @@ class App extends Component {
 const mapStateToProps = state => {
   return {
     isLoggedIn: state.user.isLoggedIn,
-    communities: state.user.communities
+    communities: state.user.communities,
+    selectedCommunity: state.user.selectedCommunity
   }
 }
 

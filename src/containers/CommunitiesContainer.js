@@ -1,5 +1,5 @@
 import React from 'react'
-import CommunityContainer from './CommunityContainer'
+import CommunityCard from '../components/CommunityCard'
 import { connect } from 'react-redux'
 
 
@@ -11,7 +11,7 @@ class CommunitiesContainer extends React.Component {
       <div className="communities-container">
       <p>hello</p>
         <div>
-          {communities.map((comm, i) => <CommunityContainer key = {i} community={comm}/>)}
+          {communities.map((comm, i) => <CommunityCard key = {i} community={comm}/>)}
         </div>
       </div>
     )
