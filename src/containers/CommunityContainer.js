@@ -1,8 +1,6 @@
 import React from 'react'
-import MemberContainer from './memberContainer'
+// import MemberContainer from './memberContainer'
 // import RoomMaker from '../components/RoomMaker'
-import RoomCard from '../components/RoomCard'
-import MemberCard from '../components/MemberCard'
 import { connect } from 'react-redux'
 
 
@@ -14,7 +12,6 @@ class CommunityContainer extends React.Component {
 
   render() {
     const {props: {community}} = this
-    console.log(community)
     return(
       <div className="community-container">
         <h1>{community.name}</h1>

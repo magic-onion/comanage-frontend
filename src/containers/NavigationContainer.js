@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {Menu, Segment} from 'semantic-ui-react'
+import {Menu} from 'semantic-ui-react'
 
 export default class NavigationContainer extends React.Component {
 
