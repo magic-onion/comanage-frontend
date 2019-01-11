@@ -44,9 +44,15 @@ class UserMaker extends React.Component {
         },
         body: JSON.stringify(userBody)
       }
-      fetch('http://localhost:3000/api/v1/login', config).then(r=>r.json()).then(p=>localStorage.setItem("token", p.jwt))
+      fetch('http://localhost:3000/api/v1/login', config).then(r=>r.json()).then(p=> localStorage.setItem("token", p.jwt)).then(p => {
+        let profileConfig = {
+          method: "GET",
+          headers: {"Content-type": 'application/json', "Authorization": `Bearer ${localStorage.token}`}
+        }
+        fetch('http://localhost:3000/api/v1/profile', profileConfig).then(r=>r.json()).then(console.log)
+      })
+      this.setState({username: init.username, password: init.password})
     }
-
   }
 
   render() {

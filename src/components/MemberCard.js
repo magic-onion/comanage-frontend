@@ -9,7 +9,7 @@ class MemberCard extends React.Component {
 
       <Card
       image='/Users/atru/fis-labs/comanage/comanage-frontend/src/assets/Icon-pngs/member-icon-0.png'
-      header="A Member"
+      header={this.props.member.name}
       meta='Status'
       description='stated datetime'
       extra={<button>Edit/Assign</button>}

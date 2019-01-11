@@ -1,7 +1,7 @@
 function userReducer(state = {
   username: "",
   password: "",
-  status: "manager"
+  status: "manager",
 }, action) {
   switch (action.type) {
 
