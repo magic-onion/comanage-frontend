@@ -27,6 +27,7 @@ body {
   color: #61dafb;
 }
 .community-maker {
+  margin: 5px;
   padding: 10px;
   border: solid red 1px;
   float:left;
@@ -62,3 +63,12 @@ body {
   float: left;
   border: 1px solid blue;
 }
+
+.member-card {
+  display: inline-block;
+}
+
+.member-card
+  img {
+    min-height: 250px;
+  }

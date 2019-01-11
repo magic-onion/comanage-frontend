@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { Card} from 'semantic-ui-react'
 
 class MemberCard extends React.Component {
@@ -8,7 +7,8 @@ class MemberCard extends React.Component {
     return (
 
       <Card
-      image='/Users/atru/fis-labs/comanage/comanage-frontend/src/assets/Icon-pngs/member-icon-0.png'
+      className="member-card"
+      image={this.props.icon}
       header={this.props.member.name}
       meta='Status'
       description='stated datetime'

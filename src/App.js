@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-// import MemberContainer from './containers/memberContainer'
 import NavigationContainer from './containers/NavigationContainer'
-// import SidebarContainer from './containers/SidebarContainer'
 import CommunityMaker from './components/CommunityMaker'
 import CommunitiesContainer from './containers/CommunitiesContainer'
-// import RoomCard from './components/RoomCard'
+import CommunityContainer from './containers/CommunityContainer'
 import UserMaker from './components/UserMaker'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
+
+// import MemberContainer from './containers/memberContainer'
+// import SidebarContainer from './containers/SidebarContainer'
+// import RoomCard from './components/RoomCard'
 // import { Route, Switch, Redirect } from 'react-router-dom'
 
 
@@ -42,6 +44,7 @@ class App extends Component {
         <NavigationContainer loggingOut={this.loggingOut}/>
         {isLoggedIn ? <CommunityMaker/> : null}
         {isLoggedIn && !selectedCommunity ? <CommunitiesContainer/> : null }
+        {selectedCommunity ? <CommunityContainer/> : null}
         {isLoggedIn ? null: <UserMaker/> }
       </div>
     );
