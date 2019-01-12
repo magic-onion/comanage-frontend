@@ -66,9 +66,5 @@ body {
 
 .member-card {
   display: inline-block;
+  margin: 15px;
 }
-
-.member-card
-  img {
-    min-height: 250px;
-  }

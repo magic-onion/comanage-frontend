@@ -1,17 +1,23 @@
 import React from 'react'
 // import RoomMaker from './RoomMaker'
 import RoomEditor from './RoomEditor'
+import RoomDetails from './RoomDetails'
 
 class RoomCard extends React.Component {
   state = {
-    edit: false
+    edit: false,
+    details: false
   }
 
-  handleEdit =  event => {
+  handleEdit = event => {
     let edit = !this.state.edit
     this.setState({edit})
   }
 
+  handleDetails = event => {
+    let details = !this.state.details
+    this.setState({details}, ()=>console.log(this.state.details))
+  }
 
   render() {
     console.log(this.props.room)
@@ -22,9 +28,10 @@ class RoomCard extends React.Component {
         <h4>Current Members: </h4>
         <span>
           <button onClick={this.handleEdit}>{this.state.edit ? "Hide" : "Edit"}</button>
-          <button>Details</button>
+          <button onClick={this.handleDetails}>Details</button>
         </span>
         {this.state.edit ? <RoomEditor /> : null}
+        {this.state.details ?  <RoomDetails room={room}/> : null}
       </div>
     )
   }

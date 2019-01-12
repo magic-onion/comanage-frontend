@@ -30,7 +30,7 @@ class MemberContainer extends React.Component {
     return (
       <div className="member-container">
         members container
-        {this.props.members.map((member, i) => <MemberCard key={i} member={member} icon={icons[Math.floor(Math.random() * 15)]}/> )}
+        {this.props.members.map((member, i) => <MemberCard key={i} rooms={this.props.rooms} member={member} icon={icons[Math.floor(Math.random() * 15)]}/> )}
       </div>
     )
   }
