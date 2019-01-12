@@ -22,7 +22,7 @@ class MemberCard extends React.Component {
         <img src={this.props.icon}/>
         <p></p>
         <button onClick={this.assignMember}>Edit/Assign</button>
-        {this.state.assigning ? <MemberRoomAssigner rooms={this.props.rooms} /> : null}
+        {this.state.assigning ? <MemberRoomAssigner rooms={this.props.rooms} member={this.props.member.id}/> : null}
       </div>
     )
   }
