@@ -4,7 +4,7 @@ const RoomDetails = props => {
   return (
     <div>
       <ul>
-        {props.members.map((member, i) => <li>{member.name}</li>)}
+        {props.members.length ? props.members.map((member, i) => <li key={i}>{member.name}</li>) : <p>no recent members here!</p>}
       </ul>
     </div>
   )

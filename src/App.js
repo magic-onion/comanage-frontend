@@ -37,7 +37,7 @@ class App extends Component {
 
 
   render() {
-    const {props: {isLoggedIn, communities, selectedCommunity}} = this
+    const {props: {isLoggedIn, selectedCommunity}} = this
     return (
       <div className="App">
         <h1>Nature does not hurry, yet everything is accomplished.</h1>

@@ -16,7 +16,6 @@ class CommunityCard extends React.Component {
 
   render() {
     const {props: {community}} = this
-    console.log(this.props)
     return(
       <div className="community-container">
         <h1>{community.name}</h1>

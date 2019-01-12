@@ -68,3 +68,7 @@ body {
   display: inline-block;
   margin: 15px;
 }
+
+.room-container {
+  display: inline-block;
+}
