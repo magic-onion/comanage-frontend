@@ -5,11 +5,6 @@ import RoomDetails from './RoomDetails'
 
 class RoomCard extends React.Component {
 
-  get roomAssignees(){
-    let assigned = this.props.roomMembers.filter(assignment => assignment.room_id === this.props.room.id)
-    let membersAssigned = assigned.map(assigned => this.props.members.find(member => assigned.member_id === member.id))
-    return membersAssigned
-  }
 
   state = {
     edit: false,
@@ -26,22 +21,26 @@ class RoomCard extends React.Component {
     this.setState({details}, ()=>console.log(this.state.details))
   }
 
-  get assignees() {
+  get roomAssignees(){
+    if (this.props.roomMembers) {
+      let assigned = this.props.roomMembers.filter(assignment => assignment.room_id === this.props.room.id)
+      let membersAssigned = assigned.map(assigned => this.props.members.find(member => assigned.member_id === member.id))
+      return membersAssigned
+    }
   }
 
   render() {
-    console.log(this.roomAssignees)
     const {props: {room}} = this
     return (
       <div className="room-card">
         <span><h3>{room.name}</h3></span>
-        <h4>Current Members: {this.roomAssignees.length}</h4>
+        {this.roomAssignees ? <h4>Current Members: {this.roomAssignees.length}</h4> : <p>No assigned Members</p>}
         <h5>Occupancy: </h5>
         <span>
           <button onClick={this.handleEdit}>{this.state.edit ? "Hide" : "Edit"}</button>
           <button onClick={this.handleDetails}>Details</button>
         </span>
-        {this.state.edit ? <RoomEditor /> : null}
+        {this.state.edit ? <RoomEditor room={room} /> : null}
         {this.state.details ?  <RoomDetails members={this.roomAssignees}/> : null}
       </div>
     )

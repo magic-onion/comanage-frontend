@@ -14,14 +14,15 @@ class MemberCard extends React.Component {
   }
 
   get assignedRooms() {
-    let assigned = this.props.roomMembers.filter(assignment => assignment.active)
-    let membersAssigned = assigned.filter(assignment => assignment.member_id === this.props.member.id)
-    let roomsAssigned = membersAssigned.map(assigned => this.props.rooms.find(room => assigned.room_id === room.id))
-    return roomsAssigned
+    if (this.props.roomMembers) {
+      let assigned = this.props.roomMembers.filter(assignment => assignment.active)
+      let membersAssigned = assigned.filter(assignment => assignment.member_id === this.props.member.id)
+      let roomsAssigned = membersAssigned.map(assigned => this.props.rooms.find(room => assigned.room_id === room.id))
+      return roomsAssigned
+    }
   }
 
   render() {
-    console.log(this.assignedRooms)
     return (
 
       <div className="member-card">
@@ -29,7 +30,7 @@ class MemberCard extends React.Component {
         <img src={this.props.icon} alt={this.props.member.name}/>
         <div>
           <p>Currently Assigned To: </p>
-          {this.assignedRooms.length ? this.assignedRooms.map((room, i) => <p key={i}>{room.name}</p>) : null}
+          {this.assignedRooms ? this.assignedRooms.map((room, i) => <p key={i}>{room.name}</p>) : null}
         </div>
         <h6>"{this.props.member.bio}"</h6>
         <button onClick={this.assignMember}>Edit/Assign</button>

@@ -11,7 +11,7 @@ class CommunitiesContainer extends React.Component {
       <div className="communities-container">
       <p>hello</p>
         <div>
-          {communities.map((comm, i) => <CommunityCard key = {i} community={comm}/>)}
+          {communities !== undefined ? communities.map((comm, i) => <CommunityCard key = {i} community={comm}/>) : null}
         </div>
       </div>
     )
@@ -20,7 +20,7 @@ class CommunitiesContainer extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    communities: state.user.communities
+    communities: state.user.communities,
   }
 }
 

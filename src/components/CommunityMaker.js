@@ -45,6 +45,9 @@ class CommunityMaker extends React.Component {
           members: p.members
         }
       })
+      if (this.props.user.communities === undefined) {
+        this.props.dispatch({type:"MAKE_FIRST_COMMUNITY", payload: p.community})
+      }
     })
   }
 
@@ -64,8 +67,8 @@ class CommunityMaker extends React.Component {
   }
 }
 
-const mapStateToProps = ({community}) => {
-  return { community }
+const mapStateToProps = ({community, user}) => {
+  return { community, user }
 }
 
 export default connect(mapStateToProps)(CommunityMaker)

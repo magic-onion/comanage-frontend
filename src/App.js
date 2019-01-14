@@ -6,15 +6,8 @@ import CommunityContainer from './containers/CommunityContainer'
 import UserMaker from './components/UserMaker'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-
-// import MemberContainer from './containers/memberContainer'
-// import SidebarContainer from './containers/SidebarContainer'
-// import RoomCard from './components/RoomCard'
-// import { Route, Switch, Redirect } from 'react-router-dom'
-
-
+import icon from './assets/Icon-pngs/comanage-logo.png'
 import './App.css';
-
 
 class App extends Component {
 
@@ -40,11 +33,12 @@ class App extends Component {
     const {props: {isLoggedIn, selectedCommunity}} = this
     return (
       <div className="App">
+        <img className="App-logo" src={icon} alt="logo"/>
         <h1>Nature does not hurry, yet everything is accomplished.</h1>
         <NavigationContainer loggingOut={this.loggingOut}/>
         {isLoggedIn ? <CommunityMaker/> : null}
         {isLoggedIn && !selectedCommunity ? <CommunitiesContainer/> : null }
-        {selectedCommunity ? <CommunityContainer/> : null}
+        {isLoggedIn && selectedCommunity ? <CommunityContainer/> : null}
         {isLoggedIn ? null: <UserMaker/> }
       </div>
     );
@@ -64,3 +58,10 @@ const mapStateToProps = state => {
 
 
 export default withRouter(connect(mapStateToProps)(App));
+
+
+
+// import MemberContainer from './containers/memberContainer'
+// import SidebarContainer from './containers/SidebarContainer'
+// import RoomCard from './components/RoomCard'
+// import { Route, Switch, Redirect } from 'react-router-dom'
