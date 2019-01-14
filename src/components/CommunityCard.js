@@ -1,7 +1,8 @@
 import React from 'react'
+import { connect } from 'react-redux'
+
 // import MemberContainer from './memberContainer'
 // import RoomMaker from '../components/RoomMaker'
-import { connect } from 'react-redux'
 
 
 class CommunityCard extends React.Component {
@@ -11,7 +12,7 @@ class CommunityCard extends React.Component {
   }
 
   selected = event => {
-    this.props.dispatch({ type: "SELECT_COMMUNITY", payload: event.target.name})
+    this.props.dispatch({ type: "SELECT_COMMUNITY", payload: event.target.id})
   }
 
   render() {
@@ -24,7 +25,7 @@ class CommunityCard extends React.Component {
           <li> Rooms: {community.rooms.length}</li>
           <li> Members: {community.members.length}</li>
         </ul>
-        <button name={community.id} onClick={this.selected}>Select</button>
+        <button id={community.id} onClick={this.selected}>Select</button>
       </div>
     )
   }

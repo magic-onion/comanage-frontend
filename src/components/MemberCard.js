@@ -20,6 +20,7 @@ class MemberCard extends React.Component {
       let roomsAssigned = membersAssigned.map(assigned => this.props.rooms.find(room => assigned.room_id === room.id))
       return roomsAssigned
     }
+    else return [null]
   }
 
   render() {

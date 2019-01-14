@@ -2,21 +2,16 @@ import React from 'react'
 import { connect } from 'react-redux'
 import MemberContainer from './MemberContainer'
 import RoomContainer from './RoomContainer'
+import { getCommunity } from '../actions/community'
+import store from '../index'
 
 class CommunityContainer extends React.Component {
 
   componentDidMount() {
-    let communityConfig = {
-      method: "GET",
-      headers: {"Content-type": 'application/json', "Authorization": `Bearer ${localStorage.token}`}
-    }
-    fetch(`http://localhost:3000/api/v1/communities/${this.props.user.selectedCommunity}`, communityConfig).then(r=>r.json()).then(p=>{
-      this.props.dispatch({type: "HOLD_COMMUNITY", payload: p})
-    })
+    this.props.getCommunity(store.getState().user.selectedCommunity)
   }
 
   render() {
-    console.log(this.props)
     const {props: {community: {name, start_date, rooms, members, roomMembers}}} = this
     return (
       <div className="community-container">
@@ -30,4 +25,10 @@ class CommunityContainer extends React.Component {
 
 const mapStateToProps = ({user, community}) => ({ user, community})
 
-export default connect(mapStateToProps)(CommunityContainer)
+const mapDispatchToProps = dispatch => {
+  return {
+    getCommunity: id => dispatch(getCommunity(id))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CommunityContainer)
