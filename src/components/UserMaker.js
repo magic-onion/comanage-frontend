@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import store from '../index.js'
+import { newUser, loginUser } from '../actions/user'
 
   const init = {
     username: "",
@@ -20,40 +20,11 @@ class UserMaker extends React.Component {
   handleUser = event => {
     event.preventDefault()
     if (event.target.name === "create") {
-      let user = this.state
-      this.props.dispatch({ type: 'CREATE_USER', payload: user })
-      let userBody = { user: store.getState().user }
-      let config = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(userBody)
-      }
-      fetch('http://localhost:3000/api/v1/users', config).then(r=>r.json()).then(p=>localStorage.setItem("token", p.jwt))
+      this.props.newUser(this.state)
       this.setState({username: init.username, password: init.password})
     }
     else if (event.target.name === "login") {
-      let user = this.state
-      this.props.dispatch({ type: 'CREATE_USER', payload: user })
-      let userBody = { user: store.getState().user }
-      let config = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(userBody)
-      }
-      fetch('http://localhost:3000/api/v1/login', config).then(r=>r.json()).then(p=> localStorage.setItem("token", p.jwt)).then(p => {
-        let profileConfig = {
-          method: "GET",
-          headers: {"Content-type": 'application/json', "Authorization": `Bearer ${localStorage.token}`}
-        }
-        fetch('http://localhost:3000/api/v1/profile', profileConfig).then(r=>r.json()).then(p => {
-          console.log(p)
-          this.props.dispatch({type: "GET_USER_DATA", payload: p.communities})
-        })
-      })
+      this.props.loginUser(this.state)
       this.setState({username: init.username, password: init.password})
     }
   }
@@ -81,4 +52,11 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(UserMaker)
+const mapDispatchToProps = dispatch => {
+  return {
+    newUser: (userObj) => dispatch(newUser(userObj)),
+    loginUser: (userObj) => dispatch(loginUser(userObj))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserMaker)

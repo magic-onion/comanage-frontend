@@ -10,10 +10,10 @@ function userReducer(state = {
   switch (action.type) {
 
     case "CREATE_USER":
-    let newState = {...action.payload, status: state.status, isLoggedIn: true}
+    let newState = {...action.payload, status: action.payload.user.status, isLoggedIn: true}
     return newState
 
-    case "GET_USER_DATA":
+    case "SET_USER_DATA":
     let userState = {...state, isLoggedIn: true, communities: action.payload}
     return userState
 
