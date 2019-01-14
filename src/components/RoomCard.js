@@ -18,7 +18,7 @@ class RoomCard extends React.Component {
 
   handleDetails = event => {
     let details = !this.state.details
-    this.setState({details}, ()=>console.log(this.state.details))
+    this.setState({details})
   }
 
   get roomAssignees(){

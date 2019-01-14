@@ -19,3 +19,7 @@ function assignmentReducer(state = init, action) {
 }
 
 export default assignmentReducer
+
+//Is this reducer action even necessary? This should rerender for that particular member
+
+//Should make a new one to assign members from rooms?

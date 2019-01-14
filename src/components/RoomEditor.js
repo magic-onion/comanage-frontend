@@ -10,8 +10,6 @@ class RoomEditor extends React.Component {
   }
 
   componentDidMount() {
-    console.log("editor mounted")
-    console.log(this.props, this.state)
     this.props.dispatch({
       type: "INIT_ROOM",
       payload: {

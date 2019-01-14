@@ -1,6 +1,5 @@
 export const loginUser = (userObj) => {
   return (dispatch) => {
-    console.log(userObj)
     let userBody = {
       user: {
         username: userObj.username,

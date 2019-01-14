@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { createAssignment } from '../actions/assignment'
 //the selection is not controlled
 class MemberRoomAssigner extends React.Component {
   state = {
@@ -8,13 +9,13 @@ class MemberRoomAssigner extends React.Component {
   }
 
   handleSubmit = event => {
-    let action = {type: "ASSIGN_MEMBER", payload: {
+    let assignment = {
       memberId: this.props.member,
       roomId: event.target.parentElement.children[0].value,
       startDate: event.target.parentElement.children[1].value,
       endDate: event.target.parentElement.children[2].value
-    }}
-    this.props.dispatch(action)
+    }
+    this.props.createAssignment(assignment)
   }
 
   handleChange = event => {
@@ -24,7 +25,6 @@ class MemberRoomAssigner extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div>
         <select>
@@ -44,4 +44,12 @@ const mapStateToProps = state => {
     assignment: state.assignment
   }
 }
-export default connect(mapStateToProps)(MemberRoomAssigner)
+
+const mapDispatchToProps = dispatch => {
+  return {
+    createAssignment: assignmentObj => dispatch(createAssignment(assignmentObj))
+  }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(MemberRoomAssigner)
