@@ -2,6 +2,9 @@ import React from 'react'
 // import RoomMaker from './RoomMaker'
 import RoomEditor from './RoomEditor'
 import RoomDetails from './RoomDetails'
+import { getRoomDetails } from '../actions/detail'
+
+import { connect } from 'react-redux'
 
 class RoomCard extends React.Component {
 
@@ -17,8 +20,7 @@ class RoomCard extends React.Component {
   }
 
   handleDetails = event => {
-    let details = !this.state.details
-    this.setState({details})
+    this.props.getRoomDetails(this.props.room.id)
   }
 
   get roomAssignees(){
@@ -49,4 +51,16 @@ class RoomCard extends React.Component {
 
 }
 
-export default RoomCard
+const mapStateToProps = state => {
+  return {
+    detail: state.detail
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    getRoomDetails: roomId => dispatch(getRoomDetails(roomId))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(RoomCard)

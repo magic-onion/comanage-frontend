@@ -4,6 +4,7 @@ import CommunityMaker from './components/CommunityMaker'
 import CommunitiesContainer from './containers/CommunitiesContainer'
 import CommunityContainer from './containers/CommunityContainer'
 import UserMaker from './components/UserMaker'
+import DetailView from './components/DetailView'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import icon from './assets/Icon-pngs/comanage-logo.png'
@@ -30,6 +31,7 @@ class App extends Component {
         <img className="App-logo" src={icon} alt="logo"/>
         <h1>Nature does not hurry, yet everything is accomplished.</h1>
         <NavigationContainer loggingOut={this.loggingOut}/>
+        {this.props.detail.toggled ? <DetailView/> : null}
         {isLoggedIn ? <CommunityMaker/> : null}
         {isLoggedIn && !selectedCommunity ? <CommunitiesContainer/> : null }
         {isLoggedIn && selectedCommunity ? <CommunityContainer/> : null}
@@ -44,7 +46,8 @@ const mapStateToProps = state => {
   return {
     isLoggedIn: state.user.isLoggedIn,
     communities: state.user.communities,
-    selectedCommunity: state.user.selectedCommunity
+    selectedCommunity: state.user.selectedCommunity,
+    detail: state.detail
   }
 }
 
