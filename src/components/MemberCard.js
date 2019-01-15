@@ -1,5 +1,4 @@
 import React from 'react'
-import MemberRoomAssigner from './MemberRoomAssigner'
 import { getMembersRooms } from '../actions/member'
 import { connect } from 'react-redux'
 
@@ -9,6 +8,10 @@ class MemberCard extends React.Component {
   state = {
     assigning: false,
     detailView: false
+  }
+
+  showMemberDetails = event => {
+    
   }
 
   toggling = event => {
@@ -43,10 +46,7 @@ class MemberCard extends React.Component {
         <h1>{this.props.member.name}</h1>
         <img src={this.props.icon} alt={this.props.member.name}/>
         <h6>"{this.props.member.bio}"</h6>
-        {this.state.detailView ? <h1>DETAILVIEW</h1> : null}
-        <button name="detailView" onClick={this.toggling}>details</button>
-        <button name="assigning" onClick={this.toggling}>Edit/Assign</button>
-        {this.state.assigning ? <MemberRoomAssigner rooms={this.props.rooms} member={this.props.member.id}/> : null}
+        <button name="detailView" onClick={this.showMemberDetails}>details</button>
       </div>
     )
   }
@@ -66,21 +66,3 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(null, mapDispatchToProps)(MemberCard)
-
-// <div>
-// <p>Currently Assigned To: </p>
-// {this.assignedRooms ? this.assignedRooms.map((room, i) => <p key={i}>{room.name}</p>) : null}
-// </div>
-
-// let assignBody = {
-//   member_id: this.props.member.id
-//
-// }
-// let config = {
-//   method: "PATCH",
-//   headers: {
-//     "Content-Type": "application/json",
-//     "Authorization": `Bearer ${localStorage.token}`
-//   },
-//   body: JSON.stringify(assignBody)
-// }

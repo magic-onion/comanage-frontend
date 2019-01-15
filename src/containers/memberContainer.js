@@ -25,7 +25,7 @@ import icon20 from '../assets/Icon-pngs/member-icon-20.png'
 import icon21 from '../assets/Icon-pngs/member-icon-21.png'
 
 
-const icons = [icon0, icon1, icon2, icon3, icon4, icon5, icon6, icon7, icon8, icon9, icon10, icon11, icon13, icon14, icon15, icon16, icon17, icon18, icon19, icon20, icon21]
+export const icons = [icon0, icon1, icon2, icon3, icon4, icon5, icon6, icon7, icon8, icon9, icon10, icon11, icon13, icon14, icon15, icon16, icon17, icon18, icon19, icon20, icon21]
 
 class MemberContainer extends React.Component {
 

@@ -1,8 +1,9 @@
 import React from 'react'
-import MemberCard from './MemberCard'
+import MemberDetailCard from './MemberDetailCard'
 import { roomEditSubmit } from '../actions/detail'
 import {connect} from 'react-redux'
 import {getCommunity} from '../actions/community'
+import { icons } from '../containers/MemberContainer'
 
 class DetailView extends React.Component {
 
@@ -59,7 +60,7 @@ class DetailView extends React.Component {
           <h3>{this.props.detail.currentRoom.name}</h3>
           <h4>Occupancy Limit: {this.props.detail.currentRoom.occupancy}</h4>
           <h5>current assignees:</h5>
-          { this.props.detail.members.length ? this.props.detail.members.map((member, i) => <MemberCard member={member} rooms={this.props.community.rooms} key={i}/>) : null }
+          { this.props.detail.members.length ? this.props.detail.members.map((member, i) => <MemberDetailCard member={member} rooms={this.props.community.rooms} key={i} icon={icons[Math.floor(Math.random() * 20)]}/>) : null }
         </div>
       )
     }
