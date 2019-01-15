@@ -20,7 +20,7 @@ class MemberCard extends React.Component {
       <div className="member-card">
         <h1>{this.props.member.name}</h1>
         <img src={this.props.icon} alt={this.props.member.name}/>
-        <h6>"{this.props.member.bio}"</h6>
+        <h3>"{this.props.member.bio}"</h3>
         <button name="detailView" onClick={this.showMemberDetails}>details</button>
       </div>
     )

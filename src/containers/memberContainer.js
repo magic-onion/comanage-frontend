@@ -1,6 +1,7 @@
 import React from 'react'
 // import PerkContainer from './perkContainer'
 // import MemberInfo from './memberInfo'
+import {connect} from 'react-redux'
 import MemberCard from '../components/MemberCard'
 import icon0 from '../assets/Icon-pngs/member-icon-0.png'
 import icon1 from '../assets/Icon-pngs/member-icon-1.png'
@@ -32,13 +33,16 @@ class MemberContainer extends React.Component {
   render() {
     return (
       <div className="member-container">
-        members container
-        {this.props.members.map((member, i) => <MemberCard key={i} roomMembers={this.props.roomMembers} rooms={this.props.rooms} member={member} icon={icons[Math.floor(Math.random() * 20)]}/> )}
+        {this.props.community.members.map((member, i) => <MemberCard key={i} roomMembers={this.props.community.roomMembers} rooms={this.props.community.rooms} member={member} icon={icons[Math.floor(Math.random() * 20)]}/> )}
       </div>
     )
   }
-
-
 }
 
-export default MemberContainer
+const mapStateToProps = state => {
+  return {
+    community: state.community
+  }
+}
+
+export default connect(mapStateToProps)(MemberContainer)

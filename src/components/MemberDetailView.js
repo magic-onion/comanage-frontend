@@ -1,17 +1,28 @@
 import React from 'react'
 import MemberDetailCard from './MemberDetailCard'
 import { roomEditSubmit } from '../actions/detail'
+import { memberEditSubmit } from '../actions/detail'
+
 import {connect} from 'react-redux'
 import {getCommunity} from '../actions/community'
+
 import { icons } from '../containers/MemberContainer'
 
 class MemberDetailView extends React.Component {
 
   state = {
+    toggleEdit: false,
     memberId: this.props.detail.currentMember.id,
     memberName: this.props.detail.currentMember.name,
     memberBio: this.props.detail.currentMember.bio,
     memberRooms: this.props.detail.rooms
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    if (state.memberId !== props.detail.currentMember.id) {
+      return {...state, memberName: props.detail.currentMember.name, memberBio: props.detail.currentMember.bio, memberId: props.detail.currentMember.id}
+    }
+    return state
   }
 
   handleEditing = event => {
@@ -20,21 +31,22 @@ class MemberDetailView extends React.Component {
     }, () => console.log(this.state))
   }
 
-  editRoom = event => {
-    let toggleRommEditPane = !this.state.toggleRommEditPane
-    this.setState({toggleRommEditPane})
+  editMember = event => {
+    let toggleEdit = !this.state.toggleEdit
+    this.setState({toggleEdit})
   }
 
-  roomEditSubmit = event => {
+  memberEditSubmit = event => {
     event.preventDefault()
-    let newRoomObj = {
-      room: {
-        id: this.props.detail.currentRoom.id,
-        name: this.state.roomName,
-        occupancy: this.state.roomOccupancy
+    console.log("ay")
+    let newMemberObj = {
+      member: {
+        id: this.state.memberId,
+        name: this.state.memberName,
+        bio: this.state.memberBio
       }
     }
-    this.props.roomEditSubmit(newRoomObj, this.props.community.id)
+    this.props.memberEditSubmit(newMemberObj, this.props.community.id)
     this.setState({toggleRommEditPane: false})
     // this.props.getCommunity(this.props.community.id)
   }
@@ -43,7 +55,19 @@ class MemberDetailView extends React.Component {
     if (this.props.detail.memberIsSelected) {
       return (
         <div>
-          {this.props.detail.currentMember.name}
+          { this.state.toggleEdit ?
+              <form onSubmit={this.memberEditSubmit}>
+                <input onChange={this.handleEditing} name="memberName" type="text" value={this.state.memberName}/>
+                <input onChange={this.handleEditing} name="memberBio" type="text" value={this.state.memberBio}/>
+                <button type="submit">Save</button>
+                </form>
+            : null }
+          <button onClick={this.editMember}>Edit</button>
+          <h3>{this.props.detail.currentMember.name}</h3>
+          <h4>{this.props.detail.currentMember.bio}</h4>
+          <p>Currently Assigned To:</p>
+          {this.props.detail.rooms.map((room, i )=> <span key={i} className="rooms-in-member-detail">{room.name}</span> )}
+
         </div>
       )
     }
@@ -52,9 +76,8 @@ class MemberDetailView extends React.Component {
 
 
   render() {
-    console.log(this.props)
     return (
-      <div className="detail-view">
+      <div className="member-detail-view">
         <h2>Detail View</h2>
         {this.getMemberDetails()}
       </div>
@@ -65,7 +88,8 @@ class MemberDetailView extends React.Component {
 const mapDispatchToProps = dispatch => {
   return {
     roomEditSubmit: (roomObj, communityId) => dispatch(roomEditSubmit(roomObj, communityId)),
-    getCommunity: selectedCommunity => dispatch(getCommunity(selectedCommunity))
+    getCommunity: selectedCommunity => dispatch(getCommunity(selectedCommunity)),
+    memberEditSubmit: (memberObj, communityId) => dispatch(memberEditSubmit(memberObj, communityId))
   }
 }
 

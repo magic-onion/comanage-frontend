@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import MemberContainer from './MemberContainer'
 import RoomContainer from './RoomContainer'
+import { Router, Route, Link } from 'react-router-dom'
 import { getCommunity } from '../actions/community'
 import store from '../index'
 
@@ -12,12 +13,12 @@ class CommunityContainer extends React.Component {
   }
 
   render() {
-    const {props: {community: {name, start_date, rooms, members, roomMembers}}} = this
+    const {props: {community: {name, rooms, members, roomMembers}}} = this
     return (
       <div className="community-container">
-        <p>{name}, created: {start_date}</p>
-        <RoomContainer/>
-        <MemberContainer members={members} rooms={rooms} roomMembers={roomMembers}/>
+        <p>{name}</p>
+        <RoomContainer />
+        <MemberContainer />
       </div>
     )
   }

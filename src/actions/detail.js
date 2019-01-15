@@ -18,6 +18,25 @@ export const getMemberDetails = (memberId) => {
 
 export const showMemberDetailView = (memberDetails) => ({type: "TOGGLE_MEMBER_DETAIL_VIEW", payload: memberDetails})
 
+export const memberEditSubmit = (memberObj, communityId) => {
+  return (dispatch) => {
+    let config = {
+      method: "PATCH",
+      headers: {
+        "Content-type": "Application/json",
+        "Authorization": `Bearer ${localStorage.getItem('token')}`
+      },
+      body: JSON.stringify(memberObj)
+    }
+    fetch(`http://localhost:3000/api/v1/members/${memberObj.member.id}`, config).then(r=>r.json()).then(p => {
+      console.log(p)
+      dispatch(getMemberDetails(p.member.id))
+    }).then(p => {
+      dispatch(getCommunity(communityId))
+    })
+  }
+}
+
 
 export const getRoomDetails = (roomId) => {
   return (dispatch) => {
@@ -29,7 +48,6 @@ export const getRoomDetails = (roomId) => {
       }
     }
     fetch(`http://localhost:3000/api/v1/rooms/${roomId}`, config).then(r=>r.json()).then(p => {
-      console.log(p)
       dispatch(showRoomDetailView(p))
     })
   }

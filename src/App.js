@@ -29,10 +29,10 @@ class App extends Component {
     const {props: {isLoggedIn, selectedCommunity}} = this
     return (
       <div className="App">
+        <button onClick={this.loggingOut}>logout</button>
         <img className="App-logo" src={icon} alt="logo"/>
         <h1>Nature does not hurry, yet everything is accomplished.</h1>
-        <NavigationContainer loggingOut={this.loggingOut}/>
-        {this.props.detail.toggled && this.props.detail.roomIsSeledcted ? <DetailView/> : null}
+        {this.props.detail.toggled && this.props.detail.roomIsSelected ? <DetailView/> : null}
         {this.props.detail.toggled && this.props.detail.memberIsSelected ? <MemberDetailView /> : null}
         {isLoggedIn && !selectedCommunity ? <CommunityMaker/> : null}
         {isLoggedIn && !selectedCommunity ? <CommunitiesContainer/> : null }

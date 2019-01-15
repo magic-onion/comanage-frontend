@@ -1,10 +1,10 @@
 body {
-    background-color: #c8c8c8;
+    background-color: #84bdd5;
 }
 .App {
   padding-top: 50px;
   text-align: center;
-  background-color: #c8c8c8;
+  background-color: #84bdd5;
 }
 
 .App-logo {
@@ -14,20 +14,6 @@ body {
   animation: App-logo-spin infinite 20s linear;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
 .community-maker {
   margin: 5px;
   padding: 10px;
@@ -35,10 +21,12 @@ body {
   float:left;
 }
 
-
 .community-container {
   border: solid green 5px;
-  float:left;
+  display: inline-grid;
+  max-width: 650px;
+  float: right;
+  margin-right: 15em;
 }
 
 .room-card {
@@ -76,11 +64,34 @@ body {
 }
 
 .detail-view {
+  margin-left: 30px;
+  float: left;
+  max-width: 400px;
+  min-height: 650px;
+  border: 3px solid blue;
+}
+
+.member-detail-view {
+  margin-left: 30px;
+  min-height: 650px;
+  max-width: 400px;
+  padding: 5px;
   float: left;
   border: 3px solid blue;
 }
 
+
 .feed-item {
   display: inline-block;
   margin: 10px;
+}
+
+
+.rooms-in-member-detail {
+  margin: 3px;
+}
+
+img {
+  max-width: 100px;
+  max-height: 100px;
 }
