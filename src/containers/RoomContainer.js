@@ -9,7 +9,6 @@ class RoomContainer extends React.Component {
       <div className="room-container">
       <h2>ROOM CONTAINER</h2>
         {this.props.rooms.map((room, i) => <RoomCard key={i} room={room} roomMembers={this.props.roomMembers} members={this.props.members}/> )}
-        <MemberFeed members={this.props.members}/>
       </div>
     )
   }

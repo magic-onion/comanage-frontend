@@ -36,7 +36,7 @@ class RoomCard extends React.Component {
       <div className="room-card">
         <span><h3>{room.name}</h3></span>
         {this.roomAssignees ? <h4>Current Members: {this.roomAssignees.length}</h4> : <p>No assigned Members</p>}
-        <h5>Occupancy: </h5>
+        <h5>Occupancy: {room.occupancy}</h5>
         <span>
           <button onClick={this.handleEdit}>{this.state.edit ? "Hide" : "Edit"}</button>
           <button onClick={this.handleDetails}>Details</button>

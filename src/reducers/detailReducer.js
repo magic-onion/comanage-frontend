@@ -1,20 +1,22 @@
 const init = {
-  name: "",
-  roomamount: 0,
-  memberamount: 0,
+  toggled: false,
+  currentCommunity: "",
+  containerView: "",
+  currentMember: "",
+  currentRoom: "",
   rooms: [],
   members: [],
   roomMembers: []
 }
 
 
-function communityReducer(state = init, action) {
+function detailReducer(state = init, action) {
   switch (action.type) {
 
-    case "CREATE_COMMUNITY":
+    case "VIEW_ROOM_DETAILS":
     let newState = action.payload
     return newState
-    case "SAVED_COMMUNITY":
+    case "VIEW_MEMBER_DETAILS":
     let commState = {...state, rooms: action.payload.rooms, members: action.payload.members}
     return commState
     case "HOLD_COMMUNITY":
@@ -27,4 +29,4 @@ function communityReducer(state = init, action) {
 
 }
 
-export default communityReducer
+export default detailReducer

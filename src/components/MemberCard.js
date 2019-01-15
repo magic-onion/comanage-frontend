@@ -1,16 +1,29 @@
 import React from 'react'
 import MemberRoomAssigner from './MemberRoomAssigner'
+import { getMembersRooms } from '../actions/member'
+import { connect } from 'react-redux'
 
 
 class MemberCard extends React.Component {
 
   state = {
-    assigning: false
+    assigning: false,
+    detailView: false
   }
 
-  assignMember = event => {
-    let assigning = !this.state.assigning
-    this.setState({assigning})
+  toggling = event => {
+    if (event.target.name === "detailView") {
+      let detailView = !this.state.detailView
+      this.setState({detailView}, ()=> {
+        if (this.state.detailView) {
+          this.props.getMembersRooms(this.props.member.id)
+        }
+      })
+    }
+    else {
+      let assigning = !this.state.assigning
+      this.setState({assigning})
+    }
   }
 
   get assignedRooms() {
@@ -29,12 +42,10 @@ class MemberCard extends React.Component {
       <div className="member-card">
         <h1>{this.props.member.name}</h1>
         <img src={this.props.icon} alt={this.props.member.name}/>
-        <div>
-          <p>Currently Assigned To: </p>
-          {this.assignedRooms ? this.assignedRooms.map((room, i) => <p key={i}>{room.name}</p>) : null}
-        </div>
         <h6>"{this.props.member.bio}"</h6>
-        <button onClick={this.assignMember}>Edit/Assign</button>
+        {this.state.detailView ? <h1>DETAILVIEW</h1> : null}
+        <button name="detailView" onClick={this.toggling}>details</button>
+        <button name="assigning" onClick={this.toggling}>Edit/Assign</button>
         {this.state.assigning ? <MemberRoomAssigner rooms={this.props.rooms} member={this.props.member.id}/> : null}
       </div>
     )
@@ -42,8 +53,24 @@ class MemberCard extends React.Component {
 
 }
 
-export default MemberCard
+const mapStateToProps = state => {
+  return {
+    assignment: state.assignment
+  }
+}
 
+const mapDispatchToProps = dispatch => {
+  return {
+    getMembersRooms: id => dispatch(getMembersRooms(id))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(MemberCard)
+
+// <div>
+// <p>Currently Assigned To: </p>
+// {this.assignedRooms ? this.assignedRooms.map((room, i) => <p key={i}>{room.name}</p>) : null}
+// </div>
 
 // let assignBody = {
 //   member_id: this.props.member.id

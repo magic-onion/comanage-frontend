@@ -9,7 +9,8 @@ export const createAssignment = (assignmentObject) => {
       body: JSON.stringify(assignmentObject)
     }
     fetch('http://localhost:3000/api/v1/roommembers', config).then(r=>r.json()).then(p => {
-      //RENDER THE NEW SHIT
+      console.log("hi")
+      console.log(p)
     })
   }
 }

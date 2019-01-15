@@ -60,7 +60,6 @@ class CommunityMaker extends React.Component {
         <input onChange={this.handleChange} name="roomamount" type="number" placeholder="Rooms" value={this.state.roomamount}/>
           <p>memberamount</p>
         <input onChange={this.handleChange} name="memberamount" type="number" placeholder="Members" value={this.state.memberamount}/>
-        <input name="start_date" onChange={this.handleChange} type="date" value={this.state.start_date}/>
         <button type="submit">Make the Community</button>
       </form>
     )
