@@ -59,7 +59,7 @@ class DetailView extends React.Component {
           <h3>{this.props.detail.currentRoom.name}</h3>
           <h4>Occupancy Limit: {this.props.detail.currentRoom.occupancy}</h4>
           <h5>current assignees:</h5>
-          { this.props.detail.members.length ? this.props.detail.members.map((member, i) => <MemberCard member={member} key={i}/>) : null }
+          { this.props.detail.members.length ? this.props.detail.members.map((member, i) => <MemberCard member={member} rooms={this.props.community.rooms} key={i}/>) : null }
         </div>
       )
     }

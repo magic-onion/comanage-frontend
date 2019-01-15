@@ -1,23 +1,9 @@
 import React from 'react'
-// import RoomMaker from './RoomMaker'
-import RoomEditor from './RoomEditor'
-import RoomDetails from './RoomDetails'
 import { getRoomDetails } from '../actions/detail'
 
 import { connect } from 'react-redux'
 
 class RoomCard extends React.Component {
-
-
-  state = {
-    edit: false,
-    details: false
-  }
-
-  handleEdit = event => {
-    let edit = !this.state.edit
-    this.setState({edit})
-  }
 
   handleDetails = event => {
     this.props.getRoomDetails(this.props.room.id)
@@ -33,6 +19,7 @@ class RoomCard extends React.Component {
   }
 
   render() {
+    console.log(this.props.detail.currentRoom, this.props.room)
     const {props: {room}} = this
     return (
       <div className="room-card">
@@ -40,11 +27,8 @@ class RoomCard extends React.Component {
         {this.roomAssignees ? <h4>Current Members: {this.roomAssignees.length}</h4> : <p>No assigned Members</p>}
         <h5>Occupancy: {room.occupancy}</h5>
         <span>
-          <button onClick={this.handleEdit}>{this.state.edit ? "Hide" : "Edit"}</button>
           <button onClick={this.handleDetails}>Details</button>
         </span>
-        {this.state.edit ? <RoomEditor room={room} /> : null}
-        {this.state.details ?  <RoomDetails members={this.roomAssignees}/> : null}
       </div>
     )
   }

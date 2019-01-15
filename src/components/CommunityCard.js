@@ -6,11 +6,7 @@ import { connect } from 'react-redux'
 
 
 class CommunityCard extends React.Component {
-  constructor(props) {
-    super(props)
-    this.things = null
-  }
-
+  
   selected = event => {
     this.props.dispatch({ type: "SELECT_COMMUNITY", payload: event.target.id})
   }

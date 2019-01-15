@@ -12,11 +12,12 @@ class CommunityContainer extends React.Component {
   }
 
   render() {
+    console.log(this.props.community)
     const {props: {community: {name, start_date, rooms, members, roomMembers}}} = this
     return (
       <div className="community-container">
         <p>{name}, created: {start_date}</p>
-        <RoomContainer rooms={rooms} members={members} roomMembers={roomMembers}/>
+        <RoomContainer/>
         <MemberContainer members={members} rooms={rooms} roomMembers={roomMembers}/>
       </div>
     )

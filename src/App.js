@@ -25,6 +25,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.props)
     const {props: {isLoggedIn, selectedCommunity}} = this
     return (
       <div className="App">
@@ -32,7 +33,7 @@ class App extends Component {
         <h1>Nature does not hurry, yet everything is accomplished.</h1>
         <NavigationContainer loggingOut={this.loggingOut}/>
         {this.props.detail.toggled ? <DetailView/> : null}
-        {isLoggedIn ? <CommunityMaker/> : null}
+        {isLoggedIn && !selectedCommunity ? <CommunityMaker/> : null}
         {isLoggedIn && !selectedCommunity ? <CommunitiesContainer/> : null }
         {isLoggedIn && selectedCommunity ? <CommunityContainer/> : null}
         {isLoggedIn ? null: <UserMaker/> }

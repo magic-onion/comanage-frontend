@@ -1,3 +1,5 @@
+import {getCommunity} from './community'
+
 export const createAssignment = (assignmentObject) => {
   return (dispatch) => {
     let config = {
@@ -11,6 +13,8 @@ export const createAssignment = (assignmentObject) => {
     fetch('http://localhost:3000/api/v1/roommembers', config).then(r=>r.json()).then(p => {
       console.log("hi")
       console.log(p)
+    }).then (p=> {
+      dispatch(getCommunity(assignmentObject.roomMember.communityId))
     })
   }
 }
