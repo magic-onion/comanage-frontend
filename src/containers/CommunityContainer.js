@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import MemberContainer from './MemberContainer'
 import RoomContainer from './RoomContainer'
-import { Router, Route, Link } from 'react-router-dom'
+// import { Router, Route, Link } from 'react-router-dom'
 import { getCommunity } from '../actions/community'
 import store from '../index'
 
@@ -13,7 +13,7 @@ class CommunityContainer extends React.Component {
   }
 
   render() {
-    const {props: {community: {name, rooms, members, roomMembers}}} = this
+    const {props: {community: {name}}} = this
     return (
       <div className="community-container">
         <p>{name}</p>

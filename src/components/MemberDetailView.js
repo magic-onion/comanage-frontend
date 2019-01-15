@@ -1,12 +1,12 @@
 import React from 'react'
-import MemberDetailCard from './MemberDetailCard'
+// import MemberDetailCard from './MemberDetailCard'
 import { roomEditSubmit } from '../actions/detail'
 import { memberEditSubmit } from '../actions/detail'
 
 import {connect} from 'react-redux'
 import {getCommunity} from '../actions/community'
 
-import { icons } from '../containers/MemberContainer'
+// import { icons } from '../containers/MemberContainer'
 
 class MemberDetailView extends React.Component {
 

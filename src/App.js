@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import NavigationContainer from './containers/NavigationContainer'
 import CommunityMaker from './components/CommunityMaker'
 import CommunitiesContainer from './containers/CommunitiesContainer'
 import CommunityContainer from './containers/CommunityContainer'
@@ -62,6 +61,7 @@ const mapDispatchToProps = dispatch => {
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
 
+// import NavigationContainer from './containers/NavigationContainer'
 // import MemberContainer from './containers/memberContainer'
 // import SidebarContainer from './containers/SidebarContainer'
 // import RoomCard from './components/RoomCard'

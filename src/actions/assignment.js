@@ -20,6 +20,6 @@ export const createAssignment = (assignmentObject) => {
   }
 }
 
-const showNewAssignments = assignMentObject => (
-  "hello"
-)
+// const showNewAssignments = assignMentObject => (
+//   "hello"
+// )

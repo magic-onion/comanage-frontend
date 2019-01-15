@@ -37,7 +37,7 @@ class CommunityMaker extends React.Component {
     }
     console.log(config)
     fetch('http://localhost:3000/api/v1/communities', config).then(r=>r.json()).then(p=>{
-      console.log(p)
+      console.log(p.community)
       this.props.dispatch({
         type: 'SAVED_COMMUNITY',
         payload: {

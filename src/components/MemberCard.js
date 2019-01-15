@@ -40,4 +40,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(MemberCard)
+export default connect(mapStateToProps, mapDispatchToProps)(MemberCard)
