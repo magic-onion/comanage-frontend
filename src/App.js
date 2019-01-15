@@ -5,6 +5,7 @@ import CommunitiesContainer from './containers/CommunitiesContainer'
 import CommunityContainer from './containers/CommunityContainer'
 import UserMaker from './components/UserMaker'
 import DetailView from './components/DetailView'
+import MemberDetailView from './components/MemberDetailView'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import icon from './assets/Icon-pngs/comanage-logo.png'
@@ -25,14 +26,14 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.props)
     const {props: {isLoggedIn, selectedCommunity}} = this
     return (
       <div className="App">
         <img className="App-logo" src={icon} alt="logo"/>
         <h1>Nature does not hurry, yet everything is accomplished.</h1>
         <NavigationContainer loggingOut={this.loggingOut}/>
-        {this.props.detail.toggled ? <DetailView/> : null}
+        {this.props.detail.toggled && this.props.detail.roomIsSeledcted ? <DetailView/> : null}
+        {this.props.detail.toggled && this.props.detail.memberIsSelected ? <MemberDetailView /> : null}
         {isLoggedIn && !selectedCommunity ? <CommunityMaker/> : null}
         {isLoggedIn && !selectedCommunity ? <CommunitiesContainer/> : null }
         {isLoggedIn && selectedCommunity ? <CommunityContainer/> : null}

@@ -1,11 +1,10 @@
 const init = {
-  toggleRommEditPane: false,
   toggled: false,
   roomIsSelected: false,
   memberIsSelected: false,
   currentCommunity: "",
   containerView: "",
-  currentMember: "",
+  currentMember: {},
   currentRoom: {},
   rooms: [],
   members: [],
@@ -33,10 +32,8 @@ function detailReducer(state = init, action) {
       }
 
     case "TOGGLE_MEMBER_DETAIL_VIEW":
-    // let commState = {...state, rooms: action.payload.rooms, members: action.payload.members}
-    // return commState
-
-
+      let showMemberDetailState = {...state, toggled: true, memberIsSelected: true, currentMember: action.payload.member, rooms: action.payload.rooms}
+      return showMemberDetailState
     default:
     return state
   }

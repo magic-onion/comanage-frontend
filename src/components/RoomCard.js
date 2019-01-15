@@ -19,7 +19,6 @@ class RoomCard extends React.Component {
   }
 
   render() {
-    console.log(this.props.detail.currentRoom, this.props.room)
     const {props: {room}} = this
     return (
       <div className="room-card">

@@ -7,7 +7,6 @@ import { connect } from 'react-redux'
 class RoomContainer extends React.Component {
 
   render() {
-    console.log(this.props)
     return (
       <div className="room-container">
       <h2>ROOM CONTAINER</h2>

@@ -49,7 +49,6 @@ class MemberFeed extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div>
         <button onClick={this.toggleAssignment}>CLICK TO ASSIGN</button>

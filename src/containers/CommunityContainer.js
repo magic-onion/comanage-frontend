@@ -12,7 +12,6 @@ class CommunityContainer extends React.Component {
   }
 
   render() {
-    console.log(this.props.community)
     const {props: {community: {name, start_date, rooms, members, roomMembers}}} = this
     return (
       <div className="community-container">

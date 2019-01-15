@@ -1,5 +1,5 @@
 import React from 'react'
-import { getMembersRooms } from '../actions/member'
+import { getMemberDetails } from '../actions/detail'
 import { connect } from 'react-redux'
 
 
@@ -11,37 +11,12 @@ class MemberCard extends React.Component {
   }
 
   showMemberDetails = event => {
-    
-  }
-
-  toggling = event => {
-    if (event.target.name === "detailView") {
-      let detailView = !this.state.detailView
-      this.setState({detailView}, ()=> {
-        if (this.state.detailView) {
-          this.props.getMembersRooms(this.props.member.id)
-        }
-      })
-    }
-    else {
-      let assigning = !this.state.assigning
-      this.setState({assigning})
-    }
-  }
-
-  get assignedRooms() {
-    if (this.props.roomMembers) {
-      let assigned = this.props.roomMembers.filter(assignment => assignment.active)
-      let membersAssigned = assigned.filter(assignment => assignment.member_id === this.props.member.id)
-      let roomsAssigned = membersAssigned.map(assigned => this.props.rooms.find(room => assigned.room_id === room.id))
-      return roomsAssigned
-    }
-    else return [null]
+    this.props.getMemberDetails(this.props.member.id)
   }
 
   render() {
+    console.log(this.props.member.id)
     return (
-
       <div className="member-card">
         <h1>{this.props.member.name}</h1>
         <img src={this.props.icon} alt={this.props.member.name}/>
@@ -61,7 +36,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getMembersRooms: id => dispatch(getMembersRooms(id))
+    getMemberDetails: id => dispatch(getMemberDetails(id))
   }
 }
 
