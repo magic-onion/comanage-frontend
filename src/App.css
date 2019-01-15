@@ -1,6 +1,14 @@
+/* Top LEVEL */
+
 body {
     background-color: #84bdd5;
 }
+
+img {
+  max-width: 100px;
+  max-height: 100px;
+}
+
 .App {
   padding-top: 50px;
   text-align: center;
@@ -14,25 +22,13 @@ body {
   animation: App-logo-spin infinite 20s linear;
 }
 
-.community-maker {
-  margin: 5px;
-  padding: 10px;
-  border: solid red 1px;
-  float:left;
-}
-
+/* CONTAINERS */
 .community-container {
   border: solid green 5px;
   display: inline-grid;
   max-width: 650px;
   float: right;
   margin-right: 15em;
-}
-
-.room-card {
-  padding: 5px;
-  border: solid red 1px;
-  display: inline-block;
 }
 
 .member-container {
@@ -47,22 +43,11 @@ body {
   border: 3px solid pink;
 }
 
-.user-maker {
-  padding: 5px;
-  margin: 10px;
-  float: left;
-  border: 1px solid blue;
-}
-
-.member-card {
-  display: inline-block;
-  margin: 15px;
-}
-
 .room-container {
   display: inline-block;
 }
 
+/* DETAIL CONTAINERS */
 .detail-view {
   margin-left: 30px;
   float: left;
@@ -80,18 +65,38 @@ body {
   border: 3px solid blue;
 }
 
-
-.feed-item {
-  display: inline-block;
-  margin: 10px;
-}
-
-
 .rooms-in-member-detail {
   margin: 3px;
 }
 
-img {
-  max-width: 100px;
-  max-height: 100px;
+/* FORMS */
+.community-maker {
+  margin: 5px;
+  padding: 10px;
+  border: solid red 1px;
+  float:left;
+}
+
+.user-maker {
+  padding: 5px;
+  margin: 10px;
+  float: left;
+  border: 1px solid blue;
+}
+
+/* CARDS */
+.room-card {
+  padding: 5px;
+  border: solid red 1px;
+  display: inline-block;
+}
+
+.member-card {
+  display: inline-block;
+  margin: 15px;
+}
+
+.feed-item {
+  display: inline-block;
+  margin: 10px;
 }
