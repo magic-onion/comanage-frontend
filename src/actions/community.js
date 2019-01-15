@@ -1,3 +1,5 @@
+
+//fetches the community after it is selected by the User
 export const getCommunity = (selectedCommunity) => {
   return (dispatch) => {
     let communityConfig = {

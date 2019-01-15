@@ -1,4 +1,5 @@
 
+//fetches the rooms for a given member
 export const getMembersRooms = (id) => {
   return (dispatch) => {
     let config = {

@@ -1,3 +1,5 @@
+
+//creates an instance of login
 export const loginUser = (userObj) => {
   return (dispatch) => {
     let userBody = {
@@ -22,6 +24,7 @@ export const loginUser = (userObj) => {
   }
 }
 
+//gets user data including communities and their serialized data
 export const fetchProfile = (userBody) => {
   return (dispatch) => {
     let profileConfig = {
@@ -34,6 +37,7 @@ export const fetchProfile = (userBody) => {
   }
 }
 
+//creates a new user ... does it log them in?
 export const newUser = (userObj) => {
   return (dispatch) => {
     let userBody = {
@@ -60,7 +64,7 @@ export const newUser = (userObj) => {
 
 export const createNewUser = userBody => ({type: "CREATE_USER", payload: userBody})
 
-
+//repeat code of fetchProfile - figure out which one is used and delete accordingly
 export const getUser = () => {
   return (dispatch) => {
       let profileConfig = {

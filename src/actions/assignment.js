@@ -1,5 +1,6 @@
 import {getCommunity} from './community'
 
+//Assigns a member to a room
 export const createAssignment = (assignmentObject) => {
   return (dispatch) => {
     let config = {
