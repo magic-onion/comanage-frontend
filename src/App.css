@@ -78,3 +78,8 @@ body {
 .detail-view {
   float: left;
 }
+
+.feed-item {
+  display: inline-block;
+  margin: 10px;
+}

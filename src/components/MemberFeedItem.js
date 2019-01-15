@@ -2,7 +2,7 @@ import React from 'react'
 
 class MemberFeedItem extends React.Component {
   render() {
-    return <h1>{this.props.member.name}</h1>
+    return <h3 className="feed-item">{this.props.member.name}</h3>
   }
 }
 
