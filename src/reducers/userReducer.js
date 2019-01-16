@@ -1,7 +1,7 @@
 function userReducer(state = {
   username: "",
   password: "",
-  status: "manager",
+  status: "",
   isLoggedIn: false,
   communities: [],
   selectedCommunity: null

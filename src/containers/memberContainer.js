@@ -45,12 +45,11 @@ class MemberContainer extends React.Component {
   }
 
   render() {
-    console.log(this.props )
     return (
       <div className="member-container">
         <button onClick={this.toggleCreator}>Add a Member</button>
         {this.state.toggleCreator ? this.createMemberForm : null}
-        {this.props.community.members.map((member, i) => <MemberCard key={i} roomMembers={this.props.community.roomMembers} rooms={this.props.community.rooms} member={member}/> )}
+        {this.props.community.members.map((member, i) => <MemberCard key={i} rooms={this.props.community.rooms} member={member}/> )}
       </div>
     )
   }

@@ -10,8 +10,7 @@ class MemberDetailCard extends React.Component {
     return (
 
       <div className="member-card">
-        <h1>{this.props.member.name}</h1>
-        <img src={this.props.member.image} alt={this.props.member.name}/>
+        <h1>{this.props.member.username}</h1>
         <h6>"{this.props.member.bio}"</h6>
       </div>
     )
@@ -32,3 +31,6 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MemberDetailCard)
+
+
+// <img src={this.props.member.image} alt={this.props.member.name}/>

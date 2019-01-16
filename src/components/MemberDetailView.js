@@ -13,7 +13,7 @@ class MemberDetailView extends React.Component {
   state = {
     toggleEdit: false,
     memberId: this.props.detail.currentMember.id,
-    memberName: this.props.detail.currentMember.name,
+    memberName: this.props.detail.currentMember.username,
     memberBio: this.props.detail.currentMember.bio,
     memberRooms: this.props.detail.rooms
   }
@@ -40,10 +40,9 @@ class MemberDetailView extends React.Component {
     event.preventDefault()
     console.log("ay")
     let newMemberObj = {
-      member: {
+      user: {
         id: this.state.memberId,
-        name: this.state.memberName,
-        bio: this.state.memberBio
+        username: this.state.memberName,
       }
     }
     this.props.memberEditSubmit(newMemberObj, this.props.community.id)
@@ -58,12 +57,11 @@ class MemberDetailView extends React.Component {
           { this.state.toggleEdit ?
               <form onSubmit={this.memberEditSubmit}>
                 <input onChange={this.handleEditing} name="memberName" type="text" value={this.state.memberName}/>
-                <input onChange={this.handleEditing} name="memberBio" type="text" value={this.state.memberBio}/>
                 <button type="submit">Save</button>
                 </form>
             : null }
           <button onClick={this.editMember}>Edit</button>
-          <h3>{this.props.detail.currentMember.name}</h3>
+          <h3>{this.props.detail.currentMember.username}</h3>
           <h4>{this.props.detail.currentMember.bio}</h4>
           <p>Currently Assigned To:</p>
           {this.props.detail.rooms.map((room, i )=> <span key={i} className="rooms-in-member-detail">{room.name}</span> )}
@@ -76,6 +74,7 @@ class MemberDetailView extends React.Component {
 
 
   render() {
+    console.log(this.props)
     return (
       <div className="member-detail-view">
         <h2>Detail View</h2>

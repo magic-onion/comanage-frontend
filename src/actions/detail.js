@@ -1,6 +1,6 @@
 import {getCommunity} from './community'
 
-//Fetches member data for the member detail pane
+//Fetches member data for the member detail pane which are users
 export const getMemberDetails = (memberId) => {
   return (dispatch) => {
     let config = {
@@ -10,7 +10,7 @@ export const getMemberDetails = (memberId) => {
         "Authorization": `Bearer ${localStorage.getItem('token')}`
       }
     }
-    fetch(`http://localhost:3000/api/v1/members/${memberId}`, config).then(r=>r.json()).then(p => {
+    fetch(`http://localhost:3000/api/v1/users/${memberId}`, config).then(r=>r.json()).then(p => {
       console.log(p)
       dispatch(showMemberDetailView(p))
     })
@@ -30,9 +30,9 @@ export const memberEditSubmit = (memberObj, communityId) => {
       },
       body: JSON.stringify(memberObj)
     }
-    fetch(`http://localhost:3000/api/v1/members/${memberObj.member.id}`, config).then(r=>r.json()).then(p => {
+    fetch(`http://localhost:3000/api/v1/users/${memberObj.user.id}`, config).then(r=>r.json()).then(p => {
       console.log(p)
-      dispatch(getMemberDetails(p.member.id))
+      dispatch(getMemberDetails(p.user.id))
     }).then(p => {
       dispatch(getCommunity(communityId))
     })

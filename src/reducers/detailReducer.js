@@ -35,13 +35,13 @@ function detailReducer(state = init, action) {
       let afterAssignmentState = {...state, toggled: true, roomIsSelected: true, memberIsSelected: false, currentRoom: action.payload.room, members: action.payload.room.members}
       return afterAssignmentState
     case "TOGGLE_MEMBER_DETAIL_VIEW":
-    if (action.payload.member.id === state.currentMember.id) {
+    if (action.payload.user.id === state.currentMember.id) {
       let toggleMemberDetails = !state.toggled
       let selectedMemberToggle = !state.memberIsSelected
       let toggleMemberDetailsState = {...state, toggled: toggleMemberDetails, memberIsSelected: selectedMemberToggle, roomIsSelected: false}
       return toggleMemberDetailsState
     }
-      let showMemberDetailState = {...state, toggled: true, memberIsSelected: true, roomIsSelected: false, currentMember: action.payload.member, rooms: action.payload.member.rooms}
+      let showMemberDetailState = {...state, toggled: true, memberIsSelected: true, roomIsSelected: false, currentMember: action.payload.user, rooms: action.payload.user.rooms}
       return showMemberDetailState
     case "LOGOUT":
     let logoutState = {...state, toggled: false, roomIsSelected: false, memberIsSelected: false}

@@ -17,5 +17,3 @@ export const createNewroom = (roomObj) => {
     })
   })
 }
-
-//The data is served.

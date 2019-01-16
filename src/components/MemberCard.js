@@ -15,11 +15,11 @@ class MemberCard extends React.Component {
   }
 
   render() {
+    console.log(this.props.member)
     return (
       <div className="member-card">
-        <h1>{this.props.member.name}</h1>
-        <img src={this.props.member.image} alt={this.props.member.name}/>
-        <h3>"{this.props.member.bio}"</h3>
+        <h1>{this.props.member.username}</h1>
+        <h3>"some bio stuff"</h3>
         <button name="detailView" onClick={this.showMemberDetails}>details</button>
       </div>
     )
@@ -39,3 +39,5 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MemberCard)
+
+// <img src={this.props.member.image} alt={this.props.member.name}/>
