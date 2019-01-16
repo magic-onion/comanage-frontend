@@ -19,20 +19,7 @@ export const loginUser = (userObj) => {
       fetch('http://localhost:3000/api/v1/login', config).then(r=>r.json()).then(p=>{
         console.log("success", p.jwt)
         localStorage.setItem("token", p.jwt)
-        dispatch(fetchProfile(userBody))
-    })
-  }
-}
-
-//gets user data including communities and their serialized data
-export const fetchProfile = (userBody) => {
-  return (dispatch) => {
-    let profileConfig = {
-      method: "GET",
-      headers: {"Content-type": 'application/json', "Authorization": `Bearer ${localStorage.token}`}
-    }
-    fetch('http://localhost:3000/api/v1/profile', profileConfig).then(r=>r.json()).then(p => {
-      dispatch(setUserData(p))
+        dispatch(getUser(userBody))
     })
   }
 }

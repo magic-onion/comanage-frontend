@@ -41,6 +41,9 @@ function detailReducer(state = init, action) {
     }
       let showMemberDetailState = {...state, toggled: true, memberIsSelected: true, roomIsSelected: false, currentMember: action.payload.member, rooms: action.payload.member.rooms}
       return showMemberDetailState
+    case "LOGOUT":
+    let logoutState = {...state, toggled: false, roomIsSelected: false, memberIsSelected: false}
+    return logoutState
     default:
     return state
   }

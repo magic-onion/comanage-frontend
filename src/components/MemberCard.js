@@ -15,7 +15,6 @@ class MemberCard extends React.Component {
   }
 
   render() {
-    console.log(this.props.member.id)
     return (
       <div className="member-card">
         <h1>{this.props.member.name}</h1>
@@ -25,7 +24,6 @@ class MemberCard extends React.Component {
       </div>
     )
   }
-
 }
 
 const mapStateToProps = state => {

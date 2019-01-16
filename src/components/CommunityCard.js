@@ -1,14 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import {selectCommunity} from '../actions/community'
 
 // import MemberContainer from './memberContainer'
 // import RoomMaker from '../components/RoomMaker'
 
 
 class CommunityCard extends React.Component {
-  
+
   selected = event => {
-    this.props.dispatch({ type: "SELECT_COMMUNITY", payload: event.target.id})
+    this.props.selectCommunity(event.target.id)
   }
 
   render() {
@@ -26,6 +27,7 @@ class CommunityCard extends React.Component {
     )
   }
 }
+
 const mapStateToProps = (state) => {
   return {
     user: state.user,
@@ -33,4 +35,10 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(CommunityCard)
+const mapDispatchToProps = dispatch => {
+  return {
+    selectCommunity: id => dispatch(selectCommunity(id))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CommunityCard)

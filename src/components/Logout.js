@@ -1,11 +1,5 @@
 import React from 'react'
 
-const Logout = props => {
-  return (
-    <div className="logout-div">
-      <button onClick={props.loggingOut}>Logout</button>
-    </div>
-  )
-}
+const Logout = props => <button onClick={props.loggingOut}>Logout</button>
 
 export default Logout

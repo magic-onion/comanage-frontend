@@ -20,7 +20,7 @@ function communityReducer(state = init, action) {
     return commState
     case "HOLD_COMMUNITY":
     const {payload: {community}} = action
-    let communityState = {...state, name: community.name, start_date: community.start_date, rooms: community.rooms, members: community.members, roomMembers: community.roommembers, id: community.id}
+    let communityState = {...state, name: community.name, rooms: community.rooms, members: community.members, roomMembers: community.roommembers, id: community.id}
     return communityState
     default:
     return state

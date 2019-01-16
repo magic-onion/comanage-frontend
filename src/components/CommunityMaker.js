@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import store from '../index.js'
+import { createCommunity } from '../actions/community'
 
   const init = {
     name: "",
@@ -21,34 +21,10 @@ class CommunityMaker extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    this.props.dispatch({type: "CREATE_COMMUNITY", payload: this.state})
-    this.setState({name: init.name, roomamount: init.roomamount, memberamount: init.memberamount})
-    const communityBody = {
-      community: store.getState().community
+    let communityObj = {
+      community: this.state
     }
-    console.log(communityBody)
-    const config = {
-      method: "POST",
-      headers: {
-        "Authorization": `bearer ${localStorage.token}`,
-        "Content-Type": "Application/json"
-      },
-      body: JSON.stringify(communityBody)
-    }
-    console.log(config)
-    fetch('http://localhost:3000/api/v1/communities', config).then(r=>r.json()).then(p=>{
-      console.log(p.community)
-      this.props.dispatch({
-        type: 'SAVED_COMMUNITY',
-        payload: {
-          rooms: p.rooms,
-          members: p.members
-        }
-      })
-      if (this.props.user.communities === undefined) {
-        this.props.dispatch({type:"MAKE_FIRST_COMMUNITY", payload: p.community})
-      }
-    })
+    this.props.createCommunity(communityObj)
   }
 
   render() {
@@ -70,4 +46,10 @@ const mapStateToProps = ({community, user}) => {
   return { community, user }
 }
 
-export default connect(mapStateToProps)(CommunityMaker)
+const mapDispatchToProps = dispatch => {
+  return {
+    createCommunity: communityObj => dispatch(createCommunity(communityObj))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CommunityMaker)

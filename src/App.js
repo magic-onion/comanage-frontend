@@ -28,7 +28,7 @@ class App extends Component {
     const {props: {isLoggedIn, selectedCommunity}} = this
     return (
       <div className="App">
-        <button onClick={this.loggingOut}>logout</button>
+        {isLoggedIn ?  <button onClick={this.loggingOut}>logout</button> : null}
         <img className="App-logo" src={icon} alt="logo"/>
         <h1>Nature does not hurry, yet everything is accomplished.</h1>
         {this.props.detail.toggled && this.props.detail.roomIsSelected ? <DetailView/> : null}
