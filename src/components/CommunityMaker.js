@@ -6,7 +6,6 @@ import { createCommunity } from '../actions/community'
     name: "",
     roomamount: 0,
     memberamount: 0,
-    start_date: ""
   }
 
 class CommunityMaker extends React.Component {

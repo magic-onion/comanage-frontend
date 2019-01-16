@@ -18,7 +18,7 @@ class MemberCard extends React.Component {
     return (
       <div className="member-card">
         <h1>{this.props.member.name}</h1>
-        <img src={this.props.icon} alt={this.props.member.name}/>
+        <img src={this.props.member.image} alt={this.props.member.name}/>
         <h3>"{this.props.member.bio}"</h3>
         <button name="detailView" onClick={this.showMemberDetails}>details</button>
       </div>
