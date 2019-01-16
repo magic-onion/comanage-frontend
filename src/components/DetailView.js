@@ -38,7 +38,8 @@ class DetailView extends React.Component {
       room: {
         id: this.props.detail.currentRoom.id,
         name: this.state.roomName,
-        occupancy: this.state.roomOccupancy
+        occupancy: this.state.roomOccupancy,
+        communityId: this.props.community.id
       }
     }
     this.props.roomEditSubmit(newRoomObj, this.props.community.id)
@@ -47,7 +48,7 @@ class DetailView extends React.Component {
   }
 
   getRoomDetails() {
-    if (this.props.detail.roomIsSelected) {
+    if (this.props) {
       return (
         <div>
           <button onClick={this.editRoom}>Edit Room</button>
