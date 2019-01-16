@@ -49,11 +49,13 @@ class MemberFeed extends React.Component {
   }
 
   render() {
+    console.log(this.props)
     return (
-      <div>
-        <button onClick={this.toggleAssignment}>CLICK TO ASSIGN</button>
+      <div className="member-feed">
         {this.state.assignmentOpen ? this.assignmentForms : null}
         <h3>Members in this Community</h3>
+        <button className="assignment-button" onClick={this.toggleAssignment}>CLICK TO ASSIGN</button>
+        <p></p>
         {this.props.members.map((member, i) => <MemberFeedItem key={i} member={member}/>)}
       </div>
     )
@@ -62,7 +64,8 @@ class MemberFeed extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    detail: state.detail
+    detail: state.detail,
+    community: state.community
   }
 }
 

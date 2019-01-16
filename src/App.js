@@ -30,10 +30,10 @@ class App extends Component {
       <div className="App">
         {isLoggedIn ?  <button onClick={this.loggingOut}>logout</button> : null}
         <img className="App-logo" src={icon} alt="logo"/>
-        <h1>Nature does not hurry, yet everything is accomplished.</h1>
+        <h1>CoMicroManage</h1>
         {this.props.detail.toggled && this.props.detail.roomIsSelected ? <DetailView/> : null}
         {this.props.detail.toggled && this.props.detail.memberIsSelected ? <MemberDetailView /> : null}
-        {isLoggedIn && !selectedCommunity ? <CommunityMaker/> : null}
+        {isLoggedIn ? <CommunityMaker/> : null}
         {isLoggedIn && !selectedCommunity ? <CommunitiesContainer/> : null }
         {isLoggedIn && selectedCommunity ? <CommunityContainer/> : null}
         {isLoggedIn ? null: <UserMaker/> }

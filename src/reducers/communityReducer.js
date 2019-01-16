@@ -19,6 +19,7 @@ function communityReducer(state = init, action) {
     let commState = {...state, rooms: action.payload.rooms, members: action.payload.members}
     return commState
     case "HOLD_COMMUNITY":
+    console.log(action.payload)
     const {payload: {community}} = action
     let communityState = {...state, name: community.name, rooms: community.rooms, members: community.members, roomMembers: community.roommembers, id: community.id}
     return communityState
