@@ -17,8 +17,9 @@ class MemberRoomCard extends React.Component {
     return (
       <div className="member-room-card">
         <h1>{this.props.room.name}</h1>
-        {this.roomAssignees.map((member, i) => <p key={i}>{member.username}</p>)}
+        <h3>Current Members: {this.roomAssignees.length}</h3>
         <h2>Occupancy: {this.props.room.occupancy}</h2>
+        <button>details</button>
       </div>
     )
   }

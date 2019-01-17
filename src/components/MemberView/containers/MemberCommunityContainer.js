@@ -1,5 +1,6 @@
 import React from 'react'
 import MemberRoomContainer from './MemberRoomContainer'
+import MemberFriendsContainer from './MemberFriendsContainer'
 import { connect } from 'react-redux'
 
 class MemberCommunityContainer extends React.Component {
@@ -8,6 +9,7 @@ class MemberCommunityContainer extends React.Component {
     return (
       <div>
         <MemberRoomContainer/>
+        <MemberFriendsContainer/>
       </div>
     )
   }
