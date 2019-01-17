@@ -35,6 +35,7 @@ export const getMemberData = id => {
       }
     }
     fetch(`http://localhost:3000/api/v1/users/${id}/member`, config).then(r=>r.json()).then(p => {
+      console.log(p)
       dispatch(setMemberViewCommunity(p.community[0]))
     })
   }

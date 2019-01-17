@@ -100,3 +100,19 @@ img {
   display: inline-block;
   margin: 10px;
 }
+
+
+
+/* wdfd */
+
+.member-room-container {
+  border: solid pink 3px;
+  float: left;
+  margin-left: 30px;
+}
+
+.member-room-card {
+  border: solid pink 3px;
+  max-width: 300px;
+  min-height: 150px;
+}

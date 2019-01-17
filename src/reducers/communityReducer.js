@@ -32,7 +32,8 @@ function communityReducer(state = init, action) {
     let newMemberState = {...state, members: action.payload}
     return newMemberState
     case "SET_MEMBER_VIEW_COMMUNITY":
-    let memberViewCommunityState = {...state, id: action.payload.id, name: action.payload.name, rooms: action.payload.rooms, members: action.payload.members}
+    console.log(action.payload)
+    let memberViewCommunityState = {...state, id: action.payload.id, name: action.payload.name, rooms: action.payload.rooms, members: action.payload.members, roomusers: action.payload.roomusers}
     return memberViewCommunityState
     case "LOGOUT":
     console.log("community clearing")
