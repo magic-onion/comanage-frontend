@@ -5,6 +5,7 @@ import CommunityContainer from './containers/CommunityContainer'
 import UserMaker from './components/UserMaker'
 import DetailView from './components/DetailView'
 import MemberDetailView from './components/MemberDetailView'
+import NewMemberPasswordChanger from './components/NewMemberPasswordChanger'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import icon from './assets/Icon-pngs/comanage-logo.png'
@@ -24,16 +25,26 @@ class App extends Component {
     }
   }
 
-  get newUserAuth() {
-    if (this.props.user.status === "newMember") {
-      return null
+  get auth() {
+    if (this.props.user && this.props.user.status === "newMember") {
+      return true
+    }
+    else if (this.props.user && this.props.user.status === "manager") {
+      return false
     }
   }
 
-  render() {
+
+  get newUserAuth() {
+    return(
+      <NewMemberPasswordChanger user={this.props.user}/>
+    )
+  }
+
+  get managerAuth() {
     const {props: {isLoggedIn, selectedCommunity}} = this
-    return (
-      <div className="App">
+      return (
+        <div className="App">
         {isLoggedIn ?  <button onClick={this.loggingOut}>logout</button> : null}
         <img className="App-logo" src={icon} alt="logo"/>
         <h1>CoMicroManage</h1>
@@ -42,15 +53,26 @@ class App extends Component {
         {isLoggedIn ? <CommunityMaker/> : null}
         {isLoggedIn && !selectedCommunity ? <CommunitiesContainer/> : null }
         {isLoggedIn && selectedCommunity ? <CommunityContainer/> : null}
-        {isLoggedIn ? null: <UserMaker/> }
+        </div>
+      )
+    }
+
+  render() {
+    console.log(this.auth)
+    return (
+      <div>
+        {this.props.isLoggedIn ? null: <UserMaker/> }
+        {this.auth ? this.newUserAuth : this.managerAuth }
       </div>
     );
   }
 
 }
 
+
 const mapStateToProps = state => {
   return {
+    user: state.user,
     isLoggedIn: state.user.isLoggedIn,
     communities: state.user.communities,
     selectedCommunity: state.user.selectedCommunity,

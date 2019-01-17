@@ -1,6 +1,7 @@
 const init = {
   username: "",
   password: "",
+  id: null,
   status: "",
   isLoggedIn: false,
   communities: [],
@@ -18,7 +19,7 @@ function userReducer(state = init, action) {
 
     case "SET_USER_DATA":
     console.log(action)
-    let userState = {...state, isLoggedIn: true, communities: action.payload.communities, status: action.payload.user.status}
+    let userState = {...state, isLoggedIn: true, communities: action.payload.communities, status: action.payload.user.status, username: action.payload.user.username, id: action.payload.user.id}
     return userState
 
 
