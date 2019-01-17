@@ -24,6 +24,12 @@ class App extends Component {
     }
   }
 
+  get newUserAuth() {
+    if (this.props.user.status === "newMember") {
+      return null
+    }
+  }
+
   render() {
     const {props: {isLoggedIn, selectedCommunity}} = this
     return (

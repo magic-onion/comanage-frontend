@@ -1,4 +1,4 @@
-function userReducer(state = {
+const init = {
   username: "",
   password: "",
   status: "",
@@ -6,7 +6,10 @@ function userReducer(state = {
   communities: [],
   selectedCommunity: null
 
-}, action) {
+}
+
+
+function userReducer(state = init, action) {
   switch (action.type) {
 
     case "CREATE_USER":
@@ -18,9 +21,6 @@ function userReducer(state = {
     let userState = {...state, isLoggedIn: true, communities: action.payload.communities, status: action.payload.user.status}
     return userState
 
-    case "LOGOUT":
-    let logoutState = {...state, isLoggedIn: false, communities: []}
-    return logoutState
 
     case "SELECT_COMMUNITY":
     let selectedState = {...state, selectedCommunity: action.payload}
@@ -30,6 +30,9 @@ function userReducer(state = {
     // let firstCommunityState = {...state, communities: [action.payload], selectedCommunity: action.payload.id}
     // return firstCommunityState
 
+    case "LOGOUT":
+    let logoutState = init
+    return logoutState
     default:
     return state
   }

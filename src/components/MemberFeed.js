@@ -49,6 +49,7 @@ class MemberFeed extends React.Component {
   }
 
   render() {
+    
     return (
       <div className="member-feed">
         {this.state.assignmentOpen ? this.assignmentForms : null}

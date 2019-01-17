@@ -1,4 +1,3 @@
-
 //creates an instance of login
 export const loginUser = (userObj) => {
   return (dispatch) => {

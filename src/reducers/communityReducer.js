@@ -32,7 +32,9 @@ function communityReducer(state = init, action) {
     let newMemberState = {...state, members: action.payload}
     return newMemberState
     case "LOGOUT":
-    return init
+    console.log("community clearing")
+    let logoutState = init
+    return logoutState
     default:
     return state
   }
