@@ -10,12 +10,15 @@ export const createNewroom = (roomObj) => {
       },
       body: JSON.stringify(roomObj)
     }
-      console.log(config)
     fetch(`http://localhost:3000/api/v1/rooms`, config).then(r=>r.json()).then(p=> {
-      let reducerBody = {community: p.community}
-      dispatch(setCommunity(reducerBody))
+      let reducerBody = {community: p.community, rooms: p.community.rooms}
+      dispatch(setNewRooms(reducerBody))
     })
   })
 }
+
+export const setNewRooms = (communityData) => ({type: "SET_NEW_ROOMS", payload: communityData})
+
+
 
 //The data is served.

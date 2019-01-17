@@ -16,6 +16,7 @@ function detailReducer(state = init, action) {
   switch (action.type) {
 
     case "TOGGLE_ROOM_DETAIL_VIEW":
+    console.log(action.payload)
       if (action.payload.room.name === state.currentRoom.name) {
         console.log("toggle room detail case 1")
         let toggleDetails = !state.toggled

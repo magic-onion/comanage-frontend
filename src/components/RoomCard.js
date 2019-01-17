@@ -10,8 +10,8 @@ class RoomCard extends React.Component {
   }
 
   get roomAssignees(){
-    if (this.props.roomMembers) {
-      let assigned = this.props.roomMembers.filter(assignment => assignment.room_id === this.props.room.id)
+    if (this.props.roomusers) {
+      let assigned = this.props.roomusers.filter(assignment => assignment.room_id === this.props.room.id)
       let membersAssigned = assigned.map(assigned => this.props.members.find(member => assigned.member_id === member.id))
       return membersAssigned
     }
@@ -31,7 +31,6 @@ class RoomCard extends React.Component {
       </div>
     )
   }
-
 }
 
 const mapStateToProps = state => {
