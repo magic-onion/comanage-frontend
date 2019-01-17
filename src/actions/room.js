@@ -1,4 +1,4 @@
-import { setCommunity } from './community'
+// import { setCommunity } from './community'
 
 export const createNewroom = (roomObj) => {
   return (dispatch => {

@@ -1,5 +1,5 @@
-import { showMemberDetailView} from './detail'
-import { setCommunity } from './community'
+// import { showMemberDetailView} from './detail'
+// import { setCommunity } from './community'
 
 //fetches the rooms for a given member
 export const getMembersRooms = (id) => {
@@ -58,10 +58,13 @@ export const makeNewMemberRealMember = obj => {
     console.log(config)
     fetch(`http://localhost:3000/api/v1/users/${obj.id}/authorize`, config).then(r=>r.json()).then(p => {
 
-    console.log(p)
+    dispatch(setMemberViewCommunity(p.community))
   })
   }
 }
+
+export const setMemberViewCommunity = (communityData) => ({type: "SET_MEMBER_VIEW_COMMUNITY", payload: communityData})
+
 // export const memberEditSubmit = (memberObj, communityId) => {
 //   return (dispatch) => {
 //     let config = {

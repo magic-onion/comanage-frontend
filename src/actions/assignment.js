@@ -1,5 +1,5 @@
 import {getCommunity} from './community'
-import { getRoomDetails} from './detail'
+// import { getRoomDetails} from './detail'
 
 //Assigns a member to a room
 export const createAssignment = (assignmentObject) => {

@@ -6,6 +6,7 @@ import UserMaker from './components/UserMaker'
 import DetailView from './components/DetailView'
 import MemberDetailView from './components/MemberDetailView'
 import NewMemberPasswordChanger from './components/memberViewComponents/NewMemberPasswordChanger'
+import MemberCommunityContainer from './components/memberViewComponents/MemberCommunityContainer'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import icon from './assets/Icon-pngs/comanage-logo.png'
@@ -45,15 +46,20 @@ class App extends Component {
           </div>
         )
         case "member":
-        return <button onClick={this.loggingOut}>logout</button>
+        return (
+        <div>
+          <button onClick={this.loggingOut}>logout</button>
+          <MemberCommunityContainer/>
+        </div>
+      )
         default:
         return <UserMaker/>
       }
     }
+    else return <UserMaker />
   }
 
   render() {
-    console.log(this.auth)
     return (
       <div>
         {this.auth}

@@ -1,7 +1,8 @@
+import { setMemberViewCommunity } from './member'
+
 //creates an instance of login
 export const loginUser = (userObj) => {
   return (dispatch) => {
-    let user
     let userBody = {
       user: {
         username: userObj.username,
@@ -25,7 +26,6 @@ export const loginUser = (userObj) => {
 }
 
 export const getMemberData = id => {
-  console.log(localStorage.token)
   return (dispatch) => {
     let config = {
       method: "Get",
@@ -35,7 +35,7 @@ export const getMemberData = id => {
       }
     }
     fetch(`http://localhost:3000/api/v1/users/${id}/member`, config).then(r=>r.json()).then(p => {
-      console.log(p)
+      dispatch(setMemberViewCommunity(p.community[0]))
     })
   }
 }
@@ -77,8 +77,10 @@ export const getUser = () => {
         headers: {"Content-type": 'application/json', "Authorization": `Bearer ${localStorage.token}`}
       }
       fetch('http://localhost:3000/api/v1/profile', profileConfig).then(r=>r.json()).then(userData => {
-        console.log(userData)
         dispatch(setUserData(userData))
+        if (userData.user.status === "member") {
+          dispatch(getMemberData(userData.user.id))
+        }
       })
   }
 }

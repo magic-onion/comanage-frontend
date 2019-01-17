@@ -18,7 +18,6 @@ function userReducer(state = init, action) {
     return newState
 
     case "SET_USER_DATA":
-    console.log(action)
     let userState = {...state, isLoggedIn: true, communities: action.payload.communities, status: action.payload.user.status, username: action.payload.user.username, id: action.payload.user.id}
     return userState
 
