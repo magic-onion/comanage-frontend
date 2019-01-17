@@ -15,7 +15,6 @@ class MemberCard extends React.Component {
   }
 
   render() {
-    console.log(this.props.member)
     return (
       <div className="member-card">
         <h1>{this.props.member.username}</h1>

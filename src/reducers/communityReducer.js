@@ -5,7 +5,6 @@ const init = {
   memberamount: 0,
   rooms: [],
   members: [],
-  roomMembers: []
 }
 
 
@@ -19,10 +18,11 @@ function communityReducer(state = init, action) {
     let commState = {...state, rooms: action.payload.rooms, members: action.payload.members}
     return commState
     case "HOLD_COMMUNITY":
-    console.log(action.payload)
     const {payload: {community, rooms, members}} = action
     let communityState = {...state, name: community.name, rooms: rooms, members: members, id: community.id}
     return communityState
+    case "LOGOUT":
+    return init
     default:
     return state
   }

@@ -51,6 +51,7 @@ export const getRoomDetails = (roomId) => {
       }
     }
     fetch(`http://localhost:3000/api/v1/rooms/${roomId}`, config).then(r=>r.json()).then(p => {
+      console.log(p)
       dispatch(showRoomDetailView(p))
     })
   }

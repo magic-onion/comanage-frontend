@@ -12,10 +12,11 @@ export const createAssignment = (assignmentObject) => {
       },
       body: JSON.stringify(assignmentObject)
     }
-    fetch('http://localhost:3000/api/v1/roommembers', config).then(r=>r.json()).then(p => {
+    console.log('config', config)
+    fetch('http://localhost:3000/api/v1/roomusers', config).then(r=>r.json()).then(p => {
       console.log(p)
-      dispatch(getCommunity(assignmentObject.roomMember.communityId))
-      dispatch(getRoomAfterAssignment(assignmentObject.roomMember.roomId))
+      dispatch(getCommunity(assignmentObject.roomuser.communityId))
+      dispatch(getRoomAfterAssignment(assignmentObject.roomuser.roomId))
     })
   }
 }

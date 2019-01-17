@@ -14,7 +14,8 @@ function userReducer(state = {
     return newState
 
     case "SET_USER_DATA":
-    let userState = {...state, isLoggedIn: true, communities: action.payload}
+    console.log(action)
+    let userState = {...state, isLoggedIn: true, communities: action.payload.communities, status: action.payload.user.status}
     return userState
 
     case "LOGOUT":

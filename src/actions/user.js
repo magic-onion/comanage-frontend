@@ -17,7 +17,7 @@ export const loginUser = (userObj) => {
       body: JSON.stringify(userBody)
     }
       fetch('http://localhost:3000/api/v1/login', config).then(r=>r.json()).then(p=>{
-        console.log("success", p.jwt)
+        console.log("success", p)
         localStorage.setItem("token", p.jwt)
         dispatch(getUser(userBody))
     })
@@ -43,7 +43,7 @@ export const newUser = (userObj) => {
     }
       fetch('http://localhost:3000/api/v1/users', config).then(r=>r.json()).then(p=>{
         localStorage.setItem("token", p.jwt)
-        console.log("success")
+        console.log(p)
         dispatch(createNewUser(userBody))
     })
   }
@@ -59,11 +59,12 @@ export const getUser = () => {
         headers: {"Content-type": 'application/json', "Authorization": `Bearer ${localStorage.token}`}
       }
       fetch('http://localhost:3000/api/v1/profile', profileConfig).then(r=>r.json()).then(userData => {
+        console.log(userData)
         dispatch(setUserData(userData))
       })
   }
 }
 
-export const setUserData = (userData) => ({type: 'SET_USER_DATA', payload: userData.communities})
+export const setUserData = (userData) => ({type: 'SET_USER_DATA', payload: {user: userData.user, communities: userData.communities}})
 
 export const logOut = () => ({type: "LOGOUT"})

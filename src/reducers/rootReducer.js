@@ -6,6 +6,6 @@ import detail from './detailReducer'
 import {combineReducers} from 'redux'
 
 
-const rootReducer = combineReducers({ room, community, user, assignment, detail})
+const rootReducer = combineReducers({ community, user, detail})
 
 export default rootReducer

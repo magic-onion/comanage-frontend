@@ -14,7 +14,7 @@ class MemberFeed extends React.Component {
     event.preventDefault()
     console.log(event.target.children[0].value, event.target.children[1].value)
     let assignmentObject = {
-      roomMember: {
+      roomuser: {
         roomId: event.target.children[0].value,
         memberId: event.target.children[1].value,
         communityId: this.props.communityId
@@ -41,7 +41,7 @@ class MemberFeed extends React.Component {
         {this.props.rooms.map((room, i) => <option value={room.id} key={i}>{room.name}</option>)}
       </select>
       <select>
-        {this.props.members.map((member, i) => <option value={member.id} key={i}>{member.name}</option>)}
+        {this.props.members.map((member, i) => <option value={member.id} key={i}>{member.username}</option>)}
       </select>
       <button type="submit">Assign</button>
       </form>
@@ -49,7 +49,6 @@ class MemberFeed extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div className="member-feed">
         {this.state.assignmentOpen ? this.assignmentForms : null}

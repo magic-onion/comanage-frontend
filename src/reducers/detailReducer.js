@@ -17,22 +17,27 @@ function detailReducer(state = init, action) {
 
     case "TOGGLE_ROOM_DETAIL_VIEW":
       if (action.payload.room.name === state.currentRoom.name) {
+        console.log("toggle room detail case 1")
         let toggleDetails = !state.toggled
         let roomToggle = !state.roomIsSelected
         let hideDetails = {...state, toggled: toggleDetails, roomIsSelected: roomToggle}
         return hideDetails
       }
       else if (state.toggled) {
-        let newState = {...state, roomIsSelected: true, memberIsSelected: false, currentRoom: action.payload.room, members: action.payload.room.members}
+        console.log("toggle room detail case 2")
+
+        let newState = {...state, roomIsSelected: true, memberIsSelected: false, currentRoom: action.payload.room, members: action.payload.members}
         return newState
       }
       else {
+        console.log("toggle room detail case 3")
+
         let toggler = !state.toggled
-        let newState = {...state, toggled: toggler, roomIsSelected: true, memberIsSelected: false, currentRoom: action.payload.room, members: action.payload.room.members}
+        let newState = {...state, toggled: toggler, roomIsSelected: true, memberIsSelected: false, currentRoom: action.payload.room, members: action.payload.members}
         return newState
       }
     case "ROOM_DETAIL_AFTER_ASSIGNMENT":
-      let afterAssignmentState = {...state, toggled: true, roomIsSelected: true, memberIsSelected: false, currentRoom: action.payload.room, members: action.payload.room.members}
+      let afterAssignmentState = {...state, toggled: true, roomIsSelected: true, memberIsSelected: false, currentRoom: action.payload.room, members: action.payload.members}
       return afterAssignmentState
     case "TOGGLE_MEMBER_DETAIL_VIEW":
     if (action.payload.user.id === state.currentMember.id) {
