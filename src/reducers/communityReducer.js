@@ -28,6 +28,9 @@ function communityReducer(state = init, action) {
     let newRoomState = {...state, rooms: action.payload.rooms}
     console.log(newRoomState)
     return newRoomState
+    case "SET_NEW_MEMBERS":
+    let newMemberState = {...state, members: action.payload}
+    return newMemberState
     case "LOGOUT":
     return init
     default:

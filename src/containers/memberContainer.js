@@ -24,9 +24,8 @@ class MemberContainer extends React.Component {
   createMember = event => {
     event.preventDefault()
     let memberBody = {
-      member: {
-        name: this.state.name,
-        bio: this.state.bio,
+      user: {
+        username: this.state.name,
         communityId: this.props.community.id
       }
     }
