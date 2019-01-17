@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { makeNewMemberRealMember } from '../actions/member'
+import { makeNewMemberRealMember } from '../../actions/member'
 
 class NewMemberPasswordChanger extends React.Component {
   state = {

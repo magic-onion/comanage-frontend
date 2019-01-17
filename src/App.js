@@ -5,7 +5,7 @@ import CommunityContainer from './containers/CommunityContainer'
 import UserMaker from './components/UserMaker'
 import DetailView from './components/DetailView'
 import MemberDetailView from './components/MemberDetailView'
-import NewMemberPasswordChanger from './components/NewMemberPasswordChanger'
+import NewMemberPasswordChanger from './components/memberViewComponents/NewMemberPasswordChanger'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import icon from './assets/Icon-pngs/comanage-logo.png'
@@ -26,43 +26,37 @@ class App extends Component {
   }
 
   get auth() {
-    if (this.props.user && this.props.user.status === "newMember") {
-      return true
-    }
-    else if (this.props.user && this.props.user.status === "manager") {
-      return false
-    }
-  }
-
-
-  get newUserAuth() {
-    return(
-      <NewMemberPasswordChanger user={this.props.user}/>
-    )
-  }
-
-  get managerAuth() {
     const {props: {isLoggedIn, selectedCommunity}} = this
-      return (
-        <div className="App">
-        {isLoggedIn ?  <button onClick={this.loggingOut}>logout</button> : null}
-        <img className="App-logo" src={icon} alt="logo"/>
-        <h1>CoMicroManage</h1>
-        {this.props.detail.toggled && this.props.detail.roomIsSelected ? <DetailView/> : null}
-        {this.props.detail.toggled && this.props.detail.memberIsSelected ? <MemberDetailView /> : null}
-        {isLoggedIn ? <CommunityMaker/> : null}
-        {isLoggedIn && !selectedCommunity ? <CommunitiesContainer/> : null }
-        {isLoggedIn && selectedCommunity ? <CommunityContainer/> : null}
-        </div>
-      )
+    if (this.props.user) {
+      switch (this.props.user.status) {
+        case "newMember":
+        return <NewMemberPasswordChanger user={this.props.user}/>
+        case "manager":
+        return (
+          <div className="App">
+            {isLoggedIn ?  <button onClick={this.loggingOut}>logout</button> : null}
+            <img className="App-logo" src={icon} alt="logo"/>
+            <h1>Death is not the greatest loss in life. The greatest loss is what dies inside us while we live</h1>
+            {this.props.detail.toggled && this.props.detail.roomIsSelected ? <DetailView/> : null}
+            {this.props.detail.toggled && this.props.detail.memberIsSelected ? <MemberDetailView /> : null}
+            {isLoggedIn ? <CommunityMaker/> : null}
+            {isLoggedIn && !selectedCommunity ? <CommunitiesContainer/> : null }
+            {isLoggedIn && selectedCommunity ? <CommunityContainer/> : null}
+          </div>
+        )
+        case "member":
+        return <button onClick={this.loggingOut}>logout</button>
+        default:
+        return <UserMaker/>
+      }
     }
+  }
 
   render() {
     console.log(this.auth)
     return (
       <div>
-        {this.props.isLoggedIn ? null: <UserMaker/> }
-        {this.auth ? this.newUserAuth : this.managerAuth }
+        {this.auth}
       </div>
     );
   }

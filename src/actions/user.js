@@ -1,11 +1,11 @@
 //creates an instance of login
 export const loginUser = (userObj) => {
   return (dispatch) => {
+    let user
     let userBody = {
       user: {
         username: userObj.username,
-        password: userObj.password,
-        status: "manager"
+        password: userObj.password
       }
     }
     let config = {
@@ -19,9 +19,28 @@ export const loginUser = (userObj) => {
         console.log("success", p)
         localStorage.setItem("token", p.jwt)
         dispatch(getUser(userBody))
+        p.user.status === "member" ? dispatch(getMemberData(p.user.id)) : console.log("other side of ternary")
     })
   }
 }
+
+export const getMemberData = id => {
+  console.log(localStorage.token)
+  return (dispatch) => {
+    let config = {
+      method: "Get",
+      headers: {
+        "Content-type": "application/json",
+        "Authorization": `Bearer ${localStorage.getItem('token')}`
+      }
+    }
+    fetch(`http://localhost:3000/api/v1/users/${id}/member`, config).then(r=>r.json()).then(p => {
+      console.log(p)
+    })
+  }
+}
+
+
 
 //creates a new user ... does it log them in?
 export const newUser = (userObj) => {
