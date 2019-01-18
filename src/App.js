@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TodoMaker from './components/TodoMaker'
 import CommunityMaker from './components/CommunityMaker'
 import CommunitiesContainer from './containers/CommunitiesContainer'
 import CommunityContainer from './containers/CommunityContainer'
@@ -63,6 +64,7 @@ class App extends Component {
     console.log(this.auth)
     return (
       <div>
+        <TodoMaker/>
         {this.auth}
       </div>
     );

@@ -13,6 +13,16 @@ const init = {
 
 function memberViewReducer(state=init, action) {
   switch (action.type) {
+
+    case "TOGGLE_FRIEND_VIEW":
+    console.log("toggle friend view")
+    return state
+    case "TOGGLE_MEMBER_ROOM_DETAILS":
+    console.log("toggle member room details")
+    return state
+
+
+
     default:
     return state;
   }

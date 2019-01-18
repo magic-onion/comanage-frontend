@@ -68,3 +68,6 @@ export const setMemberViewCommunity = (communityData) => ({type: "SET_MEMBER_VIE
 ////////////////////////////////////////////
 
 // memberView detail actions here - will hit the memberViewReducer
+export const toggleFriendView = () => ({type: "TOGGLE_FRIEND_VIEW"})
+
+export const toggleMemberViewRoomDetails = () => ({type: "TOGGLE_MEMBER_ROOM_DETAILS"})

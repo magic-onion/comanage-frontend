@@ -1,7 +1,12 @@
 import React from 'react'
+import { toggleMemberViewRoomDetails } from '../../../actions/member'
 import { connect } from 'react-redux'
 
 class MemberRoomCard extends React.Component {
+
+  getRoomDetails = event => {
+    this.props.toggleMemberViewRoomDetails()
+  }
 
 
   get roomAssignees(){
@@ -14,13 +19,12 @@ class MemberRoomCard extends React.Component {
   }
 
   render() {
-    console.log(this.props.roomusers)
     return (
       <div className="member-room-card">
         <h1>{this.props.room.name}</h1>
         <h3>Current Members: {this.roomAssignees.length}</h3>
         <h2>Occupancy: {this.props.room.occupancy}</h2>
-        <button>details</button>
+        <button onClick={this.getRoomDetails}>details</button>
       </div>
     )
   }
@@ -32,7 +36,13 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(MemberRoomCard)
+const mapDispatchToProps = dispatch => {
+  return {
+    toggleMemberViewRoomDetails: () => dispatch(toggleMemberViewRoomDetails())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MemberRoomCard)
 
 
 
