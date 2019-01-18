@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 class MemberRoomCard extends React.Component {
 
@@ -25,7 +26,13 @@ class MemberRoomCard extends React.Component {
   }
 }
 
-export default MemberRoomCard
+const mapStateToProps = state => {
+  return {
+    memberView: state.memberView
+  }
+}
+
+export default connect(mapStateToProps)(MemberRoomCard)
 
 
 

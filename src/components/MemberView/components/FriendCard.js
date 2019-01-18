@@ -1,6 +1,8 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 class FriendCard extends React.Component {
+
 
 
 
@@ -16,4 +18,10 @@ class FriendCard extends React.Component {
   }
 }
 
-export default FriendCard
+const mapStateToProps = state => {
+  return {
+    memberView: state.memberView
+  }
+}
+
+export default connect(mapStateToProps)(FriendCard)
