@@ -65,21 +65,6 @@ export const makeNewMemberRealMember = obj => {
 
 export const setMemberViewCommunity = (communityData) => ({type: "SET_MEMBER_VIEW_COMMUNITY", payload: communityData})
 
-// export const memberEditSubmit = (memberObj, communityId) => {
-//   return (dispatch) => {
-//     let config = {
-//       method: "PATCH",
-//       headers: {
-//         "Content-type": "Application/json",
-//         "Authorization": `Bearer ${localStorage.getItem('token')}`
-//       },
-//       body: JSON.stringify(memberObj)
-//     }
-//     fetch(`http://localhost:3000/api/v1/users/${memberObj.user.id}`, config).then(r=>r.json()).then(p => {
-//       console.log(p)
-//       dispatch(getMemberDetails(p.user.id))
-//     }).then(p => {
-//       dispatch(getCommunity(communityId))
-//     })
-//   }
-// }
+////////////////////////////////////////////
+
+// memberView detail actions here - will hit the memberViewReducer
