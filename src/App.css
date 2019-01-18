@@ -23,6 +23,16 @@ img {
 }
 
 /* CONTAINERS */
+
+.todo-container {
+  margin: 10px;
+  padding: 10px;
+  border: solid 1px red;
+  max-width: 350px;
+  float: right;
+  margin-right: 50em;
+}
+
 .community-container {
   border: solid green 5px;
   display: inline-grid;
@@ -92,6 +102,28 @@ img {
 }
 
 /* CARDS */
+.todo-likes {
+  background-color: #c87cf4;
+  border: solid blue 2px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.todo-boos {
+  background-color: #f7aa36;
+  border: solid red 2px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.todo-card {
+  margin: 10px;
+  padding: 10px;
+  border: solid green 3px;
+  min-width: 200px;
+  min-height: 90px;
+}
+
 .room-card {
   padding: 5px;
   border: solid red 1px;
@@ -115,7 +147,7 @@ img {
 .member-room-container {
   border: solid pink 3px;
   float: right;
-  margin-top: 39em;
+  margin-top: 2em;
   margin-right: 15em;
 }
 

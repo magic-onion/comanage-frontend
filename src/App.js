@@ -61,7 +61,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.auth)
     return (
       <div>
         <TodoMaker/>

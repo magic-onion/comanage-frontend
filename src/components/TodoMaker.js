@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { createTodo } from '../actions/todo'
 import { getTodos } from '../actions/todo'
+import { getCommunityTodos } from '../actions/todo'
 
 const init = {
   taskBody: ""
@@ -25,11 +26,12 @@ class TodoMaker extends React.Component {
       }
     }
     this.props.createTodo(taskBody)
-    this.props.getTodos()
+    this.setState({taskBody: ""})
+    // this.props.getTodos()
+    // this.props.getCommunityTodos(this.props.community.id)
   }
 
   render() {
-        console.log(this.props)
     return (
       <div className="todo-maker">
         <h2>Create a New Task</h2>
@@ -52,7 +54,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     createTodo: obj => dispatch(createTodo(obj)),
-    getTodos: () => dispatch(getTodos())
+    getTodos: () => dispatch(getTodos()),
+    getCommunityTodos: id => dispatch(getCommunityTodos(id))
   }
 }
 
