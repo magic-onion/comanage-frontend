@@ -69,7 +69,7 @@ class DetailView extends React.Component {
 
 
   render() {
-    console.log(this.props)
+    console.log(this.props.detail)
     return (
       <div className="room-detail-container">
         <h2>Detail View</h2>

@@ -36,12 +36,12 @@ class MemberFeed extends React.Component {
 
   get assignmentForms() {
     return (
-      <form onSubmit={this.handleAssignment}>
-      <select>
-        {this.props.rooms.map((room, i) => <option value={room.id} key={i}>{room.name}</option>)}
+      <form className="assignment-form" onSubmit={this.handleAssignment}>
+      <select className="assignment-select">
+        {this.props.rooms.map((room, i) => <option className="assignment-option" value={room.id} key={i}>{room.name}</option>)}
       </select>
-      <select>
-        {this.props.members.map((member, i) => <option value={member.id} key={i}>{member.username}</option>)}
+      <select className="assignment-select">
+        {this.props.members.map((member, i) => <option className="assignment-option" value={member.id} key={i}>{member.username}</option>)}
       </select>
       <button type="submit">Assign</button>
       </form>
@@ -52,8 +52,8 @@ class MemberFeed extends React.Component {
 
     return (
       <div className="member-feed">
+      <h3>Click to Assign to a Room</h3>
         {this.state.assignmentOpen ? this.assignmentForms : null}
-        <h3>Click to assign a member of this community</h3>
         <p></p>
         {this.props.members.map((member, i) => <MemberFeedItem key={i} toggleAssignment={this.toggleAssignment} member={member}/>)}
       </div>

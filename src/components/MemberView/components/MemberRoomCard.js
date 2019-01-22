@@ -20,7 +20,7 @@ class MemberRoomCard extends React.Component {
 
   render() {
     return (
-      <div className="member-room-card">
+      <div onClick={this.getRoomDetails} className="member-room-card">
         <h1>{this.props.room.name}</h1>
         <h3>Current Members: {this.roomAssignees.length}</h3>
         <h2>Occupancy: {this.props.room.occupancy}</h2>

@@ -17,10 +17,11 @@ export const loginUser = (userObj) => {
       body: JSON.stringify(userBody)
     }
       fetch('http://localhost:3000/api/v1/login', config).then(r=>r.json()).then(p=>{
-        console.log("success", p)
         localStorage.setItem("token", p.jwt)
         dispatch(getUser(userBody))
-        p.user.status === "member" ? dispatch(getMemberData(p.user.id)) : console.log("other side of ternary")
+        if (p.user.status === "member" ){
+          dispatch(getMemberData(p.user.id))
+        }
     })
   }
 }

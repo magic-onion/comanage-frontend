@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TodoMaker from './components/TodoMaker'
+// import TodoMaker from './components/TodoMaker'
 import CommunityMaker from './components/CommunityMaker'
 import CommunitiesContainer from './containers/CommunitiesContainer'
 import CommunityContainer from './containers/CommunityContainer'
@@ -12,6 +12,7 @@ import Logout from './components/Logout'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import icon from './assets/Icon-pngs/comanage-logo.png'
+
 import { getUser, logOut } from './actions/user'
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css';
@@ -46,6 +47,7 @@ class App extends Component {
             {isLoggedIn ?  <Logout loggingOut={this.loggingOut}/> : null}
             {isLoggedIn && !selectedCommunity ? <CommunitiesContainer/> : null }
             {isLoggedIn && selectedCommunity ? <CommunityContainer/> : null}
+            {isLoggedIn && !selectedCommunity ? <CommunityMaker/> : null}
             {this.props.detail.toggled && this.props.detail.roomIsSelected ? <DetailView/> : null}
             {this.props.detail.toggled && this.props.detail.memberIsSelected ? <MemberDetailView /> : null}
           </div>
@@ -67,6 +69,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <img src={icon} alt={icon}></img>
         {this.auth}
       </div>
     );
@@ -101,7 +104,7 @@ export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
 // import { Route, Switch, Redirect } from 'react-router-dom'
 
 
-// {isLoggedIn ? <CommunityMaker/> : null}
+
 
 
 

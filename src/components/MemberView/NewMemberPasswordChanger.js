@@ -26,15 +26,14 @@ class NewMemberPasswordChanger extends React.Component {
 
 
   render() {
-    console.log(this.props)
     return(
       <div className="member-password-changer">
       <h1>Please Change Your Password</h1>
 
       <form onSubmit={this.handleSubmit}>
-        <input name="username" onChange={this.handleChange} type="text" value={this.state.username}/>
-        <input name="password" onChange={this.handleChange} type="text" value={this.state.password}/>
-        <button type="submit">Save User Data</button>
+        <input className="member-password-changer-input" name="username" onChange={this.handleChange} type="text" value={this.state.username}/>
+        <input className="member-password-changer-input" name="password" onChange={this.handleChange} type="text" value={this.state.password}/>
+        <button className="member-password-changer-button" type="submit">Thanks!</button>
       </form>
       </div>
     )

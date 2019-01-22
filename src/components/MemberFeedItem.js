@@ -2,7 +2,11 @@ import React from 'react'
 
 class MemberFeedItem extends React.Component {
   render() {
-    return <h3 className="feed-item">{this.props.member.username}</h3>
+    return (
+      <div onClick={this.props.toggleAssignment} className="feed-item">
+      <h3 onClick={this.props.toggleAssignment}>{this.props.member.username}</h3>
+      </div>
+    )
   }
 }
 

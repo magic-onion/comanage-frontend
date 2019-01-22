@@ -16,22 +16,25 @@ function detailReducer(state = init, action) {
   switch (action.type) {
 
     case "TOGGLE_ROOM_DETAIL_VIEW":
-    console.log(action.payload)
+      if (state.memberIsSelected && !state.roomIsSelected && state.toggleDetails) {
+        let switchyState = {...state, roomIsSelected: true, memberIsSelected: false, currentRoom: action.payload.room, members: action.payload.members}
+        return switchyState
+      }
       if (action.payload.room.name === state.currentRoom.name) {
-        console.log("toggle room detail case 1")
+        console.log("toggle room detail case 1", state)
         let toggleDetails = !state.toggled
         let roomToggle = !state.roomIsSelected
         let hideDetails = {...state, toggled: toggleDetails, roomIsSelected: roomToggle}
         return hideDetails
       }
       else if (state.toggled) {
-        console.log("toggle room detail case 2")
+        console.log("toggle room detail case 2", state)
 
         let newState = {...state, roomIsSelected: true, memberIsSelected: false, currentRoom: action.payload.room, members: action.payload.members}
         return newState
       }
       else {
-        console.log("toggle room detail case 3")
+        console.log("toggle room detail case 3", state)
 
         let toggler = !state.toggled
         let newState = {...state, toggled: toggler, roomIsSelected: true, memberIsSelected: false, currentRoom: action.payload.room, members: action.payload.members}
@@ -40,8 +43,10 @@ function detailReducer(state = init, action) {
     case "ROOM_DETAIL_AFTER_ASSIGNMENT":
       let afterAssignmentState = {...state, toggled: true, roomIsSelected: true, memberIsSelected: false, currentRoom: action.payload.room, members: action.payload.members}
       return afterAssignmentState
+
     case "TOGGLE_MEMBER_DETAIL_VIEW":
     if (action.payload.user.id === state.currentMember.id) {
+      console.log(state)
       let toggleMemberDetails = !state.toggled
       let selectedMemberToggle = !state.memberIsSelected
       let toggleMemberDetailsState = {...state, toggled: toggleMemberDetails, memberIsSelected: selectedMemberToggle, roomIsSelected: false}

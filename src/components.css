@@ -128,3 +128,21 @@
   background-color: #dfdfdf;
   cursor: pointer;
 }
+
+.feed-item {
+  font-family: 'Source Sans Pro', sans-serif;
+  border: solid #021c6b 4px;
+  padding: 8px;
+  margin: 8px;
+  border-radius: 10px;
+  background-color: #eeeaea
+}
+
+.feed-item:hover {
+  font-family: 'Source Sans Pro', sans-serif;
+  border: solid #021c6b 4px;
+  padding: 8px;
+  margin: 8px;
+  border-radius: 10px;
+  background-color: #d7c9da
+}

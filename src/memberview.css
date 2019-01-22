@@ -1,31 +1,111 @@
 /* MEMBER VIEW CLASSES */
 
+.member-password-changer {
+  margin-left: 34%;
+  margin-top: 10em;
+  font-family: 'Source Sans Pro', sans-serif;
+  border-radius: 8px;
+  box-shadow: 4px 8px #6b6b6b;
+  border: groove #f07ad9 8px;
+  display: inline-table;
+  padding: 20px;
+  max-width: 600px;
+  text-align: center;
+}
+
+.member-password-changer-input {
+  /* font-family: 'Source Sans Pro', sans-serif;
+  margin: 10px;
+  border-radius: 5px;
+  padding: 4px;
+  text-align: center; */
+  background-color: #d2c5de;
+  font-size: 150%;
+  width: 90%;
+  padding: 10px;
+  margin: 20px;
+  color: #011149;
+  text-align: center;
+  font-family: 'Arimo', sans-serif;
+  display: inline-block;
+  border: 2px solid #5d0101;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.member-password-changer-button {
+  background-color: #156eb0;
+  color: #a9eed4;
+  border-radius: 30px;
+  margin: 10px;
+  padding: 15px;
+  min-width: 150px;
+  max-width: 150px;
+  text-align: center;
+  font-size: 16px;
+}
 .member-room-container {
-  border: solid pink 3px;
-  float: right;
-  margin-top: 2em;
-  margin-right: 15em;
+  font-family: 'Source Sans Pro', sans-serif;
+  border: groove #ee6323 6px;
+  border-radius: 10px;
+  padding: 15px;
+  float: left;
+  margin: 30px;
+  display: flex;
 }
 
 .member-room-card {
-  display: inline-block;
-  padding: 10px;
-  border: solid pink 3px;
+  background-color: #e98c2a;
+  text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  width: 300px;
+  height: 350px;
+  max-height: 350px;
+  padding: 15px;
+  margin: 10px;
+  border: groove #833026 5px;
+  border-radius: 10px;
+  max-width: 300px;
+  min-height: 150px;
+}
+
+.member-room-card:hover {
+  background-color: #dfa86d;
+  text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  width: 300px;
+  height: 350px;
+  max-height: 350px;
+  padding: 15px;
+  margin: 10px;
+  border: groove #833026 5px;
+  border-radius: 10px;
   max-width: 300px;
   min-height: 150px;
 }
 
 .friend-card {
-  min-width: 200px;
-  min-height: 80px;
-  margin-left: 20px;
-  border: solid red 1px;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #e98c2a;
+  min-width: 150px;
+  min-height: 200px;
+  margin: 15px;
+  padding: 10px;
+  border: groove #7d3816 4px;
 }
 
 .member-friends-container {
-  border: solid green 3px;
+  border: groove #c73add 8px;
+  border-radius: 10px;
+  display: inline-block;
+  padding: 20px;
   max-width: 400px;
   float: left;
-  margin-top: 20px;
-  margin-left: 20px;
+  margin: 20px;
+}
+
+.member-community-container {
+  max-width: 1200px;
+  margin: 2em;
 }

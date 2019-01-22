@@ -68,9 +68,10 @@ export const updateTodoReactions = obj => {
       headers: {
         "Content-type": "application/json",
         "Authorization": `Bearer ${localStorage.getItem('token')}`
-      }
+      },
+      body: JSON.stringify(updateBody)
     }
-    fetch(`http://localhost:3000/api/v1/todos/${obj.id}/`).then(r=>r.json()).then(p=> {
+    fetch(`http://localhost:3000/api/v1/todos/${obj.id}/`, config).then(r=>r.json()).then(p=> {
 
     })
 

@@ -19,7 +19,6 @@ function communityReducer(state = init, action) {
     let commState = {...state, rooms: action.payload.rooms, members: action.payload.members}
     return commState
     case "HOLD_COMMUNITY":
-    console.log(action.payload)
     const {payload: {community, rooms, members}} = action
     let communityState = {...state, name: community.name, rooms: rooms, members: members, roomusers: action.payload.roomusers, id: community.id}
     return communityState
@@ -36,7 +35,6 @@ function communityReducer(state = init, action) {
     let memberViewCommunityState = {...state, id: action.payload.id, name: action.payload.name, rooms: action.payload.rooms, members: action.payload.members, roomusers: action.payload.roomusers}
     return memberViewCommunityState
     case "LOGOUT":
-    console.log("community clearing")
     let logoutState = init
     return logoutState
     default:

@@ -20,7 +20,8 @@ class MemberDetailView extends React.Component {
 
   static getDerivedStateFromProps(props, state) {
     if (state.memberId !== props.detail.currentMember.id) {
-      return {...state, memberName: props.detail.currentMember.name, memberBio: props.detail.currentMember.bio, memberId: props.detail.currentMember.id}
+      console.log('reset')
+      return {...state, memberName: props.detail.currentMember.username, memberBio: props.detail.currentMember.bio, memberId: props.detail.currentMember.id}
     }
     return state
   }
@@ -28,7 +29,7 @@ class MemberDetailView extends React.Component {
   handleEditing = event => {
     this.setState({
       [event.target.name]: event.target.value
-    }, () => console.log(this.state))
+    })
   }
 
   editMember = event => {
@@ -43,10 +44,10 @@ class MemberDetailView extends React.Component {
       user: {
         id: this.state.memberId,
         username: this.state.memberName,
+        bio: this.state.memberBio
       }
     }
     this.props.memberEditSubmit(newMemberObj, this.props.community.id)
-    this.setState({toggleRommEditPane: false})
     // this.props.getCommunity(this.props.community.id)
   }
 
@@ -57,6 +58,8 @@ class MemberDetailView extends React.Component {
           { this.state.toggleEdit ?
               <form onSubmit={this.memberEditSubmit}>
                 <input onChange={this.handleEditing} name="memberName" type="text" value={this.state.memberName}/>
+                <input onChange={this.handleEditing} name="memberBio" type="text" value={this.state.memberBio}/>
+
                 <button type="submit">Save</button>
                 </form>
             : null }
@@ -74,7 +77,7 @@ class MemberDetailView extends React.Component {
 
 
   render() {
-    console.log(this.props)
+    console.log(this.props.detail.currentMember)
     return (
       <div className="member-detail-view">
         <h2>Detail View</h2>

@@ -15,11 +15,11 @@ class MemberCard extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div className="member-card" onClick={this.showMemberDetails}>
         <h1>{this.props.member.username}</h1>
-        <h3>"some bio stuff"</h3>
+        <img src={require(`../assets/Icon-pngs/${this.props.member.image}.png`)} alt={this.props.member.username}></img>
+        <h3>{this.props.member.bio}</h3>
       </div>
     )
   }

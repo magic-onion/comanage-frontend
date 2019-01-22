@@ -26,7 +26,7 @@ class MemberCommunityContainer extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="member-community-container">
         <MemberRoomContainer/>
         <MemberFriendsContainer/>
         <button onClick={this.toggleTodos}> show </button>

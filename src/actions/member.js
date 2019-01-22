@@ -57,7 +57,7 @@ export const makeNewMemberRealMember = obj => {
     }
     console.log(config)
     fetch(`http://localhost:3000/api/v1/users/${obj.id}/authorize`, config).then(r=>r.json()).then(p => {
-
+      console.log(p)
     dispatch(setMemberViewCommunity(p.community))
   })
   }

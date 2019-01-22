@@ -1,8 +1,10 @@
 /* FORMS */
 .community-maker {
   margin: 5px;
+  margin-right: 20em;
   padding: 10px;
-  border: solid red 1px;
+  border: groove #991269 5px;
+  border-radius: 5px;
   float:right;
 }
 
@@ -81,4 +83,26 @@
   max-width: 350px;
   padding: 20px;
   margin: 5px;
+}
+
+.assignment-form{
+padding: 5px;
+}
+
+.assignment-select{
+  font-family: 'Arimo', sans-serif;
+  font-size: 1.2em;
+  border-radius: 5px;
+  background-color: #8184e2;
+
+  margin: 10px;
+  padding: 20px;
+  width: 190px;
+  text-align: center;
+  height: 45px;
+}
+
+.assignment-option {
+  background-color: blue;
+
 }

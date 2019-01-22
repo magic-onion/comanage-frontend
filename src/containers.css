@@ -20,7 +20,34 @@
 
 }
 
+.community-container-view-toggle {
+  font-family: 'Source Sans Pro', sans-serif;
+
+  background-color: #77a871;
+  border-radius: 10px;
+  box-shadow: 1px 2px #b0b0b0;
+
+}
+
+.community-container-view-toggle:hover {
+  font-family: 'Source Sans Pro', sans-serif;
+
+  background-color: #b2daad;
+
+}
+
+.community-container-view-toggle:focus {
+  font-family: 'Source Sans Pro', sans-serif;
+
+  background-color: #77a871;
+  border-radius: 10px;
+  box-shadow: 1px 2px #b0b0b0;
+  outline: none;
+
+}
+
 .member-container {
+  text-align: center;
   border: ridge #360a94 4px;
   box-shadow: 3px 6px #757575;
   border-radius: 15px;
@@ -60,6 +87,9 @@ h2 {
   padding: 20px;
 }
 
+.room-container-title {
+  margin-top: 1em;
+}
 /* DETAIL CONTAINERS */
 .detail-view {
   margin-right: 30px;
