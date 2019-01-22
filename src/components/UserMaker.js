@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { newUser, loginUser } from '../actions/user'
+import icon from '../assets/Icon-pngs/comanage-logo.png'
+
 
   const init = {
     username: "",
@@ -32,11 +34,12 @@ class UserMaker extends React.Component {
   render() {
     return (
       <div className="user-maker">
-        <form>
-          <input onChange={this.handleChange} type="text" name="username" value={this.state.username}/>
-          <input onChange={this.handleChange} type="text" name="password" value={this.state.password}/>
-          <button onClick={this.handleUser} name="login" type="submit">Login</button>
-          <button onClick={this.handleUser} name="create" type="submit">Create User</button>
+        <h2> Please Log In or Create a New Account </h2>
+        <form class="user-maker-form">
+          <input className="user-maker-username" onChange={this.handleChange} type="text" name="username" value={this.state.username}/>
+          <input className="user-maker-password" onChange={this.handleChange} type="text" name="password" value={this.state.password}/>
+          <button className="user-maker-buttons" onClick={this.handleUser} name="login" type="submit">Login</button>
+          <button className="user-maker-buttons" onClick={this.handleUser} name="create" type="submit">Create User</button>
         </form>
       </div>
     )

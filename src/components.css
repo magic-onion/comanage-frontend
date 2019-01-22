@@ -1,0 +1,65 @@
+/* CARDS */
+
+.community-card {
+  background-color: #bec6ff;
+  font-family: 'Source Sans Pro', sans-serif;
+  display: grid;
+  min-height: 200px;
+  min-width: 150px;
+  padding: 20px;
+  margin: 20px;
+  border: solid #ac2f6f 4px;
+  box-shadow: 3px 6px #828282;
+}
+
+.todo-likes {
+  background-color: #c87cf4;
+  border: solid blue 2px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.todo-boos {
+  background-color: #f7aa36;
+  border: solid red 2px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.todo-card {
+  margin: 10px;
+  padding: 10px;
+  border: solid green 3px;
+  min-width: 200px;
+  min-height: 90px;
+  font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+.room-card {
+  padding: 5px;
+  border: solid red 1px;
+  display: inline-block;
+}
+
+.member-card {
+  display: inline-block;
+  margin: 15px;
+}
+
+.feed-item {
+  display: inline-block;
+  margin: 10px;
+}
+
+.logout-button {
+  font-family: 'Hind', sans-serif;
+  color: purple;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  min-width: 100px;
+  padding: 3px;
+  border-radius: 8px;
+  background-color: blue;
+}

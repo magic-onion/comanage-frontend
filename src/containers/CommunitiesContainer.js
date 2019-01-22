@@ -9,10 +9,8 @@ class CommunitiesContainer extends React.Component {
     const {props: {communities}} = this
     return (
       <div className="communities-container">
-      <p>Your Communities</p>
-        <div>
+      <h2>Your Communities</h2>
           {communities !== undefined ? communities.map((comm, i) => <CommunityCard key = {i} community={comm}/>) : null}
-        </div>
       </div>
     )
   }

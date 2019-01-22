@@ -8,11 +8,18 @@ import DetailView from './components/DetailView'
 import MemberDetailView from './components/MemberDetailView'
 import NewMemberPasswordChanger from './components/MemberView/NewMemberPasswordChanger'
 import MemberCommunityContainer from './components/MemberView/containers/MemberCommunityContainer'
+import Logout from './components/Logout'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import icon from './assets/Icon-pngs/comanage-logo.png'
 import { getUser, logOut } from './actions/user'
+import 'bootstrap/dist/css/bootstrap.css'
 import './App.css';
+import './containers.css'
+import './components.css'
+import './forms.css'
+import './memberview.css'
+
 
 class App extends Component {
 
@@ -36,9 +43,9 @@ class App extends Component {
         case "manager":
         return (
           <div className="App">
-            {isLoggedIn ?  <button onClick={this.loggingOut}>logout</button> : null}
+            {isLoggedIn ?  <Logout loggingOut={this.loggingOut}/> : null}
             <img className="App-logo" src={icon} alt="logo"/>
-            <h1>Death is not the greatest loss in life. The greatest loss is what dies inside us while we live</h1>
+            <h1>May I never be content</h1>
             {this.props.detail.toggled && this.props.detail.roomIsSelected ? <DetailView/> : null}
             {this.props.detail.toggled && this.props.detail.memberIsSelected ? <MemberDetailView /> : null}
             {isLoggedIn ? <CommunityMaker/> : null}
@@ -49,7 +56,7 @@ class App extends Component {
         case "member":
         return (
         <div>
-          <button onClick={this.loggingOut}>logout</button>
+          <Logout loggingOut={this.loggingOut}/>
           <MemberCommunityContainer/>
         </div>
       )
@@ -63,7 +70,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        <TodoMaker/>
         {this.auth}
       </div>
     );

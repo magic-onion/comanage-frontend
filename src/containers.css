@@ -1,0 +1,69 @@
+/* CONTAINERS */
+
+.todo-container {
+  margin: 10px;
+  padding: 10px;
+  border: solid 1px red;
+  max-width: 350px;
+  float: right;
+  margin-right: 50em;
+}
+
+.community-container {
+  border: solid green 5px;
+  display: inline-block;
+  max-width: 650px;
+  float: right;
+  margin-right: 15em;
+
+}
+
+.member-container {
+  border: solid blue 1px;
+  display: inline-block;
+}
+
+.communities-container {
+  /* font-family: 'Source Sans Pro', sans-serif; */
+  font-color: red;
+  padding: 2em;
+  display: inline-block;
+  border-radius: 10px;
+  margin-right: 40px;
+  min-height: 400px;
+  max-width: 500px;
+  border: 8px ridge #5a0085;
+  box-shadow: 4px 8px #716871;
+  background-color: #dceaf6
+}
+.communities-container,
+h2 {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #4a0000;
+}
+
+.room-container {
+  display: inline-block;
+}
+
+/* DETAIL CONTAINERS */
+.detail-view {
+  margin-right: 30px;
+  float: right;
+  max-width: 400px;
+  min-height: 650px;
+  border: 3px solid blue;
+}
+
+.member-detail-view {
+  margin-right: 30px;
+  min-height: 650px;
+  max-width: 400px;
+  padding: 5px;
+  float: right;
+  border: 3px solid blue;
+}
+
+.rooms-in-member-detail {
+  margin: 3px;
+}

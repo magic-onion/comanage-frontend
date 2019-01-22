@@ -1,7 +1,12 @@
 /* Top LEVEL */
 
+button {
+  cursor: pointer
+}
+
 body {
-    background-color: #84bdd5;
+    background-color: #81d8eb;
+    /* cursor: progress; */
 }
 
 img {
@@ -12,164 +17,15 @@ img {
 .App {
   padding-top: 50px;
   text-align: center;
-  background-color: #84bdd5;
+  background-color: #81d8eb;
+  /* cursor: progress; */
 }
 
 .App-logo {
-  float: left;
   max-width: 100px;
-  mac-height: 100px;
-  animation: App-logo-spin infinite 20s linear;
+  max-height: 100px;
 }
 
-/* CONTAINERS */
-
-.todo-container {
-  margin: 10px;
-  padding: 10px;
-  border: solid 1px red;
-  max-width: 350px;
-  float: right;
-  margin-right: 50em;
-}
-
-.community-container {
-  border: solid green 5px;
-  display: inline-grid;
-  max-width: 650px;
-  float: right;
-  margin-right: 15em;
-}
-
-.member-container {
-  border: solid blue 1px;
-  display: inline-block;
-}
-
-.communities-container {
-  float: right;
-  margin-right: 40px;
-  max-width: 900px;
-  border: 3px solid pink;
-}
-
-.room-container {
-  display: inline-block;
-}
-
-/* DETAIL CONTAINERS */
-.detail-view {
-  margin-right: 30px;
-  float: right;
-  max-width: 400px;
-  min-height: 650px;
-  border: 3px solid blue;
-}
-
-.member-detail-view {
-  margin-right: 30px;
-  min-height: 650px;
-  max-width: 400px;
-  padding: 5px;
-  float: right;
-  border: 3px solid blue;
-}
-
-.rooms-in-member-detail {
-  margin: 3px;
-}
-
-/* FORMS */
-.community-maker {
-  margin: 5px;
-  padding: 10px;
-  border: solid red 1px;
-  float:right;
-}
-
-.user-maker {
-  padding: 5px;
-  margin: 10px;
-  float: left;
-  border: 1px solid blue;
-}
-
-.todo-maker {
-  border: solid salmon 2px;
-  max-width: 350px;
-  padding: 20px;
-  margin: 5px;
-}
-
-/* CARDS */
-.todo-likes {
-  background-color: #c87cf4;
-  border: solid blue 2px;
-  margin: 5px;
-  padding: 5px;
-}
-
-.todo-boos {
-  background-color: #f7aa36;
-  border: solid red 2px;
-  margin: 5px;
-  padding: 5px;
-}
-
-.todo-card {
-  margin: 10px;
-  padding: 10px;
-  border: solid green 3px;
-  min-width: 200px;
-  min-height: 90px;
-}
-
-.room-card {
-  padding: 5px;
-  border: solid red 1px;
-  display: inline-block;
-}
-
-.member-card {
-  display: inline-block;
-  margin: 15px;
-}
-
-.feed-item {
-  display: inline-block;
-  margin: 10px;
-}
-
-
-
-/* MEMBER VIEW CLASSES */
-
-.member-room-container {
-  border: solid pink 3px;
-  float: right;
-  margin-top: 2em;
-  margin-right: 15em;
-}
-
-.member-room-card {
-  display: inline-block;
-  padding: 10px;
-  border: solid pink 3px;
-  max-width: 300px;
-  min-height: 150px;
-}
-
-.friend-card {
-  min-width: 200px;
-  min-height: 80px;
-  margin-left: 20px;
-  border: solid red 1px;
-}
-
-.member-friends-container {
-  border: solid green 3px;
-  max-width: 400px;
-  float: left;
-  margin-top: 20px;
-  margin-left: 20px;
-}
+/* font-family: 'Source Sans Pro', sans-serif;
+font-family: 'Arimo', sans-serif;
+font-family: 'Hind', sans-serif; */

@@ -1,0 +1,31 @@
+/* MEMBER VIEW CLASSES */
+
+.member-room-container {
+  border: solid pink 3px;
+  float: right;
+  margin-top: 2em;
+  margin-right: 15em;
+}
+
+.member-room-card {
+  display: inline-block;
+  padding: 10px;
+  border: solid pink 3px;
+  max-width: 300px;
+  min-height: 150px;
+}
+
+.friend-card {
+  min-width: 200px;
+  min-height: 80px;
+  margin-left: 20px;
+  border: solid red 1px;
+}
+
+.member-friends-container {
+  border: solid green 3px;
+  max-width: 400px;
+  float: left;
+  margin-top: 20px;
+  margin-left: 20px;
+}
