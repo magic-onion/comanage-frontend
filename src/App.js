@@ -48,7 +48,6 @@ class App extends Component {
             <h1>May I never be content</h1>
             {this.props.detail.toggled && this.props.detail.roomIsSelected ? <DetailView/> : null}
             {this.props.detail.toggled && this.props.detail.memberIsSelected ? <MemberDetailView /> : null}
-            {isLoggedIn ? <CommunityMaker/> : null}
             {isLoggedIn && !selectedCommunity ? <CommunitiesContainer/> : null }
             {isLoggedIn && selectedCommunity ? <CommunityContainer/> : null}
           </div>
@@ -102,3 +101,6 @@ export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
 // import SidebarContainer from './containers/SidebarContainer'
 // import RoomCard from './components/RoomCard'
 // import { Route, Switch, Redirect } from 'react-router-dom'
+
+
+// {isLoggedIn ? <CommunityMaker/> : null}

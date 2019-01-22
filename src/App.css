@@ -17,6 +17,7 @@ img {
 .App {
   padding-top: 50px;
   text-align: center;
+  display: flex;
   background-color: #81d8eb;
   /* cursor: progress; */
 }

@@ -10,9 +10,11 @@
 }
 
 .community-container {
-  border: solid green 5px;
+  border: ridge #6985a6 5px;
+  margin: 10px;
+  padding: 20px;
   display: inline-block;
-  max-width: 650px;
+  max-width: 12000px;
   float: right;
   margin-right: 15em;
 
@@ -44,6 +46,12 @@ h2 {
 
 .room-container {
   display: inline-block;
+  border-radius: 10px;
+  background-color: #cc7aac;
+  min-width: 900px;
+  margin: 30px;
+  border: groove #e6a34c 8px;
+  padding: 20px;
 }
 
 /* DETAIL CONTAINERS */

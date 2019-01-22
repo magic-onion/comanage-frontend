@@ -37,10 +37,28 @@
 }
 
 .room-card {
-  padding: 5px;
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #eeeaea;
+  border-radius: 10px;
+  box-shadow: 3px 6px #838383;
+  padding: 20px;
+  margin: 20px;
   border: solid red 1px;
   display: inline-block;
+  padding: 10px;
 }
+.room-card:hover {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #d7c9da;
+  border-radius: 10px;
+  box-shadow: 3px 6px #838383;
+  padding: 20px;
+  margin: 20px;
+  border: solid red 1px;
+  display: inline-block;
+  padding: 10px;
+}
+
 
 .member-card {
   display: inline-block;
@@ -62,4 +80,20 @@
   padding: 3px;
   border-radius: 8px;
   background-color: blue;
+}
+
+.room-creator-button {
+  font-family: 'Hind', sans-serif;
+  border-radius: 5px;
+  color: green;
+  float: left;
+  background-color: #bebebe;
+}
+
+.room-creator-button:hover {
+  font-family: 'Hind', sans-serif;
+  border-radius: 5px;
+  color: green;
+  float: left;
+  background-color: #dfdfdf;
 }

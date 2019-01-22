@@ -49,14 +49,13 @@ class MemberFeed extends React.Component {
   }
 
   render() {
-    
+
     return (
       <div className="member-feed">
         {this.state.assignmentOpen ? this.assignmentForms : null}
-        <h3>Members in this Community</h3>
-        <button className="assignment-button" onClick={this.toggleAssignment}>CLICK TO ASSIGN</button>
+        <h3>Click to assign a member of this community</h3>
         <p></p>
-        {this.props.members.map((member, i) => <MemberFeedItem key={i} member={member}/>)}
+        {this.props.members.map((member, i) => <MemberFeedItem key={i} toggleAssignment={this.toggleAssignment} member={member}/>)}
       </div>
     )
   }

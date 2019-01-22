@@ -47,11 +47,11 @@ class RoomContainer extends React.Component {
     console.log(this.props.community)
     return (
       <div className="room-container">
-      <h2>ROOM CONTAINER</h2>
-      <button onClick={this.toggleCreateForm}>Create a Room</button>
-      {this.state.toggleCreateForm ? this.createNewRoomForm : null}
+      <button className="room-creator-button" onClick={this.toggleCreateForm}>Create a Room</button>
+        <h2>ROOM CONTAINER</h2>
+        {this.state.toggleCreateForm ? this.createNewRoomForm : null}
         {this.props.community.rooms.map((room, i) => <RoomCard key={i} room={room} roomusers={this.props.community.roomusers} members={this.props.community.members}/> )}
-      {this.props.community.rooms.length > 0 ?  <MemberFeed members={this.props.community.members} rooms={this.props.community.rooms} communityId={this.props.community.id}/> : null}
+        {this.props.community.rooms.length > 0 ?  <MemberFeed members={this.props.community.members} rooms={this.props.community.rooms} communityId={this.props.community.id}/> : null}
       </div>
     )
   }
