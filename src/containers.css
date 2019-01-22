@@ -14,15 +14,19 @@
   margin: 10px;
   padding: 20px;
   display: inline-block;
-  max-width: 12000px;
-  float: right;
+  max-width: 900px;
+  float: left;
   margin-right: 15em;
 
 }
 
 .member-container {
-  border: solid blue 1px;
+  border: ridge #360a94 4px;
+  box-shadow: 3px 6px #757575;
+  border-radius: 15px;
+  float: left;
   display: inline-block;
+  background-color: #7195ff;
 }
 
 .communities-container {
@@ -46,11 +50,13 @@ h2 {
 
 .room-container {
   display: inline-block;
-  border-radius: 10px;
+  float: left;
+  border-radius: 15px;
   background-color: #cc7aac;
-  min-width: 900px;
+  box-shadow: 3px 6px #757575;
+  min-width: 500px;
   margin: 30px;
-  border: groove #e6a34c 8px;
+  border: ridge #e6a34c 4px;
   padding: 20px;
 }
 
@@ -63,15 +69,49 @@ h2 {
   border: 3px solid blue;
 }
 
-.member-detail-view {
-  margin-right: 30px;
-  min-height: 650px;
-  max-width: 400px;
-  padding: 5px;
-  float: right;
-  border: 3px solid blue;
-}
 
 .rooms-in-member-detail {
   margin: 3px;
+}
+
+.member-container-member-creator {
+  font-family: 'Source Sans Pro', sans-serif;
+  float: left;
+  margin: 10px;
+  background-color: red;
+}
+
+.room-detail-container {
+  background-color: purple;
+  border-radius: 10px;
+  border: 4px ridge grey;
+  padding: 20px;
+  margin: 20px;
+  margin-right: 20em;
+  float: right;
+}
+
+.room-details {
+  float: right;
+  padding: 10px;
+  margin: 10px;
+  display: grid;
+}
+
+
+.member-detail-view {
+  background-color: purple;
+  border-radius: 10px;
+  border: 4px ridge grey;
+  padding: 20px;
+  margin: 20px;
+  margin-right: 20em;
+  float: right;
+}
+
+.member-detail-view-details {
+  float: right;
+  padding: 10px;
+  margin: 10px;
+  display: grid;
 }

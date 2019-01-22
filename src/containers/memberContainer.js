@@ -46,7 +46,7 @@ class MemberContainer extends React.Component {
   render() {
     return (
       <div className="member-container">
-        <button onClick={this.toggleCreator}>Add a Member</button>
+        <button className="member-container-member-creator" onClick={this.toggleCreator}>Add a Member</button>
         {this.state.toggleCreator ? this.createMemberForm : null}
         {this.props.community.members.map((member, i) => <MemberCard key={i} rooms={this.props.community.rooms} member={member}/> )}
       </div>

@@ -12,6 +12,19 @@
   box-shadow: 3px 6px #828282;
 }
 
+.community-card:hover {
+  background-color: #d4d9fe;
+  font-family: 'Source Sans Pro', sans-serif;
+  display: grid;
+  min-height: 200px;
+  min-width: 150px;
+  padding: 20px;
+  margin: 20px;
+  border: solid #ac2f6f 4px;
+  box-shadow: 3px 6px #828282;
+  cursor: pointer;
+}
+
 .todo-likes {
   background-color: #c87cf4;
   border: solid blue 2px;
@@ -57,12 +70,29 @@
   border: solid red 1px;
   display: inline-block;
   padding: 10px;
+  cursor: pointer;
 }
 
 
 .member-card {
+  font-family: 'Source Sans Pro', sans-serif;
+  border: groove #696969 3px;
+  background-color: #9571bf;
+  border-radius: 8px;
+  padding: 10px;
   display: inline-block;
   margin: 15px;
+}
+
+.member-card:hover {
+  font-family: 'Source Sans Pro', sans-serif;
+  border: groove #696969 3px;
+  background-color: #d7c6eb;
+  border-radius: 8px;
+  padding: 10px;
+  display: inline-block;
+  margin: 15px;
+  cursor: pointer;
 }
 
 .feed-item {
@@ -96,4 +126,5 @@
   color: green;
   float: left;
   background-color: #dfdfdf;
+  cursor: pointer;
 }

@@ -49,7 +49,7 @@ class DetailView extends React.Component {
   getRoomDetails() {
     if (this.props) {
       return (
-        <div>
+        <div className="room-details">
           <button onClick={this.editRoom}>Edit Room</button>
           {this.state.toggleRommEditPane ?
             <form onSubmit={this.roomEditSubmit}>
@@ -71,7 +71,7 @@ class DetailView extends React.Component {
   render() {
     console.log(this.props)
     return (
-      <div className="detail-view">
+      <div className="room-detail-container">
         <h2>Detail View</h2>
         {this.getRoomDetails()}
       </div>

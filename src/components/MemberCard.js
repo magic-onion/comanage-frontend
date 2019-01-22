@@ -17,10 +17,9 @@ class MemberCard extends React.Component {
   render() {
     console.log(this.props)
     return (
-      <div className="member-card">
+      <div className="member-card" onClick={this.showMemberDetails}>
         <h1>{this.props.member.username}</h1>
         <h3>"some bio stuff"</h3>
-        <button name="detailView" onClick={this.showMemberDetails}>details</button>
       </div>
     )
   }

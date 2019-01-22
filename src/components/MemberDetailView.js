@@ -53,7 +53,7 @@ class MemberDetailView extends React.Component {
   getMemberDetails() {
     if (this.props.detail.memberIsSelected) {
       return (
-        <div>
+        <div className="member-detail-view-details">
           { this.state.toggleEdit ?
               <form onSubmit={this.memberEditSubmit}>
                 <input onChange={this.handleEditing} name="memberName" type="text" value={this.state.memberName}/>

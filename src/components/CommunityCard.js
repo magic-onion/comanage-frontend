@@ -15,12 +15,11 @@ class CommunityCard extends React.Component {
   render() {
     const {props: {community}} = this
     return(
-      <div className="community-card">
-        <h1>{community.name}</h1>
-          <h3>{community.rooms.length} Rooms</h3>
-          <h4>&</h4>
-          <h3>{community.members.length} Members</h3>
-        <button id={community.id} onClick={this.selected}>Select</button>
+      <div id={community.id} onClick={this.selected} className="community-card">
+        <h1 id={community.id} onClick={this.selected}>{community.name}</h1>
+          <h3 id={community.id} onClick={this.selected}>{community.rooms.length} Rooms</h3>
+          <h4 id={community.id} onClick={this.selected}>&</h4>
+          <h3 id={community.id} onClick={this.selected}>{community.members.length} Members</h3>
       </div>
     )
   }

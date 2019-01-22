@@ -44,12 +44,10 @@ class App extends Component {
         return (
           <div className="App">
             {isLoggedIn ?  <Logout loggingOut={this.loggingOut}/> : null}
-            <img className="App-logo" src={icon} alt="logo"/>
-            <h1>May I never be content</h1>
-            {this.props.detail.toggled && this.props.detail.roomIsSelected ? <DetailView/> : null}
-            {this.props.detail.toggled && this.props.detail.memberIsSelected ? <MemberDetailView /> : null}
             {isLoggedIn && !selectedCommunity ? <CommunitiesContainer/> : null }
             {isLoggedIn && selectedCommunity ? <CommunityContainer/> : null}
+            {this.props.detail.toggled && this.props.detail.roomIsSelected ? <DetailView/> : null}
+            {this.props.detail.toggled && this.props.detail.memberIsSelected ? <MemberDetailView /> : null}
           </div>
         )
         case "member":
@@ -104,3 +102,11 @@ export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
 
 
 // {isLoggedIn ? <CommunityMaker/> : null}
+
+
+
+
+
+
+
+// <img className="App-logo" src={icon} alt="logo"/>

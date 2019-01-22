@@ -17,8 +17,8 @@ class CommunityContainer extends React.Component {
     return (
       <div className="community-container">
         <p>{name}</p>
-        <MemberContainer />
         <RoomContainer />
+        <MemberContainer />
       </div>
     )
   }
