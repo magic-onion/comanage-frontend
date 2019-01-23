@@ -1,7 +1,7 @@
 import React from 'react'
 import { toggleMemberViewRoomDetails } from '../../../actions/member'
 import { connect } from 'react-redux'
-import { getMemberViewDetails } from '../../../actions/member'
+// import { getMemberViewDetails } from '../../../actions/member'
 import { getMemberViewRoomDetails } from '../../../actions/member'
 
 class MemberRoomCard extends React.Component {

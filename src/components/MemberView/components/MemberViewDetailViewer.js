@@ -13,6 +13,7 @@ class MemberViewDetailViewer extends React.Component {
         </div>
       )
     }
+    return null
   }
 
 

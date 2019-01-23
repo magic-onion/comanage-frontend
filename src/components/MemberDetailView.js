@@ -77,7 +77,6 @@ class MemberDetailView extends React.Component {
 
 
   render() {
-    console.log(this.props.detail.currentMember)
     return (
       <div className="member-detail-view">
         <h2>Detail View</h2>

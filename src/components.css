@@ -155,12 +155,12 @@
 }
 
 .todo-card {
-  background-color: #878787;
-  display: inline-block;;
-  /* flex-flow: row; */
+  background-color: #477dcd;
+  text-align: center;
+  display: inline-block;
   margin: 10px;
-  padding: 8px;
-  border: solid green 3px;
+  padding: 4px;
+  border-radius: 15px;
   min-width: 300px;
 
   min-height: 70px;
@@ -168,6 +168,18 @@
   overflow: auto;
   font-family: 'Source Sans Pro', sans-serif;
 
+}
+
+.todo-body {
+  min-height: 70px;
+  text-align: center;
+}
+
+.todo-elements-1 {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 4px;
 }
 
 .todo-delete {

@@ -35,7 +35,6 @@ export const getTodos = () => {
 
 //fetch todos from a community:
 export const getCommunityTodos = id => {
-  console.log(id)
   return dispatch => {
     let config = {
       method: "Get",
@@ -45,7 +44,6 @@ export const getCommunityTodos = id => {
       }
     }
     fetch(`http://localhost:3000/api/v1/communities/${id}/gettodos`, config).then(r=>r.json()).then(p=>{
-      console.log(p)
       dispatch(setCommunityTodos(p))
 
     })
@@ -86,8 +84,6 @@ export const deleteTodo = obj => {
       body: JSON.stringify(obj.todo)
     }
     fetch(`http://localhost:3000/api/v1/todos/${obj.id}`, config).then(r=>r.json()).then(p=>{
-      console.log(p)
-      let payload = {todos: p}
       dispatch(todosAfterDelete(obj.id))
     })
   }

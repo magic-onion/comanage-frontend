@@ -12,7 +12,7 @@ import MemberCommunityContainer from './components/MemberView/containers/MemberC
 import Logout from './components/Logout'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import icon from './assets/Icon-pngs/comanage-logo.png'
+// import icon from './assets/Icon-pngs/comanage-logo.png'
 
 import { getUser, logOut } from './actions/user'
 import 'bootstrap/dist/css/bootstrap.css'

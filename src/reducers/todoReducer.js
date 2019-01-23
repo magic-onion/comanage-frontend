@@ -7,7 +7,6 @@ function todoReducer(state = init, action) {
   switch (action.type) {
 
     case "GET_COMMUNITY_TODOS":
-    console.log('setting state')
     let communityTodoState = {...state, todos: action.payload.todos}
     return communityTodoState
     case "ADD_SINGLE_TODO":
