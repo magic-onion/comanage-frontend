@@ -95,6 +95,18 @@
   border: groove #7d3816 4px;
 }
 
+.friend-card:hover {
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #fabb79;
+  min-width: 150px;
+  min-height: 200px;
+  margin: 15px;
+  padding: 10px;
+  border: groove #7d3816 4px;
+}
+
 .member-friends-container {
   border: groove #c73add 8px;
   border-radius: 10px;

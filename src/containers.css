@@ -1,11 +1,13 @@
 /* CONTAINERS */
 
 .todo-container {
+  min-width: 320px;
+  display: grid;
+  border-radius: 10px;
   margin: 10px;
   padding: 10px;
-  border: solid 1px red;
+  border: groove 5px orange;
   max-width: 350px;
-  float: right;
   margin-right: 50em;
 }
 

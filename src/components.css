@@ -26,22 +26,23 @@
 }
 
 .todo-likes {
-  background-color: #c87cf4;
-  border: solid blue 2px;
-  margin: 5px;
+  background-color: #b596c7;
+  border: solid #dbaef4 2px;
+  margin: 10px;
   padding: 5px;
 }
 
 .todo-boos {
   background-color: #f7aa36;
-  border: solid red 2px;
-  margin: 5px;
+  border: solid #c97a8a 2px;
+  margin: 10px;
   padding: 5px;
 }
 
 .todo-card {
+  background-color: #878787;
   margin: 10px;
-  padding: 10px;
+  padding: 20px;
   border: solid green 3px;
   min-width: 200px;
   min-height: 90px;

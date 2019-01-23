@@ -28,8 +28,8 @@ export const createCommunity = (communityObj) => {
     }
     fetch('http://localhost:3000/api/v1/communities', config).then(r=>r.json()).then(p => {
       console.log(p)
-      // dispatch(getCommunity(p.community.id))
-      // dispatch(selectCommunity(p.community.id))
+      dispatch(getCommunity(p.community.id))
+      dispatch(selectCommunity(p.community.id))
 
     })
   }
