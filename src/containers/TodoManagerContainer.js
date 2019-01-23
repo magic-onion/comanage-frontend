@@ -1,9 +1,9 @@
 import React from 'react'
-import TodoCard from '../components/TodoCard'
+import TodoManagerCard from '../components/TodoManagerCard'
 import { connect } from 'react-redux'
 import { getCommunityTodos } from '../actions/todo'
 
-class TodoContainer extends React.Component {
+class TodoManagerContainer extends React.Component {
 
 
   render() {
@@ -11,7 +11,7 @@ class TodoContainer extends React.Component {
     return (
       <div className="todo-container">
       TodoContainer
-      {this.props.todo.todos.map((todo, i) => <TodoCard key={i} todo={todo}/>)}
+      {this.props.todo.todos.map((todo, i) => <TodoManagerCard key={i} todo={todo}/>)}
       </div>
     )
   }
@@ -31,4 +31,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TodoContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(TodoManagerContainer)

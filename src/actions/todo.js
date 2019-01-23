@@ -35,6 +35,7 @@ export const getTodos = () => {
 
 //fetch todos from a community:
 export const getCommunityTodos = id => {
+  console.log(id)
   return dispatch => {
     let config = {
       method: "Get",
@@ -55,14 +56,7 @@ export const setCommunityTodos = todos => ({type: "GET_COMMUNITY_TODOS", payload
 
 export const updateTodoReactions = obj => {
   return (dispatch) => {
-    let updateBody = {
-      todo: {
-        community_id: obj.communityId,
-        user_id: obj.userId,
-        action: obj.action
-
-      }
-    }
+    let updateBody = {todo: obj.todo}
     let config = {
       method: "PATCH",
       headers: {
@@ -72,7 +66,8 @@ export const updateTodoReactions = obj => {
       body: JSON.stringify(updateBody)
     }
     fetch(`http://localhost:3000/api/v1/todos/${obj.id}/`, config).then(r=>r.json()).then(p=> {
-
+        let payload = {todos: p}
+      dispatch(setCommunityTodos(payload))
     })
 
 
