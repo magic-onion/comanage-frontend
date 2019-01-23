@@ -15,6 +15,11 @@ function todoReducer(state = init, action) {
     newTodoArray.splice(0,0, action.payload)
     let addSingleTodoState = {...state, todos: newTodoArray}
     return addSingleTodoState
+    case "AFTER_DELETE":
+    let afterDeleteTodos = state.todos.filter(todo => todo.id !== action.payload)
+    console.log(afterDeleteTodos)
+    let afterDeleteState = {...state, todos: afterDeleteTodos}
+    return afterDeleteState
     case "LOGOUT":
     let logoutState = init
     return logoutState

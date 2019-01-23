@@ -27,6 +27,9 @@ class CommunityContainer extends React.Component {
   }
 
   toggleTodos = event => {
+    if (!this.state.showTodos){
+      this.props.getCommunityTodos(this.props.community.id)
+    }
     let showTodos = !this.state.showTodos
     this.setState({showTodos})
   }
@@ -39,7 +42,7 @@ class CommunityContainer extends React.Component {
       <div className="community-container">
         <h4>The {name} Community</h4>
         <button className="community-container-view-toggle" onClick={this.toggleView}>{this.state.showRoom ? "Members" : "Rooms"}</button>
-        <button className="community-container-view-toggle" onClick={this.toggleTodos}>{this.state.showTodos ? "Hide Todos" : "Show Todos"}</button>
+        {this.props.todo.todos.length ? <button className="community-container-view-toggle" onClick={this.toggleTodos}>{this.state.showTodos ? "Hide Todos" : "Show Todos"}</button> : null }
         {this.state.showRoom ? <RoomContainer /> : null}
         {!this.state.showRoom ? <MemberContainer /> : null }
         {this.state.showTodos? <TodoManagerContainer/> : null }
@@ -48,7 +51,7 @@ class CommunityContainer extends React.Component {
   }
 }
 
-const mapStateToProps = ({user, community}) => ({ user, community})
+const mapStateToProps = ({user, community, todo}) => ({ user, community, todo})
 
 const mapDispatchToProps = dispatch => {
   return {

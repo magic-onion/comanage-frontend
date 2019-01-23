@@ -10,8 +10,7 @@ class TodoManagerContainer extends React.Component {
     console.log(this.props)
     return (
       <div className="todo-container">
-      TodoContainer
-      {this.props.todo.todos.map((todo, i) => <TodoManagerCard key={i} todo={todo}/>)}
+      {this.props.todo.todos.length ? this.props.todo.todos.map((todo, i) => <TodoManagerCard key={i} todo={todo}/>) : "No Todos yet!"}
       </div>
     )
   }

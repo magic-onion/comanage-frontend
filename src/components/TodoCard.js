@@ -6,16 +6,6 @@ import { updateTodoReactions } from '../actions/todo'
 
 class TodoCard extends React.Component {
 
-  // static getDerivedStateFromProps(props, state) {
-  // if (props.todo.todos !== undefined ) {
-  //   let todoInQuestion = props.todo.todos.filter(todo => todo.id === state.id)
-  //   if (state.likes !== todoInQuestion.likes || state.booss !== todoInQuestion.boos) {
-  //     return {...state, likes: todoInQuestion.likes, boos: todoInQuestion.boos, id: todoInQuestion.id}
-  //   }
-  // }
-  //   return state
-  // }
-
 
 
 
@@ -23,8 +13,8 @@ class TodoCard extends React.Component {
   render() {
     return (
       <div onMouseLeave={this.handleSubmission} className="todo-card">
-      <p>{this.props.todo.user.status} <strong>{this.props.todo.user.username}</strong> <em>posted {moment(Date.parse(this.props.todo.created_at)).fromNow()}</em></p>
-        <h2>{this.props.todo.body}</h2>
+      <p><strong>{this.props.todo.user.username}</strong> <em>posted {moment(Date.parse(this.props.todo.created_at)).fromNow()}</em></p>
+        <h6><em>{this.props.todo.body}</em></h6>
         <Reactions todo={this.props.todo}/>
 
       </div>

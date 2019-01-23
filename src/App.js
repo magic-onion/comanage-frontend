@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 // import TodoMaker from './components/TodoMaker'
+import Bgvid from './bgvid'
 import CommunityMaker from './components/CommunityMaker'
 import CommunitiesContainer from './containers/CommunitiesContainer'
 import CommunityContainer from './containers/CommunityContainer'
@@ -69,8 +70,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <img src={icon} alt={icon}></img>
         {this.auth}
+        <Bgvid/>
       </div>
     );
   }
@@ -106,6 +107,7 @@ export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
 
 
 
+// <img src={icon} alt={icon}></img>
 
 
 

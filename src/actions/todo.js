@@ -52,6 +52,7 @@ export const getCommunityTodos = id => {
   }
 }
 
+
 export const setCommunityTodos = todos => ({type: "GET_COMMUNITY_TODOS", payload: todos})
 
 export const updateTodoReactions = obj => {
@@ -73,3 +74,23 @@ export const updateTodoReactions = obj => {
 
   }
 }
+
+export const deleteTodo = obj => {
+  return dispatch => {
+    let config = {
+      method: "DELETE",
+      headers: {
+        "Content-type": "application/json",
+        "Authorization": `Bearer ${localStorage.getItem('token')}`
+      },
+      body: JSON.stringify(obj.todo)
+    }
+    fetch(`http://localhost:3000/api/v1/todos/${obj.id}`, config).then(r=>r.json()).then(p=>{
+      console.log(p)
+      let payload = {todos: p}
+      dispatch(todosAfterDelete(obj.id))
+    })
+  }
+}
+
+export const todosAfterDelete = id => ({type: "AFTER_DELETE", payload: id})
