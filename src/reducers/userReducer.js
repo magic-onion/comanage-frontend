@@ -5,8 +5,8 @@ const init = {
   status: "",
   isLoggedIn: false,
   communities: [],
-  selectedCommunity: null
-
+  selectedCommunity: null,
+  error: ""
 }
 
 
@@ -30,6 +30,13 @@ function userReducer(state = init, action) {
     // let firstCommunityState = {...state, communities: [action.payload], selectedCommunity: action.payload.id}
     // return firstCommunityState
 
+    case "THROW_ERROR":
+    console.log(action.payload)
+    let errorState = {...state, error: action.payload}
+    return errorState
+    case "CLEAR_ERROR":
+    let errorFree = {...state, error: ""}
+    return errorFree
     case "LOGOUT":
     let logoutState = init
     return logoutState

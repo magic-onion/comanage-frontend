@@ -3,6 +3,7 @@ import { setMemberViewCommunity } from './member'
 //creates an instance of login
 export const loginUser = (userObj) => {
   return (dispatch) => {
+    let error
     let userBody = {
       user: {
         username: userObj.username,
@@ -16,15 +17,26 @@ export const loginUser = (userObj) => {
       },
       body: JSON.stringify(userBody)
     }
-      fetch('http://localhost:3000/api/v1/login', config).then(r=>r.json()).then(p=>{
+      fetch('http://localhost:3000/api/v1/login', config).then(r=>{
+        if (r.ok) {
+          return r.json()
+        }
+        else {
+          error=r.statusText
+          console.log(r)
+          throw error
+        }
+      }).then(p=>{
         localStorage.setItem("token", p.jwt)
         dispatch(getUser(userBody))
         if (p.user.status === "member" ){
           dispatch(getMemberData(p.user.id))
         }
-    })
+    }).catch(error => dispatch(throwError(error)))
   }
 }
+
+export const throwError = error => ({type: "THROW_ERROR", payload: error})
 
 export const getMemberData = id => {
   return (dispatch) => {
@@ -90,3 +102,5 @@ export const getUser = () => {
 export const setUserData = (userData) => ({type: 'SET_USER_DATA', payload: {user: userData.user, communities: userData.communities}})
 
 export const logOut = () => ({type: "LOGOUT"})
+
+export const clearError = () => ({type:"CLEAR_ERROR"})

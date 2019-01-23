@@ -16,9 +16,9 @@ class FriendCard extends React.Component {
   render() {
     return (
       <div id={this.props.member.id} onClick={this.showFriendDetails} className="friend-card">
-        <h2 id={this.props.member.id} onClick={this.showFriendDetails}>{this.props.member.username}</h2>
-        <h3 id={this.props.member.id} onClick={this.showFriendDetails}>{this.props.member.bio}</h3>
-        <img alt={this.props.member.name} id={this.props.member.id} onClick={this.showFriendDetails} src={require(`../../../assets/Icon-pngs/${this.props.member.image}.png`)}></img>
+        <h2 id={this.props.member.id}>{this.props.member.username}</h2>
+        <h3 id={this.props.member.id}>{this.props.member.bio}</h3>
+        <img alt={this.props.member.name} id={this.props.member.id} src={require(`../../../assets/Icon-pngs/${this.props.member.image}.png`)}></img>
       </div>
     )
   }
