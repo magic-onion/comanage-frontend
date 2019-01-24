@@ -15,6 +15,7 @@ class MemberCommunityContainer extends React.Component {
     let toggleTodos = !this.state.toggleTodos
     if (this.state.toggleTodos) {
       this.setState({toggleTodos})
+      this.props.getCommunityTodos(this.props.community.id)
     }
     else {
       this.props.getCommunityTodos(this.props.community.id)
@@ -30,7 +31,7 @@ class MemberCommunityContainer extends React.Component {
       <div className="member-community-container">
         <MemberRoomContainer/>
         <MemberFriendsContainer/>
-        <button onClick={this.toggleTodos}> show </button>
+        <button className="todo-toggle" onClick={this.toggleTodos}> show </button>
         { this.state.toggleTodos ? <TodoContainer/> : null}
       </div>
     )

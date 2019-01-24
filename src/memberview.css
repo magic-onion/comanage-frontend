@@ -1,12 +1,49 @@
 /* MEMBER VIEW CLASSES */
 
+/* TO DO SHOW BUTTON TOGGLE */
+.todo-toggle {
+  position: fixed;
+  background-color: #8fccf2;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #c9380e;
+  font-size: 110%;
+  border-radius: 5px;
+  border: solid #011c61 3px;
+  box-shadow: 2px 4px #757575;
+  outline: none;
+}
+
+.todo-toggle:hover {
+  position: fixed;
+  background-color: #e2f4ff;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #c9380e;
+  font-size: 110%;
+  border-radius: 5px;
+  border: solid #011c61 3px;
+  box-shadow: 2px 4px #757575;
+  outline: none;
+}
+.todo-toggle:active {
+  position: fixed;
+  background-color: #ff7e7e;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #c9380e;
+  font-size: 110%;
+  border-radius: 5px;
+  border: solid #011c61 3px;
+  box-shadow: 2px 4px #757575;
+  outline: none;
+}
+
+/* PASSWORD CHANGER */
 .member-password-changer {
   margin-left: 34%;
   margin-top: 10em;
   font-family: 'Source Sans Pro', sans-serif;
   border-radius: 8px;
   box-shadow: 4px 8px #6b6b6b;
-  border: groove #f07ad9 8px;
+  border: groove #710000 8px;
   display: inline-table;
   padding: 20px;
   max-width: 600px;
@@ -45,6 +82,9 @@
 }
 
 
+/* MEMBERVIEW CARDS */
+
+/* ROOM CARDS */
 .member-room-card {
   background-color: #e98c2a;
   text-align: center;
@@ -59,16 +99,13 @@
   background-color: #dfa86d;
   text-align: center;
   font-family: 'Source Sans Pro', sans-serif;
-  width: 300px;
-  height: 350px;
-  max-height: 350px;
   padding: 15px;
   margin: 10px;
   border: groove #833026 5px;
   border-radius: 10px;
-  max-width: 300px;
-  min-height: 150px;
 }
+
+/* CARDS FOR FELLOW MEMBERS */
 
 .friend-card {
   font-family: 'Source Sans Pro', sans-serif;
@@ -95,55 +132,119 @@
 }
 
 
-.todo-member-container {
-  background-color: rgb(62,114,198);
-
-  min-width: 450px;
-  max-width: 450px;
-  max-height: 650px;
-  display: inline-block;
-  border-radius: 10px;
-  margin: 15px;
-  margin-left: 18px;
-  margin-top: 0px;
-  padding: 10px;
-  border: groove 5px orange;
-  overflow: auto;
-}
 
 .todo-member-card {
+  font-family: 'Source Sans Pro', sans-serif;
   color: #d2cc7a;
   background-color: #7a0000;
-  text-align: center;
-  display: inline-block;
+  display: grid;
+  float: left;
   margin: 10px;
   padding: 4px;
+  width: 360px;
+  text-align: center;
   border-radius: 15px;
-  min-width: 300px;
-  min-height: 650px;
-  max-height: 650px;
-  max-width: 400px;
   overflow: auto;
-  font-family: 'Source Sans Pro', sans-serif;
+}
 
+.member-view-member-detail-window {
+  display: inline-block;
+  float: right;
+  border: solid red 1px;
+  /* margin-top: 8em; */
+  margin: 10px 20px 30px 40px;
+  max-width: 400px;
+}
+
+
+.todo-maker {
+  text-align: center;
+  border: groove goldenrod 5px;
+  width: 450px;
+  border-radius: 10px;
+  max-width: 350px;
+  padding: 20px;
+  margin: 15px;
+  margin-right: 17px;
+  display: flex;
+  flex-direction: column;
+}
+
+.todo-maker-input {
+  width: 280px;
+  border-radius: 5px;
+  background-color: #d2c5de;
+  margin: 10px;
+}
+
+.todo-maker-button {
+  font-family: 'Source Sans Pro', sans-serif;
+  outline: none;
+  background-color: #8fccf2;
+  color: #c9380e;
+  border-radius: 3px;
+  max-height: 35px;
+  margin: 10px;
+  margin-bottom: 0;
+  outline: none;
+  border: solid #011c61 3px;
+  box-shadow: 2px 4px #757575;
+}
+
+.todo-maker-button:hover {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #e2f4ff;
+  border-radius: 3px;
+  max-height: 35px;
+  margin: 10px;
+  margin-bottom: 0;
+  outline: none;
+  border: solid #011c61 3px;
+  box-shadow: 2px 4px #757575;
+}
+.todo-maker-button:active {
+  outline: none;
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #ff7e7e;
+  border-radius: 3px;
+  max-height: 35px;
+  margin: 10px;
+  margin-bottom: 0;
+  outline: none;
+  border: solid #011c61 3px;
+  box-shadow: 2px 4px #757575;
 }
 
 
 
+/* MAIN CONTAINERS */
+
+.todo-member-container {
+  background-color: rgb(62,114,198);
+  min-width: 420px;
+  max-width: 420px;
+  max-height: 800px;
+  display: inline-block;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 10px;
+  border: groove 8px #ff890e;
+  overflow: auto;
+}
 
 .member-room-container {
   font-family: 'Source Sans Pro', sans-serif;
   float: right;
-  display: inline-block;
-  flex-direction: column;
-  max-width: 300px;
-  min-height: 600px;
-  max-height: 600px;
-  border: groove #ee6323 6px;
-  border-radius: 10px;
-  padding: 15px;
-  margin: 30px;
   overflow: auto;
+  display: inline-block;
+  border: groove #09446a 8px;
+  background-color: goldenrod;
+  border-radius: 10px;
+  padding: 20px;
+  width: 420px;
+  min-height: 800px;
+  max-height: 800px;
+  margin: 20px;
 }
 
 .member-friends-container {
@@ -153,25 +254,122 @@
   background-color: goldenrod;
   border-radius: 10px;
   padding: 20px;
-  width: 400px;
-  min-height: 750px;
-  max-height: 750px;
+  width: 420px;
+  min-height: 800px;
+  max-height: 800px;
   margin: 20px;
 }
 
 .member-community-container {
   justify-content: center;
-  background-color: #969696;
-  width: 1600px;
+  background-color: #bbc2d2;
+  width: 1400px;
   height: 850px;
   display: inline-block;
   flex-direction: column;
   margin: 2em;
-  border: solid red 2px;
+  border: groove goldenrod 10px;
+  border-radius: 20px;
 }
 
-.member-view-member-detail-window {
-  display: inline-block;
-  float: right;
-  border: solid red 1px;
+
+
+
+
+
+
+
+/* scroll bars for member views */
+
+.member-friends-container::-webkit-scrollbar {
+  width: .2em;
+}
+
+.member-friends-container::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+.member-friends-container::-webkit-scrollbar-thumb {
+  background-color: #c80e75;
+  outline: 1px solid slategrey;
+}
+
+/*  */
+
+.member-room-container::-webkit-scrollbar {
+  width: .2em;
+}
+
+.member-room-container::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+.member-room-container::-webkit-scrollbar-thumb {
+  background-color: #c80e75;
+  outline: 1px solid slategrey;
+}
+
+/*  */
+
+.todo-member-container::-webkit-scrollbar {
+  width: .2em;
+}
+
+.todo-member-container::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+.todo-member-container::-webkit-scrollbar-thumb {
+  background-color: #c80e75;
+  outline: 1px solid slategrey;
+}
+
+
+.todo-likes {
+  background-color: #006fad;
+  border: solid #46006c 2px;
+  border-radius: 3px;
+  min-width: 80px;
+  margin: 10px;
+  padding: 5px;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #000;
+}
+
+.todo-likes:hover {
+  background-color: #84d2fe;
+  border: solid #46006c 2px;
+  border-radius: 3px;
+  min-width: 80px;
+  margin: 10px;
+  padding: 5px;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #000;
+}
+
+.todo-boos {
+  background-color: #a20000;
+  border: solid #3d1c04 2px;
+  border-radius: 3px;
+  min-width: 80px;
+  margin: 10px;
+  padding: 5px;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #000;
+}
+
+.todo-boos:hover {
+  background-color: #e76666;
+  border: solid #3d1c04 2px;
+  border-radius: 3px;
+  min-width: 80px;
+  margin: 10px;
+  padding: 5px;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #000;
+}
+
+.reactions {
+  display: flex;
+  justify-content: center;
 }

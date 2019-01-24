@@ -66,7 +66,8 @@ export const updateTodoReactions = obj => {
     }
     fetch(`http://localhost:3000/api/v1/todos/${obj.id}/`, config).then(r=>r.json()).then(p=> {
         let payload = {todos: p}
-      dispatch(setCommunityTodos(payload))
+        console.log(p)
+      // dispatch(setCommunityTodos(payload))
     })
 
 

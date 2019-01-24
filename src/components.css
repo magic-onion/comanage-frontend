@@ -25,20 +25,6 @@
   cursor: pointer;
 }
 
-.todo-likes {
-  background-color: #b596c7;
-  border: solid #dbaef4 2px;
-  margin: 10px;
-  padding: 5px;
-}
-
-.todo-boos {
-  background-color: #f7aa36;
-  border: solid #c97a8a 2px;
-  margin: 10px;
-  padding: 5px;
-}
-
 
 .room-card {
   font-family: 'Source Sans Pro', sans-serif;

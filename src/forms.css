@@ -78,14 +78,6 @@
   font-size: 16px;
 }
 
-.todo-maker {
-  border: groove goldenrod 10px;
-  border-radius: 10px;
-  max-width: 350px;
-  padding: 20px;
-  margin: 5px;
-}
-
 .assignment-form{
 padding: 5px;
 }

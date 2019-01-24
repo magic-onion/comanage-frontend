@@ -56,7 +56,7 @@ handleSubmission = event => {
 
   render() {
     return (
-      <div onMouseLeave={this.handleSubmission}>
+      <div className="reactions" onMouseLeave={this.handleSubmission}>
         <div onClick={this.handleLikes} className="todo-likes" id="like">
           <span id="like">Likes: {this.state.likes}</span>
         </div>

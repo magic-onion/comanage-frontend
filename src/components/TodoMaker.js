@@ -36,8 +36,8 @@ class TodoMaker extends React.Component {
       <div className="todo-maker">
         <h2>Create a New Task</h2>
         <form onSubmit={this.createTodo}>
-          <input onChange={this.editTask} name="taskBody" type="text" value={this.state.taskBody}/>
-          <button type="submit">Create Task</button>
+          <input className="todo-maker-input" onChange={this.editTask} name="taskBody" type="text" value={this.state.taskBody}/>
+          <button className="todo-maker-button" type="submit">Create Task</button>
         </form>
       </div>
     )
