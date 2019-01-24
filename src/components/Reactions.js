@@ -10,17 +10,16 @@ class Reactions extends React.Component {
     id: this.props.todo.id
   }
 
-  static getDerivedStateFromProps(props, state) {
-  if (props.todo.todos !== undefined ) {
-    let todoInQuestion = props.todo.todos.filter(todo => todo.id === state.id)
-    if (state.likes !== todoInQuestion.likes || state.booss !== todoInQuestion.boos) {
-      return {...state, likes: todoInQuestion.likes, boos: todoInQuestion.boos, id: todoInQuestion.id}
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.todo.id !== prevState.id) {
+      this.setState({
+        likes: this.props.todo.likes,
+        boos: this.props.todo.boos,
+        id: this.props.todo.id
+      })
     }
+    else return this.state
   }
-    return state
-  }
-
-
 
   handleLikes = event => {
     if (event.target.id === "like") {

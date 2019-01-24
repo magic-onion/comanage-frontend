@@ -10,7 +10,9 @@ export const createTodo = taskObj => {
     }
     fetch('http://localhost:3000/api/v1/todos', config).then(r=>r.json()).then(p=>{
       console.log(p)
+      let payload = {todos: p.todos}
       dispatch(newCommunityTodo(p))
+      dispatch(getCommunityTodos(taskObj.todo.community_id))
     })
   }
 }
