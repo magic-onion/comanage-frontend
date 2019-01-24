@@ -32,7 +32,7 @@ class NewMemberPasswordChanger extends React.Component {
 
       <form onSubmit={this.handleSubmit}>
         <input className="member-password-changer-input" name="username" onChange={this.handleChange} type="text" value={this.state.username}/>
-        <input className="member-password-changer-input" name="password" onChange={this.handleChange} type="text" value={this.state.password}/>
+        <input className="member-password-changer-input" name="password" onChange={this.handleChange} type="password" value={this.state.password}/>
         <button className="member-password-changer-button" type="submit">Thanks!</button>
       </form>
       </div>

@@ -9,6 +9,8 @@ import DetailView from './components/DetailView'
 import MemberDetailView from './components/MemberDetailView'
 import NewMemberPasswordChanger from './components/MemberView/NewMemberPasswordChanger'
 import MemberCommunityContainer from './components/MemberView/containers/MemberCommunityContainer'
+import MemberViewDetailViewer from './components/MemberView/components/MemberViewDetailViewer'
+import MemberRoomDetail from './components/MemberView/components/MemberRoomDetail'
 import Logout from './components/Logout'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
@@ -58,6 +60,8 @@ class App extends Component {
         <div>
           <Logout loggingOut={this.loggingOut}/>
           <MemberCommunityContainer/>
+          {this.props.memberView.toggled && this.props.memberView.memberIsSelected ? <MemberViewDetailViewer/> : null}
+          {this.props.memberView.toggled && this.props.memberView.roomIsSelected ? <MemberRoomDetail/> : null}
         </div>
       )
         default:
@@ -85,7 +89,8 @@ const mapStateToProps = state => {
     isLoggedIn: state.user.isLoggedIn,
     communities: state.user.communities,
     selectedCommunity: state.user.selectedCommunity,
-    detail: state.detail
+    detail: state.detail,
+    memberView: state.memberView
   }
 }
 

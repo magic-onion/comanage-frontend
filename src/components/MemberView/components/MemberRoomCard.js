@@ -23,9 +23,9 @@ class MemberRoomCard extends React.Component {
   render() {
     return (
       <div id={this.props.room.id} onClick={this.getRoomDetails} className="member-room-card">
-        <h1>{this.props.room.name}</h1>
-        <h3>Current Members: {this.roomAssignees.length}</h3>
-        <h2>Occupancy: {this.props.room.occupancy}</h2>
+        <h3>{this.props.room.name}</h3>
+        <h4>Current Members: {this.roomAssignees.length}</h4>
+        <h4>Occupancy: {this.props.room.occupancy}</h4>
       </div>
     )
   }

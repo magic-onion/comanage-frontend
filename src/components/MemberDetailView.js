@@ -56,17 +56,17 @@ class MemberDetailView extends React.Component {
       return (
         <div className="member-detail-view-details">
           { this.state.toggleEdit ?
-              <form onSubmit={this.memberEditSubmit}>
-                <input onChange={this.handleEditing} name="memberName" type="text" value={this.state.memberName}/>
-                <input onChange={this.handleEditing} name="memberBio" type="text" value={this.state.memberBio}/>
+              <form className="room-editor-form" onSubmit={this.memberEditSubmit}>
+                <input className="room-editor-input" onChange={this.handleEditing} name="memberName" type="text" value={this.state.memberName}/>
+                <input className="room-editor-input" onChange={this.handleEditing} name="memberBio" type="text" value={this.state.memberBio}/>
 
-                <button type="submit">Save</button>
+                <button className="room-creator-button" type="submit">Save</button>
                 </form>
             : null }
-          <button onClick={this.editMember}>Edit</button>
-          <h3>{this.props.detail.currentMember.username}</h3>
-          <h4>{this.props.detail.currentMember.bio}</h4>
-          <p>Currently Assigned To:</p>
+          <button className="member-creator-button" onClick={this.editMember}>Edit</button>
+          <h3 className="room-detail-element" >{this.props.detail.currentMember.username}</h3>
+          <h4 className="room-detail-element" >{this.props.detail.currentMember.bio}</h4>
+          <p className="room-detail-element" >Currently Assigned To:</p>
           {this.props.detail.rooms.map((room, i )=> <span key={i} className="rooms-in-member-detail">{room.name}</span> )}
 
         </div>
@@ -78,8 +78,8 @@ class MemberDetailView extends React.Component {
 
   render() {
     return (
-      <div className="member-detail-view">
-        <h2>Detail View</h2>
+      <div className="member-detail-views">
+
         {this.getMemberDetails()}
       </div>
     )

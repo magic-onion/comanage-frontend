@@ -43,29 +43,16 @@
   text-align: center;
   font-size: 16px;
 }
-.member-room-container {
-  font-family: 'Source Sans Pro', sans-serif;
-  border: groove #ee6323 6px;
-  border-radius: 10px;
-  padding: 15px;
-  float: left;
-  margin: 30px;
-  display: flex;
-}
+
 
 .member-room-card {
   background-color: #e98c2a;
   text-align: center;
   font-family: 'Source Sans Pro', sans-serif;
-  width: 300px;
-  height: 350px;
-  max-height: 350px;
   padding: 15px;
   margin: 10px;
   border: groove #833026 5px;
   border-radius: 10px;
-  max-width: 300px;
-  min-height: 150px;
 }
 
 .member-room-card:hover {
@@ -107,17 +94,84 @@
   border: groove #7d3816 4px;
 }
 
-.member-friends-container {
-  border: groove #c73add 8px;
-  border-radius: 10px;
+
+.todo-member-container {
+  background-color: rgb(62,114,198);
+
+  min-width: 450px;
+  max-width: 450px;
+  max-height: 650px;
   display: inline-block;
-  padding: 20px;
+  border-radius: 10px;
+  margin: 15px;
+  margin-left: 18px;
+  margin-top: 0px;
+  padding: 10px;
+  border: groove 5px orange;
+  overflow: auto;
+}
+
+.todo-member-card {
+  color: #d2cc7a;
+  background-color: #7a0000;
+  text-align: center;
+  display: inline-block;
+  margin: 10px;
+  padding: 4px;
+  border-radius: 15px;
+  min-width: 300px;
+  min-height: 650px;
+  max-height: 650px;
   max-width: 400px;
-  float: left;
+  overflow: auto;
+  font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+
+
+
+.member-room-container {
+  font-family: 'Source Sans Pro', sans-serif;
+  float: right;
+  display: inline-block;
+  flex-direction: column;
+  max-width: 300px;
+  min-height: 600px;
+  max-height: 600px;
+  border: groove #ee6323 6px;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 30px;
+  overflow: auto;
+}
+
+.member-friends-container {
+  overflow: auto;
+  display: inline-block;
+  border: groove #09446a 8px;
+  background-color: goldenrod;
+  border-radius: 10px;
+  padding: 20px;
+  width: 400px;
+  min-height: 750px;
+  max-height: 750px;
   margin: 20px;
 }
 
 .member-community-container {
-  max-width: 1200px;
+  justify-content: center;
+  background-color: #969696;
+  width: 1600px;
+  height: 850px;
+  display: inline-block;
+  flex-direction: column;
   margin: 2em;
+  border: solid red 2px;
+}
+
+.member-view-member-detail-window {
+  display: inline-block;
+  float: right;
+  border: solid red 1px;
 }

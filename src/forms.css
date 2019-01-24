@@ -79,7 +79,8 @@
 }
 
 .todo-maker {
-  border: solid salmon 2px;
+  border: groove goldenrod 10px;
+  border-radius: 10px;
   max-width: 350px;
   padding: 20px;
   margin: 5px;

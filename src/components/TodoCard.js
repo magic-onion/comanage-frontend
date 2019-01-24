@@ -12,7 +12,7 @@ class TodoCard extends React.Component {
 
   render() {
     return (
-      <div onMouseLeave={this.handleSubmission} className="todo-card">
+      <div onMouseLeave={this.handleSubmission} className="todo-member-card">
       <p><strong>{this.props.todo.user.username}</strong>posted {moment(Date.parse(this.props.todo.created_at)).fromNow()}</p>
         <h6><em>{this.props.todo.body}</em></h6>
         <Reactions todo={this.props.todo}/>

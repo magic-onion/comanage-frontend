@@ -2,9 +2,6 @@ import React from 'react'
 import MemberRoomContainer from './MemberRoomContainer'
 import MemberFriendsContainer from './MemberFriendsContainer'
 import TodoContainer from '../../../containers/TodoContainer'
-import MemberViewDetailViewer from '../components/MemberViewDetailViewer'
-import MemberRoomDetail from '../components/MemberRoomDetail'
-import TodoMaker from '../../TodoMaker'
 import { connect } from 'react-redux'
 import { getCommunityTodos } from '../../../actions/todo'
 
@@ -31,11 +28,8 @@ class MemberCommunityContainer extends React.Component {
     return (
 
       <div className="member-community-container">
-        <TodoMaker/>
         <MemberRoomContainer/>
         <MemberFriendsContainer/>
-        {this.props.memberView.toggled && this.props.memberView.memberIsSelected ? <MemberViewDetailViewer/> : null}
-        {this.props.memberView.toggled && this.props.memberView.roomIsSelected ? <MemberRoomDetail/> : null}
         <button onClick={this.toggleTodos}> show </button>
         { this.state.toggleTodos ? <TodoContainer/> : null}
       </div>

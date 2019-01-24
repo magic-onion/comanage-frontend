@@ -71,23 +71,34 @@
 
 .member-card {
   font-family: 'Source Sans Pro', sans-serif;
-  border: groove #696969 3px;
-  background-color: #9571bf;
-  border-radius: 8px;
-  padding: 10px;
   display: inline-block;
-  margin: 15px;
+  border: groove #696969 3px;
+  min-width: 200px;
+  max-width: 200px;
+  min-height: 450px;
+  max-height: 450px;
+  background-color: #eeeaea;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+  word-wrap: normal;
+  overflow: auto;
 }
 
 .member-card:hover {
-  font-family: 'Source Sans Pro', sans-serif;
-  border: groove #696969 3px;
   background-color: #d7c6eb;
-  border-radius: 8px;
-  padding: 10px;
+  font-family: 'Source Sans Pro', sans-serif;
   display: inline-block;
-  margin: 15px;
-  cursor: pointer;
+  border: groove #696969 3px;
+  min-width: 200px;
+  max-width: 200px;
+  min-height: 450px;
+  max-height: 450px;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+  word-wrap: normal;
+  overflow: auto;
 }
 
 .feed-item {
@@ -114,6 +125,7 @@
   float: left;
   background-color: #bebebe;
   highlight: none;
+  max-width: 100px;
 }
 
 .room-creator-button:hover {
@@ -154,8 +166,10 @@
   background-color: #d7c9da
 }
 
+/* background-color: #477dcd; */
 .todo-card {
-  background-color: #477dcd;
+  color: #d2cc7a;
+  background-color: #7a0000;
   text-align: center;
   display: inline-block;
   margin: 10px;
@@ -204,4 +218,37 @@
 .todo-card::-webkit-scrollbar-thumb {
   background-color: #c80e75;
   outline: 1px solid slategrey;
+}
+
+.room-detail-element {
+ margin-bottom: 5px;
+}
+
+.member-room-detail-card {
+  display: inline-block;
+  background-color: #696969;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  max-width: 300px;
+}
+
+.room-editor-form {
+  margin-top: 3em;
+  margin: 15px;
+  padding: 15px;
+}
+
+.room-editor-input {
+  min-width: 250px;
+  display: grid;
+  padding: 4px;
+  margin: 15px;
+  font-family: 'Source Sans Pro', sans-serif;
+  border-radius: 5px;
+  background-color: #d2c5de;
+}
+
+.room-editor-button {
+
 }

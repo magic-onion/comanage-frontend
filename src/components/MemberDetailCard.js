@@ -10,8 +10,8 @@ class MemberDetailCard extends React.Component {
     return (
 
       <div className="member-card">
-        <h1>{this.props.member.username}</h1>
-        <h6>"{this.props.member.bio}"</h6>
+        <h1 className="room-detail-element">{this.props.member.username}</h1>
+        <h6 className="room-detail-element">"{this.props.member.bio}"</h6>
       </div>
     )
   }
