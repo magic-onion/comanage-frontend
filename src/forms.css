@@ -3,9 +3,29 @@
   margin: 5px;
   margin-right: 20em;
   padding: 10px;
-  border: groove #991269 5px;
-  border-radius: 5px;
+  display: inline-block;
+  border: groove #991269 8px;
+  border-radius: 10px;
   float:right;
+  width: 300px;
+}
+
+.community-maker-input {
+width: 240px;
+background-color: #d2c5de;
+border-radius: 5px;
+box-shadow: 2px 4px #989898;
+}
+
+.community-maker-button {
+background-color: #156eb0;
+color: #a9eed4;
+font-family: 'Arimo', sans-serif;
+float: right;
+display: grid;
+margin-top: 30px;
+margin-bottom: 10px;
+border-radius: 10px;
 }
 
 .user-maker {
@@ -55,6 +75,7 @@
 }
 
 .user-maker-buttons {
+  font-family: 'Arimo', sans-serif;
   background-color: #156eb0;
   color: #a9eed4;
   border-radius: 30px;
@@ -98,4 +119,17 @@ padding: 5px;
 .assignment-option {
   background-color: blue;
 
+}
+
+.room-editor-button {
+  background-color: #dfdfdf;
+  color: green;
+  font-family: 'Hind', sans-serif;
+  border: solid #7a061e 2px;
+  border-radius: 5px;
+  float: left;
+  display: inline-block;
+  float: left;
+  cursor: pointer;
+  highlight: none;
 }

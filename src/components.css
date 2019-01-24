@@ -38,6 +38,7 @@
   border: solid red 1px;
   display: inline-block;
   padding: 10px;
+  overflow:auto;
 }
 .room-card:hover {
   font-family: 'Source Sans Pro', sans-serif;
@@ -52,6 +53,7 @@
   display: inline-block;
   padding: 10px;
   cursor: pointer;
+  overflow:auto;
 }
 
 
@@ -61,8 +63,8 @@
   border: groove #696969 3px;
   min-width: 200px;
   max-width: 200px;
-  min-height: 450px;
-  max-height: 450px;
+  min-height: 400px;
+  max-height: 400px;
   background-color: #eeeaea;
   border-radius: 8px;
   padding: 20px;
@@ -78,8 +80,8 @@
   border: groove #696969 3px;
   min-width: 200px;
   max-width: 200px;
-  min-height: 450px;
-  max-height: 450px;
+  min-height: 400px;
+  max-height: 400px;
   border-radius: 8px;
   padding: 20px;
   margin: 10px;
@@ -87,10 +89,6 @@
   overflow: auto;
 }
 
-.feed-item {
-  display: inline-block;
-  margin: 10px;
-}
 
 .logout-button {
   font-family: 'Hind', sans-serif;
@@ -112,6 +110,7 @@
   background-color: #bebebe;
   highlight: none;
   max-width: 100px;
+  max-height: 30px;
 }
 
 .room-creator-button:hover {
@@ -122,6 +121,7 @@
   background-color: #dfdfdf;
   cursor: pointer;
   highlight: none;
+
 }
 .room-creator-button:hover {
   font-family: 'Hind', sans-serif;
@@ -134,23 +134,6 @@
 }
 
 
-.feed-item {
-  font-family: 'Source Sans Pro', sans-serif;
-  border: solid #021c6b 4px;
-  padding: 6px 4px 6px 4px;
-  margin: 4px;
-  border-radius: 10px;
-  background-color: #eeeaea
-}
-
-.feed-item:hover {
-  font-family: 'Source Sans Pro', sans-serif;
-  border: solid #021c6b 4px;
-  padding: 8px;
-  margin: 8px;
-  border-radius: 10px;
-  background-color: #d7c9da
-}
 
 /* background-color: #477dcd; */
 .todo-card {
@@ -211,8 +194,10 @@
 }
 
 .member-room-detail-card {
+  font-family: 'Source Sans Pro', sans-serif;
   display: inline-block;
-  background-color: #696969;
+  border: groove goldenrod 4px;
+  background-color: #144c80;
   border-radius: 5px;
   padding: 10px;
   margin: 10px;
@@ -237,4 +222,28 @@
 
 .room-editor-button {
 
+}
+
+
+.feed-item {
+  background-color: #eeeaea;
+  font-family: 'Source Sans Pro', sans-serif;
+  border: solid #021c6b 4px;
+  padding: 6px 4px 6px 4px;
+  margin: 4px;
+  border-radius: 10px;
+  display: inline-block;
+  min-width: 60px;
+  max-height: 40px;
+}
+
+.feed-item:hover {
+  background-color: #d7c9da;
+  font-family: 'Source Sans Pro', sans-serif;
+  border: solid #021c6b 4px;
+  padding: 6px 4px 6px 4px;
+  margin: 4px;
+  border-radius: 10px;
+  min-width: 60px;
+  max-height: 40px;
 }

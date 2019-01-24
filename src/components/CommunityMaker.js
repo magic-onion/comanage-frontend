@@ -30,12 +30,12 @@ class CommunityMaker extends React.Component {
     return (
       <form className="community-maker" onSubmit={this.handleSubmit} >
         <p>Community Name</p>
-        <input onChange={this.handleChange} name="name" type="text" placeholder="Community Name" value={this.state.name}/>
+        <input className="community-maker-input" onChange={this.handleChange} name="name" type="text" placeholder="Community Name" value={this.state.name}/>
           <p>roomamount</p>
-        <input onChange={this.handleChange} name="roomamount" type="number" placeholder="Rooms" value={this.state.roomamount}/>
+        <input className="community-maker-input" onChange={this.handleChange} name="roomamount" type="number" placeholder="Rooms" value={this.state.roomamount}/>
           <p>memberamount</p>
-        <input onChange={this.handleChange} name="memberamount" type="number" placeholder="Members" value={this.state.memberamount}/>
-        <button type="submit">Make the Community</button>
+        <input className="community-maker-input" onChange={this.handleChange} name="memberamount" type="number" placeholder="Members" value={this.state.memberamount}/>
+        <button className="community-maker-button" type="submit">Make the Community</button>
       </form>
     )
   }

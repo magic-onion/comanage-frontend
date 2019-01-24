@@ -1,4 +1,5 @@
 import React from 'react'
+import FriendCard from '../components/FriendCard'
 import { connect } from 'react-redux'
 
 class MemberRoomDetail extends React.Component {
@@ -9,7 +10,7 @@ class MemberRoomDetail extends React.Component {
         <div className="member-room-detail">
           <h1>{this.props.memberView.currentRoom.name}</h1>
           <p>currently assigned:</p>
-          {this.props.memberView.members.map((member, i) => <p key={i}>{member.username}</p>)}
+          {this.props.memberView.members.map((member, i) => <FriendCard member={member} key={i}/>)}
         </div>
       )
     }

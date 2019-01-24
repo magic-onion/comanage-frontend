@@ -50,14 +50,14 @@ class DetailView extends React.Component {
     if (this.props) {
       return (
         <div className="room-details">
-          <button className="room-creator-button" onClick={this.editRoom}>Edit Room</button>
+          <button className="room-editor-button" onClick={this.editRoom}>Edit Room</button>
           {this.state.toggleRommEditPane ?
             <form className="room-editor-form" onSubmit={this.roomEditSubmit}>
               <input className="room-editor-input" onChange={this.handleEditing} type="text" name="roomName" value={this.state.roomName}/>
               <input  className="room-editor-input" onChange={this.handleEditing} type="number" name ="roomOccupancy" value={this.state.roomOccupancy}/>
               <button className="room-creator-button" type="submit">save</button>
             </form> : null }
-          <h3>{this.props.detail.currentRoom.name}</h3>
+          <h3 className="room-details-h3">{this.props.detail.currentRoom.name}</h3>
           <h4>Occupancy Limit: {this.props.detail.currentRoom.occupancy}</h4>
           <h5>current assignees:</h5>
           { this.props.detail.members.length ? this.props.detail.members.map((member, i) => <MemberDetailViewCard member={member} rooms={this.props.community.rooms} key={i}/>) : "None!" }

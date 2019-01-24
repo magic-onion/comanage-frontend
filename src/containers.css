@@ -124,18 +124,9 @@ h2 {
   background-color: #dfdfdf;
   cursor: pointer;
 }
-outline: none;
 
-.room-detail-container {
-  background-color: purple;
-  border-radius: 10px;
-  border: 4px ridge grey;
-  padding: 20px;
-  margin: 20px;
-  float: right;
-}
 
-.room-details {
+/* .room-detail-container {
   color: #ed7e18;
   background-color: rgb(62,114,198);
   display: inline-block;
@@ -145,6 +136,22 @@ outline: none;
   padding: 20px;
   margin-top: 4em;
   margin-right: 13em;;
+  float: right;
+} */
+
+.room-details-h3 {
+  margin: 50px;
+}
+.room-details {
+  color: #ed7e18;
+  background-color: rgb(62,114,198);
+  display: inline-block;
+  border-radius: 10px;
+  max-width: 450px;
+  border: 4px ridge grey;
+  padding: 20px;
+  margin-top: 4em;
+  margin-right: 12em;;
   float: right;
 }
 
@@ -158,7 +165,7 @@ outline: none;
   border: 4px ridge grey;
   padding: 20px;
   margin-top: 4em;
-  margin-right: 13em;;
+  margin-right: 12em;;
   float: right;
 }
 
@@ -257,6 +264,19 @@ outline: none;
   background-color: #c80e75;
   outline: 1px solid slategrey;
 }
+.room-card::-webkit-scrollbar {
+  width: .2em;
+}
+
+.room-card::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+.room-card::-webkit-scrollbar-thumb {
+  background-color: #c80e75;
+  outline: 1px solid slategrey;
+}
+
 
 
 .member-detail-view-details {
@@ -287,6 +307,7 @@ outline: none;
   highlight: none;
   display: grid;
   max-width: 100px;
+    border: solid #7a061e 2px;
 }
 
 .member-creator-button:hover {
@@ -297,13 +318,5 @@ outline: none;
   background-color: #dfdfdf;
   cursor: pointer;
   highlight: none;
-}
-.member-creator-button:hover {
-  font-family: 'Hind', sans-serif;
-  border-radius: 5px;
-  color: green;
-  float: left;
-  background-color: #dfdfdf;
-  cursor: pointer;
-  highlight: none;
+    border: solid #7a061e 2px;
 }

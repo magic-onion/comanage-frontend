@@ -22,7 +22,7 @@ class RoomCard extends React.Component {
     const {props: {room}} = this
     return (
       <div onClick={this.handleDetails} className="room-card">
-        <span><h3>{room.name}</h3></span>
+        <span><h4>{room.name}</h4></span>
         {this.roomAssignees ? <h4>Current Members: {this.roomAssignees.length}</h4> : <p>No assigned Members</p>}
         <h5>Occupancy: {room.occupancy}</h5>
       </div>
