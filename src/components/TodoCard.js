@@ -9,7 +9,6 @@ class TodoCard extends React.Component {
 
 
 
-
   render() {
     return (
       <div onMouseLeave={this.handleSubmission} className="todo-member-card">

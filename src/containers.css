@@ -21,6 +21,7 @@
   border-radius: 20px;
   border: ridge #6985a6 10px;
   margin: 10px;
+  margin-left: 20px;
   padding: 20px;
   display: inline-block;
   max-width: 1200px;
@@ -83,6 +84,7 @@ h2 {
 
 .room-container-title {
   margin-top: 1em;
+  color: #ebe3be;
 }
 /* DETAIL CONTAINERS */
 .detail-view {

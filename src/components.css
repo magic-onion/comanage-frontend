@@ -92,14 +92,28 @@
 
 .logout-button {
   font-family: 'Hind', sans-serif;
-  color: #370081;
+  color: #ddd;
   position: absolute;
   top: 20px;
   right: 10px;
   min-width: 100px;
   padding: 3px;
   border-radius: 8px;
-  background-color: blue#d1d1d2;
+  background-color: #2d81be;
+  box-shadow: 2px 4px #424242;
+}
+
+.logout-button:active {
+  font-family: 'Hind', sans-serif;
+  color: #ddd;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  min-width: 100px;
+  padding: 3px;
+  border-radius: 8px;
+  background-color: #dd6a00;
+  box-shadow: 2px 4px #424242;
 }
 
 .room-creator-button {

@@ -25,18 +25,16 @@ function userReducer(state = init, action) {
     case "SELECT_COMMUNITY":
     let selectedState = {...state, selectedCommunity: action.payload}
     return selectedState
-    //
-    // case "MAKE_FIRST_COMMUNITY":
-    // let firstCommunityState = {...state, communities: [action.payload], selectedCommunity: action.payload.id}
-    // return firstCommunityState
+
 
     case "THROW_ERROR":
-    console.log(action.payload)
     let errorState = {...state, error: action.payload}
     return errorState
+
     case "CLEAR_ERROR":
     let errorFree = {...state, error: ""}
     return errorFree
+    
     case "LOGOUT":
     let logoutState = init
     return logoutState
