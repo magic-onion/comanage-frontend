@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import TodoMaker from './components/TodoMaker'
 import Bgvid from './bgvid'
 import CommunityMaker from './components/CommunityMaker'
 import CommunitiesContainer from './containers/CommunitiesContainer'
@@ -13,9 +12,6 @@ import MemberViewDetailViewer from './components/MemberView/components/MemberVie
 import MemberRoomDetail from './components/MemberView/components/MemberRoomDetail'
 import Logout from './components/Logout'
 import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom'
-// import icon from './assets/Icon-pngs/comanage-logo.png'
-
 import { getUser, logOut } from './actions/user'
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css';
@@ -101,7 +97,7 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
+export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 // import NavigationContainer from './containers/NavigationContainer'
 // import MemberContainer from './containers/memberContainer'

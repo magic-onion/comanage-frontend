@@ -9,8 +9,6 @@ export const createTodo = taskObj => {
       body: JSON.stringify(taskObj)
     }
     fetch('http://localhost:3000/api/v1/todos', config).then(r=>r.json()).then(p=>{
-      console.log(p)
-      let payload = {todos: p.todos}
       dispatch(newCommunityTodo(p))
       dispatch(getCommunityTodos(taskObj.todo.community_id))
     })
@@ -30,7 +28,6 @@ export const getTodos = () => {
       }
     }
     fetch('http://localhost:3000/api/v1/todos', config).then(r=>r.json()).then(p=>{
-      console.log(p)
     })
   }
 }
@@ -69,7 +66,7 @@ export const updateTodoReactions = obj => {
     fetch(`http://localhost:3000/api/v1/todos/${obj.id}/`, config).then(r=>r.json()).then(p=> {
         let payload = {todos: p}
         console.log(p)
-      // dispatch(setCommunityTodos(payload))
+      dispatch(setCommunityTodos(payload))
     })
 
 

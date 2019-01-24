@@ -31,7 +31,6 @@ export const memberEditSubmit = (memberObj, communityId) => {
       body: JSON.stringify(memberObj)
     }
     fetch(`http://localhost:3000/api/v1/users/${memberObj.user.id}`, config).then(r=>r.json()).then(p => {
-      console.log(p)
       dispatch(getMemberDetails(p.user.id))
     }).then(p => {
       dispatch(getCommunity(communityId))

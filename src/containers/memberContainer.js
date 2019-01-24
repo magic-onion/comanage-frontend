@@ -26,6 +26,7 @@ class MemberContainer extends React.Component {
     let memberBody = {
       user: {
         username: this.state.name,
+        bio: this.state.bio,
         communityId: this.props.community.id
       }
     }
@@ -35,10 +36,10 @@ class MemberContainer extends React.Component {
 
   get createMemberForm() {
     return (
-        <form onSubmit={this.createMember}>
-          <input onChange={this.newMemberInput} type="text" name="name" value={this.state.name} />
-          <input onChange={this.newMemberInput} type="text" name="bio" value={this.state.bio}/>
-          <button>create</button>
+        <form className="member-creator-form" onSubmit={this.createMember}>
+          <input className="member-creator-input" onChange={this.newMemberInput} type="text" name="name" value={this.state.name} />
+          <input className="member-creator-input" onChange={this.newMemberInput} type="text" name="bio" value={this.state.bio}/>
+          <button className="new-member-creator-button" >create</button>
         </form>
     )
   }

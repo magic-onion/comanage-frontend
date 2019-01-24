@@ -12,8 +12,8 @@
 
 .community-maker-input {
 width: 240px;
-background-color: #d2c5de;
 border-radius: 5px;
+background-color: #d2c5de;
 box-shadow: 2px 4px #989898;
 }
 
@@ -130,6 +130,35 @@ padding: 5px;
   float: left;
   display: inline-block;
   float: left;
+  cursor: pointer;
+  highlight: none;
+}
+
+.member-creator-form {
+  display: flex;
+  justify-content: center;
+}
+
+.member-creator-input {
+padding: 5px;
+font-family: 'Hind', sans-serif;
+margin-left: 10px;
+margin-right: 10px;
+border-radius: 10px;
+background-color: #d2c5de;
+box-shadow: 2px 4px #989898;
+}
+
+.new-member-creator-button {
+  background-color: #dfdfdf;
+  color: green;
+  font-family: 'Hind', sans-serif;
+  border: solid #7a061e 2px;
+  border-radius: 5px;
+  float: left;
+  display: inline-block;
+  float: right;
+  margin-left: 10px;
   cursor: pointer;
   highlight: none;
 }

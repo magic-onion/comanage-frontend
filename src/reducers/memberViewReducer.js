@@ -44,7 +44,7 @@ function memberViewReducer(state=init, action) {
     }
 
 
-
+    break;
     case "SET_MEMBERVIEW_ROOM_DETAIL":
 
     if (action.payload.room.id !== state.currentRoom.id && state.toggled) {
@@ -63,7 +63,7 @@ function memberViewReducer(state=init, action) {
       let memberViewRoomState = {...state, toggled: true, memberIsSelected: false, roomIsSelected: true, currentRoom: action.payload.room, members: action.payload.members}
       return memberViewRoomState
     }
-
+    break;
     default:
     return state;
   }
