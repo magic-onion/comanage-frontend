@@ -26,14 +26,15 @@ class RoomContainer extends React.Component {
       }
     }
     this.props.createNewroom(roomBody)
+    this.setState({toggleCreateForm: false, name: init.name, occupancy: init.occupancy})
   }
 
   get createNewRoomForm() {
     return (
-      <form onSubmit={this.createRoom}>
-        <input onChange={this.roomInput} name="name" type="text" value={this.state.name}/>
-        <input onChange={this.roomInput} name="occupancy" type="number" value={this.state.occupancy}/>
-        <button type="submit">Save</button>
+      <form className="member-creator-form" onSubmit={this.createRoom}>
+        <input className="member-creator-input" onChange={this.roomInput} name="name" type="text" value={this.state.name}/>
+        <input className="member-creator-input" onChange={this.roomInput} name="occupancy" type="number" value={this.state.occupancy}/>
+        <button className="new-member-creator-button" type="submit">Save</button>
       </form>
     )
   }

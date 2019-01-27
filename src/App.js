@@ -19,6 +19,13 @@ import './containers.css'
 import './components.css'
 import './forms.css'
 import './memberview.css'
+//assigning a newly created member breaks it
+//state is not fully cleared at log out esp for memberView
+//assignment doesn't re-render on memberView side
+//button to go to communities container :(
+//inconsistent styling on detail containers
+//member details are very plain
+//bio is unreliable
 
 
 class App extends Component {

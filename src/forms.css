@@ -1,5 +1,6 @@
 /* FORMS */
 .community-maker {
+  color: #fff;
   margin: 5px;
   margin-right: 20em;
   padding: 10px;
@@ -12,6 +13,7 @@
 
 .community-maker-input {
 width: 240px;
+margin-bottom: 10px;
 border-radius: 5px;
 background-color: #d2c5de;
 box-shadow: 2px 4px #989898;
@@ -29,6 +31,7 @@ border-radius: 10px;
 }
 
 .user-maker {
+  color: white;
   text-align: center;
   max-width: 60%;
   display: grid;
